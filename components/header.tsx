@@ -11,6 +11,7 @@ import {
   Text,
 } from "@mantine/core";
 import { useDisclosure } from "@mantine/hooks";
+import { useState, useEffect } from "react";
 
 const HEADER_HEIGHT = rem(60);
 
@@ -36,7 +37,7 @@ const useStyles = createStyles((theme) => ({
 
   blurredHeader: {
     backdropFilter: "blur(10px)", // 원하는 블러 정도로 조절
-    backgroundColor: "rgba(255, 255, 255, 0.1)", // 희망하는 배경색 및 투명도 조절
+    backgroundColor: "rgba(255, 255, 255, 0.85)", // 희망하는 배경색 및 투명도 조절
   },
 
   link: {
@@ -95,12 +96,11 @@ export function HeaderAction({ links }: HeaderActionProps) {
       height={HEADER_HEIGHT}
       sx={{
         borderBottom: 0,
-        backgroundColor: "transparent",
       }}
       mb={120}
       style={{ position: "fixed" }}
     >
-      <Container className={classes.inner} fluid>
+      <Container className={classes.inner}>
         <Group>
           <Burger
             opened={opened}
@@ -108,14 +108,11 @@ export function HeaderAction({ links }: HeaderActionProps) {
             className={classes.burger}
             size="sm"
           />
-          <Text>Dopamine Defense</Text>
+          <Text>도파민 디펜스</Text>
         </Group>
         <Group spacing={5} className={classes.links}>
           {items}
         </Group>
-        <Button radius="xl" h={30}>
-          Get early access
-        </Button>
       </Container>
     </Header>
   );
