@@ -151,7 +151,7 @@ export function FooterLinks({ data }: FooterLinksProps) {
         <div className={classes.logo}>
           <h1>도파민 디펜스</h1>
           <Text size="xs" color="dimmed" className={classes.description}>
-            Build fully functional accessible web applications faster than ever
+            하루 5분, 도파민으로부터 멀어지는 시간
           </Text>
         </div>
         <div className={classes.groups}>{groups}</div>
