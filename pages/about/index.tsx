@@ -13,24 +13,25 @@ export default function About() {
   return (
     <>
       <Center>
-        <div style={{ width: "64em" }}>
-          <Grid style={{ paddingTop: "100px" }} align="center">
+        <div style={{ width: "1060px" }}>
+          <Grid style={{ padding: "100px 0 100px 0" }} align="center">
             <Grid.Col md={6} orderMd={1} order={2} style={{ padding: "0px" }}>
               <MediaQuery
                 largerThan={"md"}
                 styles={{ justifyContent: "flex-end" }}
               >
                 <Flex justify={"center"}>
-                  <Image src="./img/iphone.png" width={"300px"} />
+                  <Image src="./img/iphone.png" style={{ maxWidth: "300px" }} />
                 </Flex>
               </MediaQuery>
             </Grid.Col>
             <Grid.Col md={6} orderMd={2} order={1} style={{ padding: "0px" }}>
               <Flex direction={"column"} align={"center"}>
-                <Title style={{ margin: "0px" }}>
-                  AI가 도와주는 문해력 향상
+                <Title style={{ margin: "0px" }}>AI가 길러주는 문해력</Title>
+                <Title style={{ margin: "0px" }}>매일 5분씩 도전하기.</Title>
+                <Title style={{ margin: "0px", fontSize: "50px" }}>
+                  도파민 디펜스 로고
                 </Title>
-                <Title style={{ margin: "0px" }}>하루 5분씩 꾸준히 도전!</Title>
                 <Button style={{ margin: "30px" }}>지금 시작하기</Button>
               </Flex>
             </Grid.Col>
@@ -46,14 +47,12 @@ export default function About() {
               align={"center"}
               style={{ width: "64em", margin: "20px" }}
             >
-              <Title style={{ margin: "20px", fontSize: "40px" }}>
-                숏폼 컨텐츠의 유행! 도파민 중독!
+              <Title style={{ fontSize: "30px" }}>
+                가장 빠르게 문해력 향상하는법
               </Title>
-              <Text style={{ fontSize: "20px" }}>
-                연구 결과에 따르면 학생들이 숏폼 컨텐츠에 중독되어 문해력이 크게
-                저하되었다고 합니다. 학생들은 긴 글을 잘 못읽고 국어 성적도 크게
-                떨어지는 등 사회적으로 큰 문제가 되고 있습니다.
-              </Text>
+              <Title style={{ margin: "20px", fontSize: "50px" }}>
+                독서나 신문이 아닌, 도파민 디펜스.
+              </Title>
             </Flex>
           </Center>
         </MediaQuery>
@@ -62,30 +61,112 @@ export default function About() {
       <MediaQuery largerThan="md" styles={{ height: "500px" }}>
         <MediaQuery smallerThan="md" styles={{ height: "300px" }}>
           <Center>
-            <Grid style={{ width: "64em" }}>
-              <Grid.Col span={4}>
-                <Center>
-                  <Flex direction={"column"} align={"center"}>
-                    <Title>친구수</Title>
-                    <Text>1200명</Text>
-                  </Flex>
-                </Center>
+            <Grid
+              style={{ padding: "100px 0 100px 0", width: "1060px" }}
+              align="center"
+            >
+              <Grid.Col md={6} orderMd={1} order={2} style={{ padding: "0px" }}>
+                <Flex direction={"column"} align={"flex-start"}>
+                  <Text
+                    style={{
+                      marginBottom: "20px",
+                      fontSize: "25px",
+                      fontWeight: "bold",
+                    }}
+                  >
+                    글 읽기
+                  </Text>
+                  <Title style={{ marginBottom: "20px", fontSize: "45px" }}>
+                    쉽고 재미있는 글 읽기
+                  </Title>
+                  <Text style={{ fontSize: "25px" }}>
+                    사전에 엄선된 지문을 매일 오전 8시에 보내드립니다.
+                  </Text>
+                </Flex>
               </Grid.Col>
-              <Grid.Col span={4}>
-                <Center>
-                  <Flex direction={"column"} align={"center"}>
-                    <Title>누적 유료 결제자수 </Title>
-                    <Text>142명</Text>
-                  </Flex>
-                </Center>
+              <Grid.Col md={6} orderMd={2} order={1} style={{ padding: "0px" }}>
+                <Flex direction={"column"} align={"flex-end"}>
+                  <Title style={{ margin: "0px", fontSize: "50px" }}>
+                    사진 영역
+                  </Title>
+                </Flex>
               </Grid.Col>
-              <Grid.Col span={4}>
-                <Center>
-                  <Flex direction={"column"} align={"center"}>
-                    <Title>활성 사용자 수 </Title>
-                    <Text>97명</Text>
-                  </Flex>
-                </Center>
+            </Grid>
+          </Center>
+        </MediaQuery>
+      </MediaQuery>
+
+      <MediaQuery largerThan="md" styles={{ height: "500px" }}>
+        <MediaQuery smallerThan="md" styles={{ height: "300px" }}>
+          <Center>
+            <Grid
+              style={{ padding: "100px 0 100px 0", width: "1060px" }}
+              align="center"
+            >
+              <Grid.Col md={6} orderMd={1} order={2} style={{ padding: "0px" }}>
+                <Flex direction={"column"} align={"flex-start"}>
+                  <Text
+                    style={{
+                      marginBottom: "20px",
+                      fontSize: "25px",
+                      fontWeight: "bold",
+                    }}
+                  >
+                    요약하기
+                  </Text>
+                  <Title style={{ marginBottom: "20px", fontSize: "45px" }}>
+                    짧고 굵게! 핵심만 요약하기
+                  </Title>
+                  <Text style={{ fontSize: "25px" }}>
+                    문장을 잘 이해하고 요약하는 과정에서 문해력이 길러집니다.
+                  </Text>
+                </Flex>
+              </Grid.Col>
+              <Grid.Col md={6} orderMd={2} order={1} style={{ padding: "0px" }}>
+                <Flex direction={"column"} align={"flex-end"}>
+                  <Title style={{ margin: "0px", fontSize: "50px" }}>
+                    사진 영역
+                  </Title>
+                </Flex>
+              </Grid.Col>
+            </Grid>
+          </Center>
+        </MediaQuery>
+      </MediaQuery>
+
+      <MediaQuery largerThan="md" styles={{ height: "500px" }}>
+        <MediaQuery smallerThan="md" styles={{ height: "300px" }}>
+          <Center>
+            <Grid
+              style={{ padding: "100px 0 100px 0", width: "1060px" }}
+              align="center"
+            >
+              <Grid.Col md={6} orderMd={1} order={2} style={{ padding: "0px" }}>
+                <Flex direction={"column"} align={"flex-start"}>
+                  <Text
+                    style={{
+                      marginBottom: "20px",
+                      fontSize: "25px",
+                      fontWeight: "bold",
+                    }}
+                  >
+                    채점하기
+                  </Text>
+                  <Title style={{ marginBottom: "20px", fontSize: "45px" }}>
+                    AI 채점
+                  </Title>
+                  <Text style={{ fontSize: "25px" }}>
+                    요약을 잘 했는지 평가받고 어떤 부분을 잘 했는지, <br />
+                    못했는지 알게 됩니다.
+                  </Text>
+                </Flex>
+              </Grid.Col>
+              <Grid.Col md={6} orderMd={2} order={1} style={{ padding: "0px" }}>
+                <Flex direction={"column"} align={"flex-end"}>
+                  <Title style={{ margin: "0px", fontSize: "50px" }}>
+                    사진 영역
+                  </Title>
+                </Flex>
               </Grid.Col>
             </Grid>
           </Center>
@@ -95,14 +176,37 @@ export default function About() {
       <MediaQuery largerThan="md" styles={{ height: "500px" }}>
         <MediaQuery smallerThan="md" styles={{ height: "300px" }}>
           <Center style={{ backgroundColor: "rgb(250,250,250)" }}>
-            <Flex
-              direction={"column"}
-              align={"center"}
-              style={{ padding: "30px" }}
+            <Grid
+              style={{ padding: "100px 0 100px 0", width: "1060px" }}
+              align="center"
             >
-              <h1>사용하는 방법</h1>
-              <Text>1. 요약 작성 2. 제출 3. 결과를 받아본다.</Text>
-            </Flex>
+              <Grid.Col md={6} orderMd={1} order={2} style={{ padding: "0px" }}>
+                <Flex direction={"column"} align={"center"}>
+                  <Title style={{ margin: "0px", fontSize: "50px" }}>
+                    사진 슬라이드 영역
+                  </Title>
+                </Flex>
+              </Grid.Col>
+              <Grid.Col md={6} orderMd={2} order={1} style={{ padding: "0px" }}>
+                <Flex direction={"column"} align={"flex-start"}>
+                  <Text
+                    style={{
+                      marginBottom: "20px",
+                      fontSize: "25px",
+                      fontWeight: "bold",
+                    }}
+                  >
+                    고급 AI 기술 | 점수 제공 | 피드백 제공
+                  </Text>
+                  <Title style={{ marginBottom: "20px", fontSize: "45px" }}>
+                    선생님보다 정확한 AI
+                  </Title>
+                  <Text style={{ fontSize: "25px" }}>
+                    도파민 디펜스가 자체 개발한 AI로 채점해드립니다.
+                  </Text>
+                </Flex>
+              </Grid.Col>
+            </Grid>
           </Center>
         </MediaQuery>
       </MediaQuery>
@@ -110,15 +214,176 @@ export default function About() {
       <MediaQuery largerThan="md" styles={{ height: "500px" }}>
         <MediaQuery smallerThan="md" styles={{ height: "300px" }}>
           <Center>
-            <Flex
-              direction={"column"}
-              align={"center"}
-              style={{ padding: "30px" }}
+            <Grid
+              style={{ padding: "100px 0 100px 0", width: "1060px" }}
+              align="center"
             >
-              <h1>리뷰 영역</h1>
-              <Text>A: 만족합니다!</Text>
-              <Text>B: 너무 좋아요!</Text>
-            </Flex>
+              <Grid.Col md={6} orderMd={1} order={2} style={{ padding: "0px" }}>
+                <Flex direction={"column"} align={"flex-start"}>
+                  <Text
+                    style={{
+                      marginBottom: "20px",
+                      fontSize: "25px",
+                      fontWeight: "bold",
+                    }}
+                  >
+                    레포트
+                  </Text>
+                  <Title style={{ marginBottom: "20px", fontSize: "45px" }}>
+                    꼼꼼한 레포트
+                  </Title>
+                  <Text style={{ fontSize: "25px" }}>
+                    점수, 피드백은 기본! 내가 전체에서 몇등인지, 며칠 째
+                    참여중인지 동기부여도 해드립니다.
+                  </Text>
+                </Flex>
+              </Grid.Col>
+              <Grid.Col md={6} orderMd={2} order={1} style={{ padding: "0px" }}>
+                <Flex direction={"column"} align={"flex-end"}>
+                  <Title style={{ margin: "0px", fontSize: "50px" }}>
+                    사진 영역
+                  </Title>
+                </Flex>
+              </Grid.Col>
+            </Grid>
+          </Center>
+        </MediaQuery>
+      </MediaQuery>
+
+      <MediaQuery largerThan="md" styles={{ height: "500px" }}>
+        <MediaQuery smallerThan="md" styles={{ height: "300px" }}>
+          <Center style={{ backgroundColor: "rgb(250,250,250)" }}>
+            <Grid
+              style={{ padding: "100px 0 100px 0", width: "1060px" }}
+              align="center"
+            >
+              <Grid.Col md={6} orderMd={1} order={2} style={{ padding: "0px" }}>
+                <Flex direction={"column"} align={"center"}>
+                  <Title style={{ margin: "0px", fontSize: "50px" }}>
+                    사진 슬라이드 영역
+                  </Title>
+                </Flex>
+              </Grid.Col>
+              <Grid.Col md={6} orderMd={2} order={1} style={{ padding: "0px" }}>
+                <Flex direction={"column"} align={"flex-start"}>
+                  <Text
+                    style={{
+                      marginBottom: "20px",
+                      fontSize: "25px",
+                      fontWeight: "bold",
+                    }}
+                  >
+                    Beta
+                  </Text>
+                  <Text
+                    style={{
+                      marginBottom: "20px",
+                      fontSize: "25px",
+                      fontWeight: "bold",
+                    }}
+                  >
+                    일간 레포트 | 주간 레포트 | 월간 레포트
+                  </Text>
+                  <Title style={{ marginBottom: "20px", fontSize: "45px" }}>
+                    꾸준히 받아보는 레포트
+                  </Title>
+                  <Text style={{ fontSize: "25px" }}>
+                    꾸준히 참여할수록 쌓이는 데이터. 나의 참여 기록을
+                    <br />
+                    일별, 주별, 월별로 레포트로 한 눈에 확인할 수 있습니다.
+                  </Text>
+                </Flex>
+              </Grid.Col>
+            </Grid>
+          </Center>
+        </MediaQuery>
+      </MediaQuery>
+
+      <MediaQuery largerThan="md" styles={{ height: "500px" }}>
+        <MediaQuery smallerThan="md" styles={{ height: "300px" }}>
+          <Center>
+            <div>
+              <Center>
+                <Title>이미 많은 사람들이 도파민 디펜스를 사용중입니다.</Title>
+              </Center>
+              <Grid style={{ width: "1060px" }}>
+                <Grid.Col span={4}>
+                  <Center>
+                    <Flex direction={"column"} align={"center"}>
+                      <Title style={{ margin: "20px", fontSize: "35px" }}>
+                        친구 수
+                      </Title>
+                      <Text style={{ fontSize: "20px" }}>1200명</Text>
+                    </Flex>
+                  </Center>
+                </Grid.Col>
+                <Grid.Col span={4}>
+                  <Center>
+                    <Flex direction={"column"} align={"center"}>
+                      <Title style={{ margin: "20px", fontSize: "35px" }}>
+                        누적 유료 결제자 수
+                      </Title>
+                      <Text style={{ fontSize: "20px" }}>142명</Text>
+                    </Flex>
+                  </Center>
+                </Grid.Col>
+                <Grid.Col span={4}>
+                  <Center>
+                    <Flex direction={"column"} align={"center"}>
+                      <Title style={{ margin: "20px", fontSize: "35px" }}>
+                        활성 사용자 수
+                      </Title>
+                      <Text style={{ fontSize: "20px" }}>97명</Text>
+                    </Flex>
+                  </Center>
+                </Grid.Col>
+              </Grid>
+            </div>
+          </Center>
+        </MediaQuery>
+      </MediaQuery>
+
+      <MediaQuery largerThan="md" styles={{ height: "500px" }}>
+        <MediaQuery smallerThan="md" styles={{ height: "300px" }}>
+          <Center>
+            <Grid style={{ width: "1060px" }}>
+              <Grid.Col span={6}>
+                <Center>
+                  <Flex direction={"column"} align={"center"}>
+                    <Title style={{ margin: "20px", fontSize: "35px" }}>
+                      별점 5점
+                    </Title>
+                  </Flex>
+                </Center>
+              </Grid.Col>
+              <Grid.Col span={6}>
+                <Center>
+                  <Flex direction={"column"} align={"center"}>
+                    <Title style={{ margin: "20px", fontSize: "35px" }}>
+                      너무 유익해요
+                    </Title>
+                  </Flex>
+                </Center>
+              </Grid.Col>
+              <Grid.Col span={6}>
+                <Center>
+                  <Flex direction={"column"} align={"center"}>
+                    <Title style={{ margin: "20px", fontSize: "35px" }}>
+                      좋아요
+                    </Title>
+                  </Flex>
+                </Center>
+              </Grid.Col>
+              <Grid.Col span={6}>
+                <Center>
+                  <Flex direction={"column"} align={"center"}>
+                    <Title style={{ margin: "20px", fontSize: "35px" }}>
+                      재밌어요
+                    </Title>
+                  </Flex>
+                </Center>
+              </Grid.Col>
+            </Grid>
           </Center>
         </MediaQuery>
       </MediaQuery>
@@ -133,7 +398,9 @@ export default function About() {
               align={"center"}
               style={{ padding: "30px" }}
             >
-              <h1>오늘부터 시작해볼까요?</h1>
+              <Title style={{ marginBottom: "20px", fontSize: "45px" }}>
+                오늘부터 시작하는 도파민 디펜스
+              </Title>
               <Button>무료로 시작하기</Button>
             </Flex>
           </Center>
