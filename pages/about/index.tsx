@@ -14,8 +14,8 @@ export default function About() {
     <>
       <Center>
         <div style={{ width: "64em" }}>
-          <Grid style={{ padding: "10px" }} align="center">
-            <Grid.Col md={6} orderMd={1} order={2}>
+          <Grid style={{ paddingTop: "100px" }} align="center">
+            <Grid.Col md={6} orderMd={1} order={2} style={{ padding: "0px" }}>
               <MediaQuery
                 largerThan={"md"}
                 styles={{ justifyContent: "flex-end" }}
@@ -25,7 +25,7 @@ export default function About() {
                 </Flex>
               </MediaQuery>
             </Grid.Col>
-            <Grid.Col md={6} orderMd={2} order={1}>
+            <Grid.Col md={6} orderMd={2} order={1} style={{ padding: "0px" }}>
               <Flex direction={"column"} align={"center"}>
                 <Title style={{ margin: "0px" }}>
                   AI가 도와주는 문해력 향상
