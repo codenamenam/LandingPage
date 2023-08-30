@@ -14,7 +14,7 @@ export default function About() {
     <>
       <Center>
         <div style={{ width: "64em" }}>
-          <Grid style={{ padding: "100px" }} align="center">
+          <Grid style={{ padding: "10px" }} align="center">
             <Grid.Col md={6} orderMd={1} order={2}>
               <MediaQuery
                 largerThan={"md"}
