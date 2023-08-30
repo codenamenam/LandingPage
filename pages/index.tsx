@@ -1,10 +1,10 @@
-import { HeaderAction } from "@/components/header";
+import { HeaderResponsive } from "@/components/header";
 import About from "./about";
 import { FooterLinks } from "@/components/footer";
 
 const links = [
   {
-    link: "/about",
+    link: "/",
     label: "서비스 소개",
   },
   {
@@ -90,7 +90,7 @@ const footerLinks = [
 export default function Home() {
   return (
     <div style={{ backgroundColor: "white", margin: "0px" }}>
-      <HeaderAction links={links} />
+      <HeaderResponsive links={links} />
       <About />
       <FooterLinks data={footerLinks} />
     </div>

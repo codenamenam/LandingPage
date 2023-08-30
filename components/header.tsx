@@ -1,26 +1,108 @@
+/*
+
+  links: {
+    [theme.fn.smallerThan("md")]: {
+      display: "none",
+    },
+  },
+
+  burger: {
+    [theme.fn.largerThan("md")]: {
+      display: "none",
+    },
+  },
+
+
+
+}));
+
+
+
+export function HeaderAction({ links }: HeaderActionProps) {
+  
+  const [opened, { toggle }] = useDisclosure(false);
+  const [active, setActive] = useState(links[0]) // 초기 상태
+  const { classes, cx } = useStyles();
+  const router = useRouter();
+  const items = links.map((link) => {
+    return (
+      <a
+        key={link.label}
+        href={link.link}
+        className={cx(classes.link, {
+          [classes.linkActive]: active === link.link,
+        })}
+        onClick={(event) => {
+          event.preventDefault();
+          setActive(link.label);
+          router.push(link.link);
+        }}
+        //헤더 오른쪽 폰트 사이즈
+        //최대 1060px
+        style={{ fontSize: "16px" }}
+      >
+        {link.label}
+      </a>
+    );
+  });
+
+  );
+}
+
+*/
+
 import {
   createStyles,
-  Menu,
-  Center,
   Header,
   Container,
   Group,
-  Button,
   Burger,
+  Paper,
+  Transition,
   rem,
   Text,
 } from "@mantine/core";
 import { useDisclosure } from "@mantine/hooks";
 import { useState, useEffect } from "react";
+import { useRouter } from "next/router";
 
 const HEADER_HEIGHT = rem(60);
 
+/*
+ xs: '30em',
+ sm: "48em",
+ md: "64em",
+ lg: "74em",
+ xl: "90em",
+*/
+
 const useStyles = createStyles((theme) => ({
-  inner: {
-    height: HEADER_HEIGHT,
+  root: {
+    position: "relative",
+    zIndex: 1,
+  },
+
+  dropdown: {
+    position: "absolute",
+    top: HEADER_HEIGHT,
+    left: 0,
+    right: 0,
+    zIndex: 0,
+    borderTopRightRadius: 0,
+    borderTopLeftRadius: 0,
+    borderTopWidth: 0,
+    overflow: "hidden",
+
+    [theme.fn.largerThan("sm")]: {
+      display: "none",
+    },
+  },
+
+  header: {
     display: "flex",
     justifyContent: "space-between",
     alignItems: "center",
+    height: "100%",
   },
 
   links: {
@@ -33,11 +115,6 @@ const useStyles = createStyles((theme) => ({
     [theme.fn.largerThan("sm")]: {
       display: "none",
     },
-  },
-
-  blurredHeader: {
-    backdropFilter: "blur(10px)", // 원하는 블러 정도로 조절
-    backgroundColor: "rgba(255, 255, 255, 0.85)", // 희망하는 배경색 및 투명도 조절
   },
 
   link: {
@@ -59,60 +136,89 @@ const useStyles = createStyles((theme) => ({
           ? theme.colors.dark[6]
           : theme.colors.gray[0],
     },
+
+    [theme.fn.smallerThan("sm")]: {
+      borderRadius: 0,
+      padding: theme.spacing.md,
+    },
   },
 
-  linkLabel: {
-    marginRight: rem(5),
+  linkActive: {
+    "&, &:hover": {
+      backgroundColor: theme.fn.variant({
+        variant: "light",
+        color: theme.primaryColor,
+      }).background,
+      color: theme.fn.variant({ variant: "light", color: theme.primaryColor })
+        .color,
+    },
+  },
+
+  blurredHeader: {
+    backdropFilter: "blur(10px)", // 원하는 블러 정도로 조절
+    backgroundColor: "rgba(255, 255, 255, 0.85)", // 희망하는 배경색 및 투명도 조절
   },
 }));
 
-interface HeaderActionProps {
-  links: {
-    link: string;
-    label: string;
-  }[];
+interface HeaderResponsiveProps {
+  links: { link: string; label: string }[];
 }
 
-export function HeaderAction({ links }: HeaderActionProps) {
-  const { classes } = useStyles();
-  const [opened, { toggle }] = useDisclosure(false);
+export function HeaderResponsive({ links }: HeaderResponsiveProps) {
+  const [opened, { toggle, close }] = useDisclosure(false);
+  const [active, setActive] = useState(links[0].link);
+  const { classes, cx } = useStyles();
+  const router = useRouter();
 
-  const items = links.map((link) => {
-    return (
-      <a
-        key={link.label}
-        href={link.link}
-        className={classes.link}
-        onClick={(event) => event.preventDefault()}
-      >
-        {link.label}
-      </a>
-    );
-  });
+  const items = links.map((link) => (
+    <a
+      key={link.label}
+      href={link.link}
+      style={{ fontSize: "16px" }}
+      className={cx(classes.link, {
+        [classes.linkActive]: active === link.link,
+      })}
+      onClick={(event) => {
+        event.preventDefault();
+        setActive(link.link);
+        router.push(link.link);
+        close();
+      }}
+    >
+      {link.label}
+    </a>
+  ));
 
   return (
     <Header
-      className={classes.blurredHeader}
       height={HEADER_HEIGHT}
       sx={{
         borderBottom: 0,
       }}
       mb={120}
+      className={classes.blurredHeader}
       style={{ position: "fixed" }}
     >
-      <Container className={classes.inner}>
-        <Group>
-          <Burger
-            opened={opened}
-            onClick={toggle}
-            className={classes.burger}
-            size="sm"
-          />
-          <Text>도파민 디펜스</Text>
-        </Group>
+      <Container className={classes.header} style={{ maxWidth: "1060px" }}>
+        <Text>도파민 디펜스</Text>
         <Group spacing={5} className={classes.links}>
           {items}
         </Group>
+
+        <Burger
+          opened={opened}
+          onClick={toggle}
+          className={classes.burger}
+          size="sm"
+        />
+
+        <Transition transition="pop-top-right" duration={200} mounted={opened}>
+          {(styles) => (
+            <Paper className={classes.dropdown} withBorder style={styles}>
+              {items}
+            </Paper>
+          )}
+        </Transition>
       </Container>
     </Header>
   );

@@ -12,138 +12,133 @@ import {
 export default function About() {
   return (
     <>
-      <Grid style={{ padding: "100px" }} align="center">
-        <Grid.Col sm={5} orderSm={1} order={2}>
-          <MediaQuery largerThan={"sm"} styles={{ justifyContent: "flex-end" }}>
-            <Flex justify={"center"}>
-              <Image src="./img/iphone.png" width={"300px"} />
+      <Center>
+        <div style={{ width: "64em" }}>
+          <Grid style={{ padding: "100px" }} align="center">
+            <Grid.Col md={6} orderMd={1} order={2}>
+              <MediaQuery
+                largerThan={"md"}
+                styles={{ justifyContent: "flex-end" }}
+              >
+                <Flex justify={"center"}>
+                  <Image src="./img/iphone.png" width={"300px"} />
+                </Flex>
+              </MediaQuery>
+            </Grid.Col>
+            <Grid.Col md={6} orderMd={2} order={1}>
+              <Flex direction={"column"} align={"center"}>
+                <Title style={{ margin: "0px" }}>
+                  AI가 도와주는 문해력 향상
+                </Title>
+                <Title style={{ margin: "0px" }}>하루 5분씩 꾸준히 도전!</Title>
+                <Button style={{ margin: "30px" }}>지금 시작하기</Button>
+              </Flex>
+            </Grid.Col>
+          </Grid>
+        </div>
+      </Center>
+
+      <MediaQuery largerThan="md" styles={{ height: "500px" }}>
+        <MediaQuery smallerThan="md" styles={{ height: "300px" }}>
+          <Center style={{ backgroundColor: "rgb(250,250,250)" }}>
+            <Flex
+              direction={"column"}
+              align={"center"}
+              style={{ width: "64em", margin: "20px" }}
+            >
+              <Title style={{ margin: "20px", fontSize: "40px" }}>
+                숏폼 컨텐츠의 유행! 도파민 중독!
+              </Title>
+              <Text style={{ fontSize: "20px" }}>
+                연구 결과에 따르면 학생들이 숏폼 컨텐츠에 중독되어 문해력이 크게
+                저하되었다고 합니다. 학생들은 긴 글을 잘 못읽고 국어 성적도 크게
+                떨어지는 등 사회적으로 큰 문제가 되고 있습니다.
+              </Text>
             </Flex>
-          </MediaQuery>
-        </Grid.Col>
-        <Grid.Col sm={4} orderSm={2} order={1}>
-          <Flex direction={"column"} align={"center"}>
-            <Title style={{ margin: "0px" }}>도파민 디펜스</Title>
-            <Title style={{ margin: "0px" }}>한 달에 3000원! </Title>
-            <Button style={{ margin: "30px" }}>지금 시작하기</Button>
-          </Flex>
-        </Grid.Col>
-      </Grid>
-
-      <div
-        style={{
-          backgroundColor: "rgb(250,250,250)",
-          width: "100%",
-          height: "500px",
-        }}
-      >
-        <MediaQuery smallerThan="sm" styles={{ display: "none" }}>
-          <Flex
-            direction={"column"}
-            align={"center"}
-            style={{ padding: "30px" }}
-          >
-            <h1>숏폼 컨텐츠의 유행! 도파민 중독!</h1>
-            <Text>
-              연구 결과에 따르면 학생들이 숏폼 컨텐츠에 중독되어 문해력이 크게
-              저하되었다고 합니다. 학생들은 긴 글을 잘 못읽고 국어 성적도 크게
-              떨어지는 등 사회적으로 큰 문제가 되고 있습니다.
-            </Text>
-            <h3>여러분은 어떻게 하시겠습니까?</h3>
-          </Flex>
+          </Center>
         </MediaQuery>
+      </MediaQuery>
 
-        <MediaQuery largerThan="sm" styles={{ display: "none" }}>
-          <Flex
-            direction={"column"}
-            align={"center"}
-            style={{ padding: "30px" }}
-          >
-            <h2>숏폼 컨텐츠의 유행! 도파민 중독!</h2>
-            <Text>
-              연구 결과에 따르면 학생들이 숏폼 컨텐츠에 중독되어 문해력이 크게
-              저하되었다고 합니다. 학생들은 긴 글을 잘 못읽고 국어 성적도 크게
-              떨어지는 등 사회적으로 큰 문제가 되고 있습니다.
-            </Text>
-            <h3>여러분은 어떻게 하시겠습니까?</h3>
-          </Flex>
+      <MediaQuery largerThan="md" styles={{ height: "500px" }}>
+        <MediaQuery smallerThan="md" styles={{ height: "300px" }}>
+          <Center>
+            <Grid style={{ width: "64em" }}>
+              <Grid.Col span={4}>
+                <Center>
+                  <Flex direction={"column"} align={"center"}>
+                    <Title>친구수</Title>
+                    <Text>1200명</Text>
+                  </Flex>
+                </Center>
+              </Grid.Col>
+              <Grid.Col span={4}>
+                <Center>
+                  <Flex direction={"column"} align={"center"}>
+                    <Title>누적 유료 결제자수 </Title>
+                    <Text>142명</Text>
+                  </Flex>
+                </Center>
+              </Grid.Col>
+              <Grid.Col span={4}>
+                <Center>
+                  <Flex direction={"column"} align={"center"}>
+                    <Title>활성 사용자 수 </Title>
+                    <Text>97명</Text>
+                  </Flex>
+                </Center>
+              </Grid.Col>
+            </Grid>
+          </Center>
         </MediaQuery>
-      </div>
+      </MediaQuery>
 
-      <div>
-        <Center>
-          <h1>폼 미쳤다!</h1>
-        </Center>
-        <Grid>
-          <Grid.Col span={4}>
-            <Center>
-              <Flex direction={"column"}>
-                <h1>친구수</h1>
-                <h1>1200명</h1>
-              </Flex>
-            </Center>
-          </Grid.Col>
-          <Grid.Col span={4}>
-            <Center>
-              <Flex direction={"column"}>
-                <h1>누적 유료 결제자수 </h1>
-                <h1>142명</h1>
-              </Flex>
-            </Center>
-          </Grid.Col>
-          <Grid.Col span={4}>
-            <Center>
-              <Flex direction={"column"}>
-                <h1>활성 사용자 수 </h1>
-                <h1>97명</h1>
-              </Flex>
-            </Center>
-          </Grid.Col>
-        </Grid>
-      </div>
+      <MediaQuery largerThan="md" styles={{ height: "500px" }}>
+        <MediaQuery smallerThan="md" styles={{ height: "300px" }}>
+          <Center style={{ backgroundColor: "rgb(250,250,250)" }}>
+            <Flex
+              direction={"column"}
+              align={"center"}
+              style={{ padding: "30px" }}
+            >
+              <h1>사용하는 방법</h1>
+              <Text>1. 요약 작성 2. 제출 3. 결과를 받아본다.</Text>
+            </Flex>
+          </Center>
+        </MediaQuery>
+      </MediaQuery>
 
-      <div
-        style={{
-          backgroundColor: "rgb(250,250,250)",
-          width: "100%",
-        }}
-      >
-        <Center>
-          <Flex
-            direction={"column"}
-            align={"center"}
-            style={{ padding: "30px" }}
+      <MediaQuery largerThan="md" styles={{ height: "500px" }}>
+        <MediaQuery smallerThan="md" styles={{ height: "300px" }}>
+          <Center>
+            <Flex
+              direction={"column"}
+              align={"center"}
+              style={{ padding: "30px" }}
+            >
+              <h1>리뷰 영역</h1>
+              <Text>A: 만족합니다!</Text>
+              <Text>B: 너무 좋아요!</Text>
+            </Flex>
+          </Center>
+        </MediaQuery>
+      </MediaQuery>
+
+      <MediaQuery largerThan="md" styles={{ height: "500px" }}>
+        <MediaQuery smallerThan="md" styles={{ height: "300px" }}>
+          <Center
+            style={{ backgroundColor: "rgb(250,250,250)", width: "100%" }}
           >
-            <h1>사용하는 방법</h1>
-            <Text>1. 요약 작성 2. 제출 3. 결과를 받아본다.</Text>
-          </Flex>
-        </Center>
-      </div>
-      <div style={{ width: "100%" }}>
-        <Center>
-          <Flex
-            direction={"column"}
-            align={"center"}
-            style={{ padding: "30px" }}
-          >
-            <h1>사용자들의 생생한 간증</h1>
-            <Text>A: 만족합니다!</Text>
-            <Text>B: 너무 좋아요!</Text>
-          </Flex>
-        </Center>
-      </div>
-      <div style={{ backgroundColor: "rgb(250,250,250)", width: "100%" }}>
-        <Center>
-          <Flex
-            direction={"column"}
-            align={"center"}
-            style={{ padding: "30px" }}
-          >
-            <h1>오늘부터 시작해보는건 어떨까요?</h1>
-            <Text>무료체험부터 체험해봅시다.</Text>
-            <Button>지금 시작하기</Button>
-          </Flex>
-        </Center>
-      </div>
+            <Flex
+              direction={"column"}
+              align={"center"}
+              style={{ padding: "30px" }}
+            >
+              <h1>오늘부터 시작해볼까요?</h1>
+              <Button>무료로 시작하기</Button>
+            </Flex>
+          </Center>
+        </MediaQuery>
+      </MediaQuery>
     </>
   );
 }
