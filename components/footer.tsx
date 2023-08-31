@@ -5,12 +5,10 @@ import {
   ActionIcon,
   Group,
   rem,
+  MediaQuery,
 } from "@mantine/core";
-import {
-  IconBrandTwitter,
-  IconBrandYoutube,
-  IconBrandInstagram,
-} from "@tabler/icons-react";
+
+import { useRouter } from "next/router";
 
 const useStyles = createStyles((theme) => ({
   footer: {
@@ -29,7 +27,7 @@ const useStyles = createStyles((theme) => ({
   logo: {
     maxWidth: rem(200),
 
-    [theme.fn.smallerThan("sm")]: {
+    [theme.fn.smallerThan("md")]: {
       display: "flex",
       flexDirection: "column",
       alignItems: "center",
@@ -39,7 +37,7 @@ const useStyles = createStyles((theme) => ({
   description: {
     marginTop: rem(5),
 
-    [theme.fn.smallerThan("sm")]: {
+    [theme.fn.smallerThan("md")]: {
       marginTop: theme.spacing.xs,
       textAlign: "center",
     },
@@ -49,7 +47,7 @@ const useStyles = createStyles((theme) => ({
     display: "flex",
     justifyContent: "space-between",
 
-    [theme.fn.smallerThan("sm")]: {
+    [theme.fn.smallerThan("md")]: {
       flexDirection: "column",
       alignItems: "center",
     },
@@ -59,7 +57,7 @@ const useStyles = createStyles((theme) => ({
     display: "flex",
     flexWrap: "wrap",
 
-    [theme.fn.smallerThan("sm")]: {
+    [theme.fn.smallerThan("md")]: {
       display: "none",
     },
   },
@@ -102,13 +100,13 @@ const useStyles = createStyles((theme) => ({
       theme.colorScheme === "dark" ? theme.colors.dark[4] : theme.colors.gray[2]
     }`,
 
-    [theme.fn.smallerThan("sm")]: {
+    [theme.fn.smallerThan("md")]: {
       flexDirection: "column",
     },
   },
 
   social: {
-    [theme.fn.smallerThan("sm")]: {
+    [theme.fn.smallerThan("md")]: {
       marginTop: theme.spacing.xs,
     },
   },
@@ -123,6 +121,7 @@ interface FooterLinksProps {
 
 export function FooterLinks({ data }: FooterLinksProps) {
   const { classes } = useStyles();
+  const router = useRouter();
 
   const groups = data.map((group) => {
     const links = group.links.map((link, index) => (
@@ -131,7 +130,10 @@ export function FooterLinks({ data }: FooterLinksProps) {
         className={classes.link}
         component="a"
         href={link.link}
-        onClick={(event) => event.preventDefault()}
+        onClick={(event) => {
+          event.preventDefault();
+          router.push(link.link);
+        }}
       >
         {link.label}
       </Text>
@@ -157,21 +159,9 @@ export function FooterLinks({ data }: FooterLinksProps) {
         <div className={classes.groups}>{groups}</div>
       </Container>
       <Container className={classes.afterFooter}>
-        <Text color="dimmed" size="sm">
-          © 2020 mantine.dev. All rights reserved.
+        <Text color="dimmed" size="md">
+          © 2023 도파민 디펜스. All rights reserved.
         </Text>
-
-        <Group spacing={0} className={classes.social} position="right" noWrap>
-          <ActionIcon size="lg">
-            <IconBrandTwitter size="1.05rem" stroke={1.5} />
-          </ActionIcon>
-          <ActionIcon size="lg">
-            <IconBrandYoutube size="1.05rem" stroke={1.5} />
-          </ActionIcon>
-          <ActionIcon size="lg">
-            <IconBrandInstagram size="1.05rem" stroke={1.5} />
-          </ActionIcon>
-        </Group>
       </Container>
     </footer>
   );

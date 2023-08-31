@@ -26,62 +26,20 @@ const footerLinks = [
     title: "About",
     links: [
       {
-        label: "Features",
-        link: "#",
+        label: "서비스 소개",
+        link: "/",
+      },
+      {
+        label: "결제하기",
+        link: "/pay",
       },
       {
         label: "Pricing",
-        link: "#",
+        link: "/pricing",
       },
       {
-        label: "Support",
-        link: "#",
-      },
-      {
-        label: "Forums",
-        link: "#",
-      },
-    ],
-  },
-  {
-    title: "Project",
-    links: [
-      {
-        label: "Contribute",
-        link: "#",
-      },
-      {
-        label: "Media assets",
-        link: "#",
-      },
-      {
-        label: "Changelog",
-        link: "#",
-      },
-      {
-        label: "Releases",
-        link: "#",
-      },
-    ],
-  },
-  {
-    title: "Community",
-    links: [
-      {
-        label: "Join Discord",
-        link: "#",
-      },
-      {
-        label: "Follow on Twitter",
-        link: "#",
-      },
-      {
-        label: "Email newsletter",
-        link: "#",
-      },
-      {
-        label: "GitHub discussions",
-        link: "#",
+        label: "고객센터",
+        link: "/service",
       },
     ],
   },

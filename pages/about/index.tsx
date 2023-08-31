@@ -13,30 +13,74 @@ export default function About() {
   return (
     <>
       <Center>
-        <div style={{ width: "1060px" }}>
-          <Grid style={{ padding: "100px 0 100px 0" }} align="center">
-            <Grid.Col md={6} orderMd={1} order={2} style={{ padding: "0px" }}>
-              <MediaQuery
-                largerThan={"md"}
-                styles={{ justifyContent: "flex-end" }}
-              >
-                <Flex justify={"center"}>
-                  <Image src="./img/iphone.png" style={{ maxWidth: "300px" }} />
-                </Flex>
-              </MediaQuery>
-            </Grid.Col>
-            <Grid.Col md={6} orderMd={2} order={1} style={{ padding: "0px" }}>
-              <Flex direction={"column"} align={"center"}>
-                <Title style={{ margin: "0px" }}>AI가 길러주는 문해력</Title>
-                <Title style={{ margin: "0px" }}>매일 5분씩 도전하기.</Title>
-                <Title style={{ margin: "0px", fontSize: "50px" }}>
-                  도파민 디펜스 로고
-                </Title>
-                <Button style={{ margin: "30px" }}>지금 시작하기</Button>
-              </Flex>
-            </Grid.Col>
-          </Grid>
-        </div>
+        <MediaQuery largerThan={"md"} styles={{ width: "1060px" }}>
+          <MediaQuery smallerThan={"md"} styles={{ width: "300px" }}>
+            <div>
+              <Grid style={{ padding: "100px 0 100px 0" }} align="center">
+                <Grid.Col
+                  md={6}
+                  orderMd={1}
+                  order={2}
+                  style={{ padding: "0px" }}
+                >
+                  <MediaQuery
+                    largerThan={"md"}
+                    styles={{
+                      alignContent: "flex-end",
+                      width: "100%",
+                      margin: "50px 0 50px 50px",
+                    }}
+                  >
+                    <MediaQuery
+                      smallerThan={"md"}
+                      styles={{ justifyContent: "center", width: "300px" }}
+                    >
+                      <div>
+                        <Image src="./img/first.png" />
+                      </div>
+                    </MediaQuery>
+                  </MediaQuery>
+                </Grid.Col>
+                <Grid.Col
+                  md={6}
+                  orderMd={2}
+                  order={1}
+                  style={{ padding: "0px" }}
+                >
+                  <Flex direction={"column"} align={"center"}>
+                    <MediaQuery largerThan={"md"} styles={{ fontSize: "35px" }}>
+                      <MediaQuery
+                        smallerThan={"md"}
+                        styles={{ fontSize: "30px" }}
+                      >
+                        <Title style={{ margin: "0px" }}>
+                          AI가 길러주는 문해력
+                          <br />
+                          매일 5분씩 도전하기.
+                        </Title>
+                      </MediaQuery>
+                    </MediaQuery>
+
+                    <MediaQuery
+                      largerThan={"md"}
+                      styles={{ width: "350px", margin: "20px" }}
+                    >
+                      <MediaQuery
+                        smallerThan={"md"}
+                        styles={{ width: "280px", margin: "10px" }}
+                      >
+                        <div>
+                          <Image src={"./img/dd-logo.png"} />
+                        </div>
+                      </MediaQuery>
+                    </MediaQuery>
+                    <Button style={{ margin: "30px" }}>지금 시작하기</Button>
+                  </Flex>
+                </Grid.Col>
+              </Grid>
+            </div>
+          </MediaQuery>
+        </MediaQuery>
       </Center>
 
       <MediaQuery largerThan="md" styles={{ height: "500px" }}>

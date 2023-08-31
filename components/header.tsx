@@ -1,56 +1,3 @@
-/*
-
-  links: {
-    [theme.fn.smallerThan("md")]: {
-      display: "none",
-    },
-  },
-
-  burger: {
-    [theme.fn.largerThan("md")]: {
-      display: "none",
-    },
-  },
-
-
-
-}));
-
-
-
-export function HeaderAction({ links }: HeaderActionProps) {
-  
-  const [opened, { toggle }] = useDisclosure(false);
-  const [active, setActive] = useState(links[0]) // 초기 상태
-  const { classes, cx } = useStyles();
-  const router = useRouter();
-  const items = links.map((link) => {
-    return (
-      <a
-        key={link.label}
-        href={link.link}
-        className={cx(classes.link, {
-          [classes.linkActive]: active === link.link,
-        })}
-        onClick={(event) => {
-          event.preventDefault();
-          setActive(link.label);
-          router.push(link.link);
-        }}
-        //헤더 오른쪽 폰트 사이즈
-        //최대 1060px
-        style={{ fontSize: "16px" }}
-      >
-        {link.label}
-      </a>
-    );
-  });
-
-  );
-}
-
-*/
-
 import {
   createStyles,
   Header,
@@ -61,6 +8,8 @@ import {
   Transition,
   rem,
   Text,
+  Image,
+  MediaQuery,
 } from "@mantine/core";
 import { useDisclosure } from "@mantine/hooks";
 import { useState, useEffect } from "react";
@@ -199,8 +148,15 @@ export function HeaderResponsive({ links }: HeaderResponsiveProps) {
       className={classes.blurredHeader}
       style={{ position: "fixed" }}
     >
-      <Container className={classes.header} style={{ maxWidth: "1060px" }}>
-        <Text>도파민 디펜스</Text>
+      <Container className={classes.header} style={{ maxWidth: "1100px" }}>
+        <MediaQuery largerThan={"md"} styles={{ width: "100px" }}>
+          <MediaQuery smallerThan={"md"} styles={{ width: "70px" }}>
+            <div>
+              <Image src="./img/dd-logo.png" />
+            </div>
+          </MediaQuery>
+        </MediaQuery>
+
         <Group spacing={5} className={classes.links}>
           {items}
         </Group>
