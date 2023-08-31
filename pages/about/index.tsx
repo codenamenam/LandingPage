@@ -350,7 +350,7 @@ export default function About() {
               <Center>
                 <Title>이미 많은 사람들이 도파민 디펜스를 사용중입니다.</Title>
               </Center>
-              <Grid style={{ width: "1060px" }}>
+              <Grid style={{ maxWidth: "1060px" }}>
                 <Grid.Col span={4}>
                   <Center>
                     <Flex direction={"column"} align={"center"}>
