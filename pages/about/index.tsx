@@ -14,7 +14,10 @@ export default function About() {
     <>
       <Center>
         <MediaQuery largerThan={"md"} styles={{ width: "1060px" }}>
-          <MediaQuery smallerThan={"md"} styles={{ width: "300px" }}>
+          <MediaQuery
+            smallerThan={"md"}
+            styles={{ width: "300px", marginTop: "30px" }}
+          >
             <div>
               <Grid style={{ padding: "100px 0 100px 0" }} align="center">
                 <Grid.Col
@@ -67,20 +70,27 @@ export default function About() {
 
                     <MediaQuery
                       largerThan={"md"}
-                      styles={{ width: "350px", margin: "20px" }}
+                      styles={{ width: "350px", margin: "10px" }}
                     >
                       <MediaQuery
                         smallerThan={"md"}
-                        styles={{ width: "280px", margin: "10px" }}
+                        styles={{ width: "280px", margin: "10px 0 0 0" }}
                       >
                         <div>
                           <Image src={"./img/dd-logo.png"} />
                         </div>
                       </MediaQuery>
                     </MediaQuery>
-                    <Button style={{ margin: "20px" }}>
-                      <Text>지금 시작하기</Text>
-                    </Button>
+                    <MediaQuery
+                      smallerThan={"md"}
+                      styles={{ margin: "20px 0 15px" }}
+                    >
+                      <MediaQuery largerThan={"md"} styles={{ margin: "20px" }}>
+                        <Button>
+                          <Text>지금 시작하기</Text>
+                        </Button>
+                      </MediaQuery>
+                    </MediaQuery>
                   </Flex>
                 </Grid.Col>
               </Grid>
