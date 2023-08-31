@@ -33,7 +33,11 @@ export default function About() {
                   >
                     <MediaQuery
                       smallerThan={"md"}
-                      styles={{ justifyContent: "center", width: "300px" }}
+                      styles={{
+                        justifyContent: "flex-end",
+                        alignContent: "flex-end",
+                        width: "100%",
+                      }}
                     >
                       <div>
                         <Image src="./img/first.png" />
@@ -51,7 +55,7 @@ export default function About() {
                     <MediaQuery largerThan={"md"} styles={{ fontSize: "35px" }}>
                       <MediaQuery
                         smallerThan={"md"}
-                        styles={{ fontSize: "30px" }}
+                        styles={{ fontSize: "25px" }}
                       >
                         <Title style={{ margin: "0px" }}>
                           AI가 길러주는 문해력
@@ -74,7 +78,9 @@ export default function About() {
                         </div>
                       </MediaQuery>
                     </MediaQuery>
-                    <Button style={{ margin: "30px" }}>지금 시작하기</Button>
+                    <Button style={{ margin: "20px" }}>
+                      <Text>지금 시작하기</Text>
+                    </Button>
                   </Flex>
                 </Grid.Col>
               </Grid>
