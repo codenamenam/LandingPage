@@ -690,44 +690,182 @@ export function MoreInfoScoring() {
 // 레포트
 export function Report() {
   return (
-    <MediaQuery largerThan="md" styles={{ height: "500px" }}>
-      <MediaQuery smallerThan="md" styles={{ height: "300px" }}>
-        <Center>
-          <Grid
-            style={{ padding: "100px 0 100px 0", width: "1060px" }}
-            align="center"
-          >
-            <Grid.Col md={6} orderMd={1} order={2} style={{ padding: "0px" }}>
-              <Flex direction={"column"} align={"flex-start"}>
-                <Text
+    <Center>
+      <MediaQuery largerThan={"md"} styles={{ width: "1060px" }}>
+        <MediaQuery
+          smallerThan={"md"}
+          styles={{ width: "300px", marginTop: "30px" }}
+        >
+          <div>
+            <MediaQuery smallerThan={"md"} styles={{ display: "none" }}>
+              <Grid
+                style={{
+                  padding: "100px 0 100px 0",
+                }}
+                align="center"
+              >
+                <Grid.Col
+                  md={6}
+                  orderMd={1}
+                  order={2}
                   style={{
-                    marginBottom: "20px",
-                    fontSize: "25px",
-                    fontWeight: "bold",
+                    padding: "0px",
                   }}
                 >
-                  레포트
-                </Text>
-                <Title style={{ marginBottom: "20px", fontSize: "45px" }}>
-                  꼼꼼한 레포트
-                </Title>
-                <Text style={{ fontSize: "25px" }}>
-                  점수, 피드백은 기본! 내가 전체에서 몇등인지, 며칠 째
-                  참여중인지 동기부여도 해드립니다.
-                </Text>
-              </Flex>
-            </Grid.Col>
-            <Grid.Col md={6} orderMd={2} order={1} style={{ padding: "0px" }}>
-              <Flex direction={"column"} align={"flex-end"}>
-                <Title style={{ margin: "0px", fontSize: "50px" }}>
-                  사진 영역
-                </Title>
-              </Flex>
-            </Grid.Col>
-          </Grid>
-        </Center>
+                  <Flex direction={"column"} align={"flex-start"}>
+                    <Text
+                      style={{
+                        marginBottom: "20px",
+                        fontSize: "26px",
+                        fontWeight: "bold",
+                      }}
+                    >
+                      레포트
+                    </Text>
+                    <Title style={{ marginBottom: "20px", fontSize: "45px" }}>
+                      꼼꼼한 레포트
+                    </Title>
+                    <Text style={{ fontSize: "25px", marginBottom: "10px" }}>
+                      점수, 피드백은 기본! 내가 전체에서 몇등인지, 며칠 째
+                      참여중인지 동기부여도 해드립니다.
+                    </Text>
+                    <Text
+                      style={{
+                        fontSize: "16px",
+                        fontWeight: "bold",
+                      }}
+                    >
+                      9월 중 제공 예정
+                    </Text>
+                  </Flex>
+                </Grid.Col>
+                <Grid.Col
+                  md={6}
+                  orderMd={2}
+                  order={1}
+                  style={{
+                    padding: "0px",
+                    display: "flex",
+                    justifyContent: "center",
+                    alignItems: "center",
+                  }}
+                >
+                  <MediaQuery
+                    largerThan={"md"}
+                    styles={{
+                      alignContent: "center",
+                      width: "100%",
+                      height: "700px",
+                    }}
+                  >
+                    <MediaQuery
+                      smallerThan={"md"}
+                      styles={{
+                        justifyContent: "center",
+                        alignContent: "center",
+                        width: "100%",
+                        height: "370px",
+                      }}
+                    >
+                      <div
+                        style={{
+                          display: "flex",
+                          justifyContent: "center",
+                          alignItems: "center",
+                        }}
+                      >
+                        <img src="./img/Report.png" height={"100%"} />
+                      </div>
+                    </MediaQuery>
+                  </MediaQuery>
+                </Grid.Col>
+              </Grid>
+            </MediaQuery>
+
+            <MediaQuery largerThan={"md"} styles={{ display: "none" }}>
+              <Grid
+                style={{
+                  padding: "50px 0 50px 0",
+                }}
+                align="center"
+              >
+                <Grid.Col md={12}>
+                  <Flex direction={"column"} align={"center"}>
+                    <Text
+                      style={{
+                        marginBottom: "5px",
+                        fontSize: "18px",
+                        fontWeight: "bold",
+                      }}
+                    >
+                      레포트
+                    </Text>
+
+                    <Flex direction={"column"} align={"center"}>
+                      <Title
+                        style={{
+                          fontSize: "30px",
+                        }}
+                      >
+                        꼼꼼한 레포트
+                      </Title>
+                      <Text
+                        style={{
+                          fontSize: "12px",
+                          fontWeight: "bold",
+                        }}
+                      >
+                        9월 중 제공예정
+                      </Text>
+                    </Flex>
+                  </Flex>
+                </Grid.Col>
+                <Grid.Col md={12}>
+                  <MediaQuery
+                    largerThan={"md"}
+                    styles={{
+                      alignContent: "center",
+                      width: "100%",
+                      height: "700px",
+                    }}
+                  >
+                    <MediaQuery
+                      smallerThan={"md"}
+                      styles={{
+                        justifyContent: "center",
+                        alignContent: "center",
+                        width: "100%",
+                        height: "370px",
+                      }}
+                    >
+                      <div
+                        style={{
+                          display: "flex",
+                          justifyContent: "center",
+                          alignItems: "center",
+                        }}
+                      >
+                        <img src="./img/Report.png" height={"100%"} />
+                      </div>
+                    </MediaQuery>
+                  </MediaQuery>
+                </Grid.Col>
+                <Grid.Col md={12}>
+                  <Flex direction={"column"} align={"center"}>
+                    <Text style={{ fontSize: "14px", marginTop: "5px" }}>
+                      점수, 피드백은 기본! 내가 전체에서 몇등인지, 며칠 째
+                    </Text>
+                    <Text style={{ fontSize: "14px", marginTop: "5px" }}>
+                      참여중인지 동기부여도 해드립니다.
+                    </Text>
+                  </Flex>
+                </Grid.Col>
+              </Grid>
+            </MediaQuery>
+          </div>
+        </MediaQuery>
       </MediaQuery>
-    </MediaQuery>
+    </Center>
   );
 }
 
@@ -915,7 +1053,11 @@ export default function About() {
       <FunctionScoring />
       <MoreInfoScoring />
       <Report />
-      <Demo />
+      <Center>
+        <div style={{ width: "1000px" }}>
+          <Demo />
+        </div>
+      </Center>
       <MoreInfoReport />
       <Indicator />
       <Review />
