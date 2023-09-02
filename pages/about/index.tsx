@@ -647,43 +647,164 @@ export function FunctionScoring() {
 // 채점 세부
 export function MoreInfoScoring() {
   return (
-    <MediaQuery largerThan="md" styles={{ height: "500px" }}>
-      <MediaQuery smallerThan="md" styles={{ height: "300px" }}>
-        <Center style={{ backgroundColor: "rgb(250,250,250)" }}>
-          <Grid
-            style={{ padding: "100px 0 100px 0", width: "1060px" }}
-            align="center"
-          >
-            <Grid.Col md={6} orderMd={1} order={2} style={{ padding: "0px" }}>
-              <Flex direction={"column"} align={"center"}>
-                <Title style={{ margin: "0px", fontSize: "50px" }}>
-                  사진 슬라이드 영역
-                </Title>
-              </Flex>
-            </Grid.Col>
-            <Grid.Col md={6} orderMd={2} order={1} style={{ padding: "0px" }}>
-              <Flex direction={"column"} align={"flex-start"}>
-                <Text
+    <Center style={{ backgroundColor: "rgb(250, 250,250)" }}>
+      <MediaQuery largerThan={"md"} styles={{ width: "1060px" }}>
+        <MediaQuery
+          smallerThan={"md"}
+          styles={{ width: "300px", marginTop: "30px" }}
+        >
+          <div>
+            <MediaQuery smallerThan={"md"} styles={{ display: "none" }}>
+              <Grid
+                style={{
+                  padding: "100px 0 100px 0",
+                }}
+                align="center"
+              >
+                <Grid.Col
+                  md={6}
+                  order={1}
                   style={{
-                    marginBottom: "20px",
-                    fontSize: "25px",
-                    fontWeight: "bold",
+                    padding: "0px",
+                    display: "flex",
+                    justifyContent: "center",
+                    alignItems: "center",
                   }}
                 >
-                  고급 AI 기술 | 점수 제공 | 피드백 제공
-                </Text>
-                <Title style={{ marginBottom: "20px", fontSize: "45px" }}>
-                  선생님보다 정확한 AI
-                </Title>
-                <Text style={{ fontSize: "25px" }}>
-                  도파민 디펜스가 자체 개발한 AI로 채점해드립니다.
-                </Text>
-              </Flex>
-            </Grid.Col>
-          </Grid>
-        </Center>
+                  <MediaQuery
+                    largerThan={"md"}
+                    styles={{
+                      alignContent: "center",
+                      width: "100%",
+                      height: "700px",
+                    }}
+                  >
+                    <MediaQuery
+                      smallerThan={"md"}
+                      styles={{
+                        justifyContent: "center",
+                        alignContent: "center",
+                        width: "100%",
+                        height: "370px",
+                      }}
+                    >
+                      <div
+                        style={{
+                          display: "flex",
+                          justifyContent: "center",
+                          alignItems: "center",
+                        }}
+                      >
+                        <img src="./img/Scoring.png" height={"100%"} />
+                      </div>
+                    </MediaQuery>
+                  </MediaQuery>
+                </Grid.Col>
+                <Grid.Col
+                  md={6}
+                  order={2}
+                  style={{
+                    padding: "0px",
+                  }}
+                >
+                  <Flex direction={"column"} align={"flex-start"}>
+                    <Flex direction={"row"} align="center" justify="center">
+                      <Button variant="outline" radius="xl" compact>
+                        고급 AI 기술
+                      </Button>
+                      <Button variant="outline" radius="xl" compact>
+                        점수 제공
+                      </Button>
+                      <Button variant="outline" radius="xl" compact>
+                        피드백 제공
+                      </Button>
+                    </Flex>
+                    <Title style={{ marginBottom: "20px", fontSize: "45px" }}>
+                      선생님보다 정확한 AI
+                    </Title>
+                    <Text style={{ fontSize: "25px" }}>
+                      도파민 디펜스가 자체 개발한 AI로 채점해드립니다.
+                    </Text>
+                  </Flex>
+                </Grid.Col>
+              </Grid>
+            </MediaQuery>
+
+            <MediaQuery largerThan={"md"} styles={{ display: "none" }}>
+              <Grid
+                style={{
+                  padding: "50px 0 50px 0",
+                }}
+                align="center"
+              >
+                <Grid.Col md={12}>
+                  <Flex direction={"column"} align={"center"}>
+                    <Text
+                      style={{
+                        marginBottom: "5px",
+                        fontSize: "18px",
+                        fontWeight: "bold",
+                      }}
+                    >
+                      채점하기
+                    </Text>
+                    <Flex direction={"column"} align={"center"}>
+                      <Title
+                        style={{
+                          fontSize: "30px",
+                        }}
+                      >
+                        AI 채점
+                      </Title>
+                    </Flex>
+                  </Flex>
+                </Grid.Col>
+                <Grid.Col md={12}>
+                  <MediaQuery
+                    largerThan={"md"}
+                    styles={{
+                      alignContent: "center",
+                      width: "100%",
+                      height: "700px",
+                    }}
+                  >
+                    <MediaQuery
+                      smallerThan={"md"}
+                      styles={{
+                        justifyContent: "center",
+                        alignContent: "center",
+                        width: "100%",
+                        height: "370px",
+                      }}
+                    >
+                      <div
+                        style={{
+                          display: "flex",
+                          justifyContent: "center",
+                          alignItems: "center",
+                        }}
+                      >
+                        <img src="./img/Scoring.png" height={"100%"} />
+                      </div>
+                    </MediaQuery>
+                  </MediaQuery>
+                </Grid.Col>
+                <Grid.Col md={12}>
+                  <Flex direction={"column"} align={"center"}>
+                    <Text style={{ fontSize: "14px", marginTop: "5px" }}>
+                      요약을 잘 했는지 평가받고
+                    </Text>
+                    <Text style={{ fontSize: "14px" }}>
+                      어떤 부분을 잘 했는지, 못했는지 알게 됩니다.
+                    </Text>
+                  </Flex>
+                </Grid.Col>
+              </Grid>
+            </MediaQuery>
+          </div>
+        </MediaQuery>
       </MediaQuery>
-    </MediaQuery>
+    </Center>
   );
 }
 
