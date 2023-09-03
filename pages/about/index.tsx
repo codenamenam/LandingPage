@@ -1297,7 +1297,10 @@ export default function About() {
       <MoreInfoScoring />
       <Report />
       <Center>
-        <MediaQuery largerThan={"md"} styles={{ width: "1000px" }}>
+        <MediaQuery
+          largerThan={"md"}
+          styles={{ width: "1000px", margin: "0 0 40px 0" }}
+        >
           <MediaQuery
             smallerThan={"md"}
             styles={{ width: "100%", margin: "0 20px 0 20px" }}

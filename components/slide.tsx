@@ -112,6 +112,7 @@ export function Demo() {
       align="start"
       slidesToScroll={mobile ? 1 : 1}
       style={{ padding: "0 50px 0 50px" }}
+      loop
     >
       {slides}
     </Carousel>
