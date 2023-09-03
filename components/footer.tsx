@@ -3,9 +3,10 @@ import {
   Text,
   Container,
   ActionIcon,
-  Group,
+  Image,
   rem,
   MediaQuery,
+  Center,
 } from "@mantine/core";
 
 import { useRouter } from "next/router";
@@ -150,12 +151,15 @@ export function FooterLinks({ data }: FooterLinksProps) {
   return (
     <footer className={classes.footer}>
       <Container className={classes.inner}>
-        <div className={classes.logo}>
-          <h1>도파민 디펜스</h1>
+        <div className={classes.logo} style={{ alignContent: "center" }}>
+          <div style={{ width: "100px" }}>
+            <Image src="./img/dd-logo.png" style={{ margin: "20px" }} />
+          </div>
           <Text size="xs" color="dimmed" className={classes.description}>
             하루 5분, 도파민으로부터 멀어지는 시간
           </Text>
         </div>
+
         <div className={classes.groups}>{groups}</div>
       </Container>
       <Container className={classes.afterFooter}>
