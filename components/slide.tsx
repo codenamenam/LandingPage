@@ -74,14 +74,13 @@ const data = [
   {
     image:
       "https://images.unsplash.com/photo-1508193638397-1c4234db14d8?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=400&q=80",
-    title: "꼼꼼한 레포트",
-    body: "sdf",
-    category: "고급 AI 기술",
+    title: "아 졸리다",
+    category: "졸리다",
   },
   {
     image:
       "https://images.unsplash.com/photo-1559494007-9f5847c49d94?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=400&q=80",
-    title: "1점까지 정밀한 체점.",
+    title: "1점까지 정밀한 체점",
     body: "asdf",
     category: "점수 제공",
   },
@@ -111,8 +110,8 @@ export function Demo() {
       breakpoints={[{ maxWidth: "sm", slideSize: "100%", slideGap: 2 }]}
       slideGap="xl"
       align="start"
-      slidesToScroll={mobile ? 1 : 2}
-      style={{ padding: "100px" }}
+      slidesToScroll={mobile ? 1 : 1}
+      style={{ padding: "0 50px 0 50px" }}
     >
       {slides}
     </Carousel>
