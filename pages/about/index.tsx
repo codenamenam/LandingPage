@@ -8,7 +8,6 @@ import {
   MediaQuery,
   Title,
 } from "@mantine/core";
-import { Demo } from "../../components/slide";
 import { useState, useEffect } from "react";
 
 //Swiper
@@ -667,48 +666,48 @@ export function MoreInfoScoring() {
   const [swiperSmall, setSwiperSmall] = useState<SwiperCore>();
 
   return (
-    <Center style={{ backgroundColor: "rgb(250, 250,250)" }}>
-      <MediaQuery largerThan={"md"} styles={{ width: "1060px" }}>
-        <MediaQuery
-          smallerThan={"md"}
-          styles={{ width: "300px", marginTop: "30px" }}
-        >
-          <div>
-            <MediaQuery smallerThan={"md"} styles={{ display: "none" }}>
-              <Grid
-                style={{
-                  padding: "100px 0 100px 0",
-                }}
-                align="center"
-              >
-                <Grid.Col
-                  md={6}
-                  order={1}
+    <MediaQuery
+      largerThan={"md"}
+      styles={{ backgroundColor: "rgb(250, 250,250)" }}
+    >
+      <Center>
+        <MediaQuery largerThan={"md"} styles={{ width: "1060px" }}>
+          <MediaQuery
+            smallerThan={"md"}
+            styles={{
+              width: "350px",
+              marginTop: "30px",
+              backgroundColor: "rgb(250,250,250)",
+              borderRadius: "20px",
+            }}
+          >
+            <div>
+              <MediaQuery smallerThan={"md"} styles={{ display: "none" }}>
+                <Grid
                   style={{
-                    padding: "0px",
-                    display: "flex",
-                    justifyContent: "center",
-                    alignItems: "center",
+                    padding: "100px 0 100px 0",
                   }}
+                  align="center"
                 >
-                  <MediaQuery
-                    largerThan={"md"}
-                    styles={{
-                      alignContent: "center",
-                      width: "100%",
-                      height: "700px",
+                  <Grid.Col
+                    md={6}
+                    order={1}
+                    style={{
+                      padding: "0px",
+                      display: "flex",
+                      justifyContent: "center",
+                      alignItems: "center",
                     }}
                   >
                     <MediaQuery
-                      smallerThan={"md"}
+                      largerThan={"md"}
                       styles={{
-                        justifyContent: "center",
                         alignContent: "center",
                         width: "100%",
-                        height: "370px",
+                        height: "700px",
                       }}
                     >
-                      <div>
+                      <Center>
                         <Swiper
                           spaceBetween={50}
                           slidesPerView={1}
@@ -734,228 +733,229 @@ export function MoreInfoScoring() {
                             <Image src={"./img/ai_3.png"}></Image>
                           </SwiperSlide>
                         </Swiper>
-                      </div>
+                      </Center>
                     </MediaQuery>
-                  </MediaQuery>
-                </Grid.Col>
-                <Grid.Col
-                  md={6}
-                  order={2}
-                  style={{
-                    padding: "0 0 0 30px",
-                  }}
-                >
-                  <Flex direction={"column"} justify={"flex-start"}>
-                    <Flex
-                      direction={"row"}
-                      align="center"
-                      justify="center"
-                      gap="sm"
-                      style={{ marginBottom: "30px" }}
-                    >
-                      <Button
-                        variant={activeAIButton === 0 ? "light" : "outline"}
-                        radius="xl"
-                        compact
-                        size="30px"
-                        style={{ width: "200px" }}
-                        onClick={() => {
-                          handleAIButtonClick(0);
-                          swiperLarge?.slideTo(0);
-                          swiperSmall?.slideTo(0);
-                        }}
-                      >
-                        <Text
-                          style={{
-                            fontSize: "22px",
-                            margin: "4px 10px 4px 10px",
-                          }}
-                        >
-                          고급 AI 기술
-                        </Text>
-                      </Button>
-                      <Button
-                        variant={activeAIButton === 1 ? "light" : "outline"}
-                        radius="xl"
-                        compact
-                        size="30px"
-                        style={{ width: "200px" }}
-                        onClick={() => {
-                          handleAIButtonClick(1);
-                          swiperLarge?.slideTo(1);
-                          swiperSmall?.slideTo(1);
-                        }}
-                      >
-                        <Text
-                          style={{
-                            fontSize: "22px",
-                            margin: "4px 10px 4px 10px",
-                          }}
-                        >
-                          점수 제공
-                        </Text>
-                      </Button>
-                      <Button
-                        variant={activeAIButton === 2 ? "light" : "outline"}
-                        radius="xl"
-                        compact
-                        size="30px"
-                        style={{ width: "200px" }}
-                        onClick={() => {
-                          handleAIButtonClick(2);
-                          swiperLarge?.slideTo(2);
-                          swiperSmall?.slideTo(2);
-                        }}
-                      >
-                        <Text
-                          style={{
-                            fontSize: "22px",
-                            margin: "4px 10px 4px 10px",
-                          }}
-                        >
-                          피드백 제공
-                        </Text>
-                      </Button>
-                    </Flex>
-                    <Title style={{ marginBottom: "20px", fontSize: "45px" }}>
-                      선생님보다 정확한 AI
-                    </Title>
-                    <Text style={{ fontSize: "25px" }}>
-                      도파민 디펜스가 자체 개발한 AI로 채점해드립니다.
-                    </Text>
-                  </Flex>
-                </Grid.Col>
-              </Grid>
-            </MediaQuery>
-
-            <MediaQuery largerThan={"md"} styles={{ display: "none" }}>
-              <Grid
-                style={{
-                  padding: "50px 0 50px 0",
-                }}
-                align="center"
-              >
-                <Grid.Col md={12}>
-                  <Flex direction={"column"} align={"center"}>
-                    <Flex
-                      direction={"row"}
-                      align="center"
-                      justify="center"
-                      style={{ marginBottom: "20px" }}
-                      gap={"5px"}
-                    >
-                      <Button
-                        variant={activeAIButton === 0 ? "light" : "outline"}
-                        radius="xl"
-                        compact
-                        onClick={() => {
-                          handleAIButtonClick(0);
-                          swiperLarge?.slideTo(0);
-                          swiperSmall?.slideTo(0);
-                        }}
-                        style={{ width: "100px" }}
-                      >
-                        고급 AI 기술
-                      </Button>
-                      <Button
-                        variant={activeAIButton === 1 ? "light" : "outline"}
-                        radius="xl"
-                        compact
-                        onClick={() => {
-                          handleAIButtonClick(1);
-                          swiperLarge?.slideTo(1);
-                          swiperSmall?.slideTo(1);
-                        }}
-                        style={{ width: "100px" }}
-                      >
-                        점수 제공
-                      </Button>
-                      <Button
-                        variant={activeAIButton === 2 ? "light" : "outline"}
-                        radius="xl"
-                        compact
-                        onClick={() => {
-                          handleAIButtonClick(2);
-                          swiperLarge?.slideTo(2);
-                          swiperSmall?.slideTo(2);
-                        }}
-                        style={{ width: "100px" }}
-                      >
-                        피드백 제공
-                      </Button>
-                    </Flex>
-                    <Flex direction={"column"} align={"center"}>
-                      <Title
-                        style={{
-                          fontSize: "30px",
-                        }}
-                      >
-                        AI 채점
-                      </Title>
-                    </Flex>
-                  </Flex>
-                </Grid.Col>
-                <Grid.Col md={12}>
-                  <MediaQuery
-                    largerThan={"md"}
-                    styles={{
-                      alignContent: "center",
-                      width: "100%",
-                      height: "700px",
+                  </Grid.Col>
+                  <Grid.Col
+                    md={6}
+                    order={2}
+                    style={{
+                      padding: "0 0 0 30px",
                     }}
                   >
-                    <MediaQuery
-                      smallerThan={"md"}
-                      styles={{
-                        justifyContent: "center",
-                        alignContent: "center",
-                        width: "100%",
-                        height: "370px",
-                      }}
-                    >
-                      <div>
-                        <Swiper
-                          spaceBetween={50}
-                          slidesPerView={1}
-                          onActiveIndexChange={(swiperCore) => {
-                            setSwiperIndex(swiperCore.activeIndex);
-                            handleAIButtonClick(swiperCore.activeIndex);
-                          }}
-                          onSwiper={(swiper) => {
-                            setSwiperSmall(swiper);
-                          }}
-                          autoplay={{
-                            delay: 4000,
-                            disableOnInteraction: false,
+                    <Flex direction={"column"} justify={"flex-start"}>
+                      <Flex
+                        direction={"row"}
+                        align="center"
+                        justify="center"
+                        gap="sm"
+                        style={{ marginBottom: "30px" }}
+                      >
+                        <Button
+                          variant={activeAIButton === 0 ? "light" : "outline"}
+                          radius="xl"
+                          compact
+                          size="30px"
+                          style={{ width: "200px" }}
+                          onClick={() => {
+                            handleAIButtonClick(0);
+                            swiperLarge?.slideTo(0);
+                            swiperSmall?.slideTo(0);
                           }}
                         >
-                          <SwiperSlide>
-                            <Image src={"./img/ai_1.png"}></Image>
-                          </SwiperSlide>
-                          <SwiperSlide>
-                            <Image src={"./img/ai_2.png"}></Image>
-                          </SwiperSlide>
-                          <SwiperSlide>
-                            <Image src={"./img/ai_3.png"}></Image>
-                          </SwiperSlide>
-                        </Swiper>
-                      </div>
+                          <Text
+                            style={{
+                              fontSize: "22px",
+                              margin: "4px 10px 4px 10px",
+                            }}
+                          >
+                            고급 AI 기술
+                          </Text>
+                        </Button>
+                        <Button
+                          variant={activeAIButton === 1 ? "light" : "outline"}
+                          radius="xl"
+                          compact
+                          size="30px"
+                          style={{ width: "200px" }}
+                          onClick={() => {
+                            handleAIButtonClick(1);
+                            swiperLarge?.slideTo(1);
+                            swiperSmall?.slideTo(1);
+                          }}
+                        >
+                          <Text
+                            style={{
+                              fontSize: "22px",
+                              margin: "4px 10px 4px 10px",
+                            }}
+                          >
+                            점수 제공
+                          </Text>
+                        </Button>
+                        <Button
+                          variant={activeAIButton === 2 ? "light" : "outline"}
+                          radius="xl"
+                          compact
+                          size="30px"
+                          style={{ width: "200px" }}
+                          onClick={() => {
+                            handleAIButtonClick(2);
+                            swiperLarge?.slideTo(2);
+                            swiperSmall?.slideTo(2);
+                          }}
+                        >
+                          <Text
+                            style={{
+                              fontSize: "22px",
+                              margin: "4px 10px 4px 10px",
+                            }}
+                          >
+                            피드백 제공
+                          </Text>
+                        </Button>
+                      </Flex>
+                      <Title style={{ marginBottom: "20px", fontSize: "45px" }}>
+                        선생님보다 정확한 AI
+                      </Title>
+                      <Text style={{ fontSize: "25px" }}>
+                        도파민 디펜스가 자체 개발한 AI로 채점해드립니다.
+                      </Text>
+                    </Flex>
+                  </Grid.Col>
+                </Grid>
+              </MediaQuery>
+
+              <MediaQuery largerThan={"md"} styles={{ display: "none" }}>
+                <Grid
+                  style={{
+                    padding: "20px 0 20px 0",
+                  }}
+                  align="center"
+                >
+                  <Grid.Col md={12}>
+                    <Flex direction={"column"} align={"center"}>
+                      <Flex
+                        direction={"row"}
+                        align="center"
+                        justify="center"
+                        style={{ marginBottom: "20px" }}
+                        gap={"5px"}
+                      >
+                        <Button
+                          variant={activeAIButton === 0 ? "light" : "outline"}
+                          radius="xl"
+                          compact
+                          onClick={() => {
+                            handleAIButtonClick(0);
+                            swiperLarge?.slideTo(0);
+                            swiperSmall?.slideTo(0);
+                          }}
+                          style={{ width: "100px" }}
+                        >
+                          고급 AI 기술
+                        </Button>
+                        <Button
+                          variant={activeAIButton === 1 ? "light" : "outline"}
+                          radius="xl"
+                          compact
+                          onClick={() => {
+                            handleAIButtonClick(1);
+                            swiperLarge?.slideTo(1);
+                            swiperSmall?.slideTo(1);
+                          }}
+                          style={{ width: "100px" }}
+                        >
+                          점수 제공
+                        </Button>
+                        <Button
+                          variant={activeAIButton === 2 ? "light" : "outline"}
+                          radius="xl"
+                          compact
+                          onClick={() => {
+                            handleAIButtonClick(2);
+                            swiperLarge?.slideTo(2);
+                            swiperSmall?.slideTo(2);
+                          }}
+                          style={{ width: "100px" }}
+                        >
+                          피드백 제공
+                        </Button>
+                      </Flex>
+                      <Flex direction={"column"} align={"center"}>
+                        <Title
+                          style={{
+                            fontSize: "30px",
+                          }}
+                        >
+                          AI 채점
+                        </Title>
+                      </Flex>
+                    </Flex>
+                  </Grid.Col>
+                  <Grid.Col md={12}>
+                    <MediaQuery
+                      largerThan={"md"}
+                      styles={{
+                        alignContent: "center",
+                        width: "100%",
+                        height: "700px",
+                      }}
+                    >
+                      <MediaQuery
+                        smallerThan={"md"}
+                        styles={{
+                          justifyContent: "center",
+                          alignContent: "center",
+                          width: "100%",
+                          height: "300px",
+                          padding: "5px 20px 0px 20px",
+                        }}
+                      >
+                        <div>
+                          <Swiper
+                            spaceBetween={50}
+                            slidesPerView={1}
+                            onActiveIndexChange={(swiperCore) => {
+                              setSwiperIndex(swiperCore.activeIndex);
+                              handleAIButtonClick(swiperCore.activeIndex);
+                            }}
+                            onSwiper={(swiper) => {
+                              setSwiperSmall(swiper);
+                            }}
+                            autoplay={{
+                              delay: 4000,
+                              disableOnInteraction: false,
+                            }}
+                          >
+                            <SwiperSlide>
+                              <Image src={"./img/ai_1.png"}></Image>
+                            </SwiperSlide>
+                            <SwiperSlide>
+                              <Image src={"./img/ai_2.png"}></Image>
+                            </SwiperSlide>
+                            <SwiperSlide>
+                              <Image src={"./img/ai_3.png"}></Image>
+                            </SwiperSlide>
+                          </Swiper>
+                        </div>
+                      </MediaQuery>
                     </MediaQuery>
-                  </MediaQuery>
-                </Grid.Col>
-                <Grid.Col md={12}>
-                  <Flex direction={"column"} align={"center"}>
-                    <Text style={{ fontSize: "14px", marginTop: "5px" }}>
-                      도파민 디펜스가 자체 개발한 AI로 채점해드립니다.
-                    </Text>
-                  </Flex>
-                </Grid.Col>
-              </Grid>
-            </MediaQuery>
-          </div>
+                  </Grid.Col>
+                  <Grid.Col md={12}>
+                    <Flex direction={"column"} align={"center"}>
+                      <Text style={{ fontSize: "14px", marginTop: "5px" }}>
+                        도파민 디펜스가 자체 개발한 AI로 채점해드립니다.
+                      </Text>
+                    </Flex>
+                  </Grid.Col>
+                </Grid>
+              </MediaQuery>
+            </div>
+          </MediaQuery>
         </MediaQuery>
-      </MediaQuery>
-    </Center>
+      </Center>
+    </MediaQuery>
   );
 }
 
@@ -1143,252 +1143,328 @@ export function Report() {
 
 // 레포트 세부
 export function MoreInfoReport() {
-  const [activeReportButton, setActiveReportButton] = useState<string>("1");
-
-  const handleReportButtonClick = (buttonName: string) => {
+  // 버튼 3개
+  const [activeReportButton, setActiveReportButton] = useState<number>(0);
+  const handleReportButtonClick = (buttonName: number) => {
     setActiveReportButton(buttonName);
   };
 
+  // 이미지 슬라이드 Swiper
+  SwiperCore.use([Autoplay]);
+  const [swiperIndex, setSwiperIndex] = useState<number>(0);
+  const [swiperLarge, setSwiperLarge] = useState<SwiperCore>();
+  const [swiperSmall, setSwiperSmall] = useState<SwiperCore>();
+
   return (
-    <Center style={{ backgroundColor: "rgb(250, 250,250)" }}>
-      <MediaQuery largerThan={"md"} styles={{ width: "1060px" }}>
-        <MediaQuery
-          smallerThan={"md"}
-          styles={{ width: "300px", marginTop: "30px" }}
-        >
-          <div>
-            <MediaQuery smallerThan={"md"} styles={{ display: "none" }}>
-              <Grid
-                style={{
-                  padding: "100px 0 100px 0",
-                }}
-                align="center"
-              >
-                <Grid.Col
-                  md={6}
-                  order={1}
+    <MediaQuery
+      largerThan={"md"}
+      styles={{ backgroundColor: "rgb(250, 250,250)" }}
+    >
+      <Center>
+        <MediaQuery largerThan={"md"} styles={{ width: "1060px" }}>
+          <MediaQuery
+            smallerThan={"md"}
+            styles={{
+              width: "350px",
+              marginTop: "30px",
+              backgroundColor: "rgb(250,250,250)",
+              borderRadius: "20px",
+            }}
+          >
+            <div>
+              <MediaQuery smallerThan={"md"} styles={{ display: "none" }}>
+                <Grid
                   style={{
-                    padding: "0",
-                    display: "flex",
-                    justifyContent: "center",
-                    alignItems: "center",
+                    padding: "100px 0 100px 0",
                   }}
+                  align="center"
                 >
-                  <MediaQuery
-                    largerThan={"md"}
-                    styles={{
-                      alignContent: "center",
-                      width: "100%",
-                      height: "700px",
+                  <Grid.Col
+                    md={6}
+                    order={1}
+                    style={{
+                      padding: "0px",
+                      display: "flex",
+                      justifyContent: "center",
+                      alignItems: "center",
                     }}
                   >
                     <MediaQuery
-                      smallerThan={"md"}
+                      largerThan={"md"}
                       styles={{
-                        justifyContent: "center",
                         alignContent: "center",
                         width: "100%",
-                        height: "370px",
+                        height: "700px",
                       }}
                     >
-                      <div
-                        style={{
-                          display: "flex",
-                          justifyContent: "center",
-                          alignItems: "center",
-                        }}
-                      >
-                        <img src="./img/graph.png" width={"100%"} />
-                      </div>
+                      <Center>
+                        <Swiper
+                          spaceBetween={50}
+                          slidesPerView={1}
+                          onActiveIndexChange={(swiperCore) => {
+                            setSwiperIndex(swiperCore.activeIndex);
+                            handleReportButtonClick(swiperCore.activeIndex);
+                          }}
+                          onSwiper={(swiper) => {
+                            setSwiperLarge(swiper);
+                          }}
+                          autoplay={{
+                            delay: 4000,
+                            disableOnInteraction: false,
+                          }}
+                        >
+                          <SwiperSlide>
+                            <Image src={"./img/graph.png"}></Image>
+                          </SwiperSlide>
+                          <SwiperSlide>
+                            <Image src={"./img/graph.png"}></Image>
+                          </SwiperSlide>
+                          <SwiperSlide>
+                            <Image src={"./img/graph.png"}></Image>
+                          </SwiperSlide>
+                        </Swiper>
+                      </Center>
                     </MediaQuery>
-                  </MediaQuery>
-                </Grid.Col>
-                <Grid.Col
-                  md={6}
-                  order={2}
-                  style={{
-                    padding: "0 0 0 30px",
-                  }}
-                >
-                  <Flex direction={"column"} justify={"flex-start"}>
-                    <Flex
-                      direction={"row"}
-                      align="center"
-                      justify="center"
-                      gap="sm"
-                      style={{ marginBottom: "30px" }}
-                    >
-                      <Button
-                        variant={
-                          activeReportButton === "1" ? "light" : "outline"
-                        }
-                        radius="50px"
-                        size="25px"
-                        style={{ width: "200px" }}
-                        compact
-                        onClick={() => handleReportButtonClick("1")}
+                  </Grid.Col>
+                  <Grid.Col
+                    md={6}
+                    order={2}
+                    style={{
+                      padding: "0 0 0 30px",
+                    }}
+                  >
+                    <Flex direction={"column"} justify={"flex-start"}>
+                      <Flex
+                        direction={"row"}
+                        align="center"
+                        justify="center"
+                        gap="sm"
+                        style={{ marginBottom: "30px" }}
                       >
-                        <Text
-                          style={{
-                            fontSize: "22px",
-                            margin: "4px 10px 4px 10px",
+                        <Button
+                          variant={
+                            activeReportButton === 0 ? "light" : "outline"
+                          }
+                          radius="xl"
+                          compact
+                          size="30px"
+                          style={{ width: "200px" }}
+                          onClick={() => {
+                            handleReportButtonClick(0);
+                            swiperLarge?.slideTo(0);
+                            swiperSmall?.slideTo(0);
                           }}
                         >
-                          점수 변화
-                        </Text>
-                      </Button>
-                      <Button
-                        variant={
-                          activeReportButton === "2" ? "light" : "outline"
-                        }
-                        radius="xl"
-                        compact
-                        size="30px"
-                        style={{ width: "200px" }}
-                        onClick={() => handleReportButtonClick("2")}
-                      >
-                        <Text
-                          style={{
-                            fontSize: "22px",
-                            margin: "4px 10px 4px 10px",
+                          <Text
+                            style={{
+                              fontSize: "22px",
+                              margin: "4px 10px 4px 10px",
+                            }}
+                          >
+                            점수 변화
+                          </Text>
+                        </Button>
+                        <Button
+                          variant={
+                            activeReportButton === 1 ? "light" : "outline"
+                          }
+                          radius="xl"
+                          compact
+                          size="30px"
+                          style={{ width: "200px" }}
+                          onClick={() => {
+                            handleReportButtonClick(1);
+                            swiperLarge?.slideTo(1);
+                            swiperSmall?.slideTo(1);
                           }}
                         >
-                          주간 레포트
-                        </Text>
-                      </Button>
-                      <Button
-                        variant={
-                          activeReportButton === "3" ? "light" : "outline"
-                        }
-                        radius="xl"
-                        compact
-                        size="30px"
-                        style={{ width: "200px" }}
-                        onClick={() => handleReportButtonClick("3")}
-                      >
-                        <Text
-                          style={{
-                            fontSize: "22px",
-                            margin: "4px 10px 4px 10px",
+                          <Text
+                            style={{
+                              fontSize: "22px",
+                              margin: "4px 10px 4px 10px",
+                            }}
+                          >
+                            주간 레포트
+                          </Text>
+                        </Button>
+                        <Button
+                          variant={
+                            activeReportButton === 2 ? "light" : "outline"
+                          }
+                          radius="xl"
+                          compact
+                          size="30px"
+                          style={{ width: "200px" }}
+                          onClick={() => {
+                            handleReportButtonClick(2);
+                            swiperLarge?.slideTo(2);
+                            swiperSmall?.slideTo(2);
                           }}
                         >
-                          월간 레포트
-                        </Text>
-                      </Button>
-                    </Flex>
-                    <Title style={{ marginBottom: "20px", fontSize: "45px" }}>
-                      꾸준히 받아보는 레포트
-                    </Title>
-                    <Text style={{ fontSize: "25px" }}>
-                      꾸준히 참여할수록 쌓이는 데이터! 나의 참여 기록을 일별,
-                      주별, 월별로 레포트로 한 눈에 확인할 수 있습니다.
-                    </Text>
-                  </Flex>
-                </Grid.Col>
-              </Grid>
-            </MediaQuery>
-
-            <MediaQuery largerThan={"md"} styles={{ display: "none" }}>
-              <Grid
-                style={{
-                  padding: "50px 0 50px 0",
-                }}
-                align="center"
-              >
-                <Grid.Col md={12}>
-                  <Flex direction={"column"} align={"center"}>
-                    <Flex direction={"row"} align="center" justify="center">
-                      <Button
-                        variant={
-                          activeReportButton === "1" ? "light" : "outline"
-                        }
-                        radius="xl"
-                        compact
-                        onClick={() => handleReportButtonClick("1")}
-                      >
-                        점수 변화
-                      </Button>
-                      <Button
-                        variant={
-                          activeReportButton === "2" ? "light" : "outline"
-                        }
-                        radius="xl"
-                        compact
-                        onClick={() => handleReportButtonClick("2")}
-                      >
-                        주간 레포트
-                      </Button>
-                      <Button
-                        variant={
-                          activeReportButton === "3" ? "light" : "outline"
-                        }
-                        radius="xl"
-                        compact
-                        onClick={() => handleReportButtonClick("3")}
-                      >
-                        월간 레포트
-                      </Button>
-                    </Flex>
-                    <Flex direction={"column"} align={"center"}>
-                      <Title
-                        style={{
-                          fontSize: "30px",
-                        }}
-                      >
+                          <Text
+                            style={{
+                              fontSize: "22px",
+                              margin: "4px 10px 4px 10px",
+                            }}
+                          >
+                            월간 레포트
+                          </Text>
+                        </Button>
+                      </Flex>
+                      <Title style={{ marginBottom: "20px", fontSize: "45px" }}>
                         꾸준히 받아보는 레포트
                       </Title>
+                      <Text style={{ fontSize: "25px" }}>
+                        꾸준히 참여할수록 쌓이는 데이터! 나의 참여 기록을 일별,
+                        주별, 월별로 레포트로 한 눈에 확인할 수 있습니다.
+                      </Text>
                     </Flex>
-                  </Flex>
-                </Grid.Col>
-                <Grid.Col md={12}>
-                  <MediaQuery
-                    largerThan={"md"}
-                    styles={{
-                      alignContent: "center",
-                      width: "100%",
-                      height: "700px",
-                    }}
-                  >
+                  </Grid.Col>
+                </Grid>
+              </MediaQuery>
+
+              <MediaQuery largerThan={"md"} styles={{ display: "none" }}>
+                <Grid
+                  style={{
+                    padding: "20px 0 20px 0",
+                  }}
+                  align="center"
+                >
+                  <Grid.Col md={12}>
+                    <Flex direction={"column"} align={"center"}>
+                      <Flex
+                        direction={"row"}
+                        align="center"
+                        justify="center"
+                        style={{ marginBottom: "20px" }}
+                        gap={"5px"}
+                      >
+                        <Button
+                          variant={
+                            activeReportButton === 0 ? "light" : "outline"
+                          }
+                          radius="xl"
+                          compact
+                          onClick={() => {
+                            handleReportButtonClick(0);
+                            swiperLarge?.slideTo(0);
+                            swiperSmall?.slideTo(0);
+                          }}
+                          style={{ width: "100px" }}
+                        >
+                          고급 AI 기술
+                        </Button>
+                        <Button
+                          variant={
+                            activeReportButton === 1 ? "light" : "outline"
+                          }
+                          radius="xl"
+                          compact
+                          onClick={() => {
+                            handleReportButtonClick(1);
+                            swiperLarge?.slideTo(1);
+                            swiperSmall?.slideTo(1);
+                          }}
+                          style={{ width: "100px" }}
+                        >
+                          점수 제공
+                        </Button>
+                        <Button
+                          variant={
+                            activeReportButton === 2 ? "light" : "outline"
+                          }
+                          radius="xl"
+                          compact
+                          onClick={() => {
+                            handleReportButtonClick(2);
+                            swiperLarge?.slideTo(2);
+                            swiperSmall?.slideTo(2);
+                          }}
+                          style={{ width: "100px" }}
+                        >
+                          피드백 제공
+                        </Button>
+                      </Flex>
+                      <Flex direction={"column"} align={"center"}>
+                        <Title
+                          style={{
+                            fontSize: "30px",
+                          }}
+                        >
+                          AI 채점
+                        </Title>
+                      </Flex>
+                    </Flex>
+                  </Grid.Col>
+                  <Grid.Col md={12}>
                     <MediaQuery
-                      smallerThan={"md"}
+                      largerThan={"md"}
                       styles={{
-                        justifyContent: "center",
                         alignContent: "center",
                         width: "100%",
-                        height: "370px",
+                        height: "700px",
                       }}
                     >
-                      <div
-                        style={{
-                          display: "flex",
+                      <MediaQuery
+                        smallerThan={"md"}
+                        styles={{
                           justifyContent: "center",
-                          alignItems: "center",
+                          alignContent: "center",
+                          width: "100%",
+                          height: "300px",
+                          padding: "5px 20px 0px 20px",
                         }}
                       >
-                        <img src="./img/graph.png" width={"400px"} />
-                      </div>
+                        <div>
+                          <Swiper
+                            spaceBetween={50}
+                            slidesPerView={1}
+                            onActiveIndexChange={(swiperCore) => {
+                              setSwiperIndex(swiperCore.activeIndex);
+                              handleReportButtonClick(swiperCore.activeIndex);
+                            }}
+                            onSwiper={(swiper) => {
+                              setSwiperSmall(swiper);
+                            }}
+                            autoplay={{
+                              delay: 4000,
+                              disableOnInteraction: false,
+                            }}
+                          >
+                            <SwiperSlide>
+                              <Image src={"./img/graph.png"}></Image>
+                            </SwiperSlide>
+                            <SwiperSlide>
+                              <Image src={"./img/graph.png"}></Image>
+                            </SwiperSlide>
+                            <SwiperSlide>
+                              <Image src={"./img/graph.png"}></Image>
+                            </SwiperSlide>
+                          </Swiper>
+                        </div>
+                      </MediaQuery>
                     </MediaQuery>
-                  </MediaQuery>
-                </Grid.Col>
-                <Grid.Col md={12}>
-                  <Flex direction={"column"} align={"center"}>
-                    <Text style={{ fontSize: "14px", marginTop: "5px" }}>
-                      꾸준히 참여할수록 쌓이는 데이터! 나의 참여 기록을
-                    </Text>
-                    <Text style={{ fontSize: "14px" }}>
-                      일별, 주별, 월별로 레포트로
-                    </Text>
-                    <Text style={{ fontSize: "14px" }}>
-                      한 눈에 확인할 수 있습니다.
-                    </Text>
-                  </Flex>
-                </Grid.Col>
-              </Grid>
-            </MediaQuery>
-          </div>
+                  </Grid.Col>
+                  <Grid.Col md={12}>
+                    <Flex direction={"column"} align={"center"}>
+                      <Text style={{ fontSize: "14px", marginTop: "5px" }}>
+                        꾸준히 참여할수록 쌓이는 데이터! 나의 참여 기록을
+                      </Text>
+                      <Text style={{ fontSize: "14px", marginTop: "5px" }}>
+                        일별, 주별, 월별로 레포트로
+                      </Text>
+                      <Text style={{ fontSize: "14px", marginTop: "5px" }}>
+                        한 눈에 확인할 수 있습니다.
+                      </Text>
+                    </Flex>
+                  </Grid.Col>
+                </Grid>
+              </MediaQuery>
+            </div>
+          </MediaQuery>
         </MediaQuery>
-      </MediaQuery>
-    </Center>
+      </Center>
+    </MediaQuery>
   );
 }
 
