@@ -1531,108 +1531,117 @@ export function Review() {
         smallerThan="md"
         styles={{
           width: "100%",
-          marginTop: "50px",
         }}
       >
-        <Center>
+        <>
           <MediaQuery smallerThan={"md"} styles={{ display: "none" }}>
-            <Flex direction={"column"} align={"center"}>
-              <Text style={{ fontSize: "30px", fontWeight: "bold" }}>
-                2023.9.5일 기준
-              </Text>
-              <Title style={{ fontSize: "60px" }}>
-                1387명이 도파민 디펜스 사용 중
-              </Title>
-              <Text
-                style={{
-                  fontSize: "30px",
-                  margin: "20px",
-                  fontWeight: "bold",
-                  color: "grey",
-                }}
+            <Center>
+              <Flex
+                direction={"column"}
+                align={"center"}
+                style={{ marginTop: "50px" }}
               >
-                사용자들의 따근따끈한 리뷰를 확인해보세요.
-              </Text>
+                <Text style={{ fontSize: "30px", fontWeight: "bold" }}>
+                  2023.9.5일 기준
+                </Text>
+                <Title style={{ fontSize: "60px" }}>도파민 디펜스 사용자</Title>
+                <Title style={{ fontSize: "60px" }}>1378명</Title>
+                <Text
+                  style={{
+                    fontSize: "30px",
+                    margin: "20px",
+                    fontWeight: "bold",
+                    color: "grey",
+                  }}
+                >
+                  사용자들의 따근따끈한 리뷰를 확인해보세요.
+                </Text>
 
-              <MediaQuery
-                largerThan={"md"}
-                styles={{
-                  alignContent: "center",
-                  width: "1060px",
-                  height: "700px",
-                }}
-              >
-                <div>
-                  <Swiper
-                    onSwiper={(onSwiper) => setSwiper(onSwiper)}
-                    spaceBetween={50}
-                    slidesPerView={1}
-                  >
-                    <SwiperSlide>
-                      <Text>1번</Text>
-                    </SwiperSlide>
-                    <SwiperSlide>
-                      <Text>2번</Text>
-                    </SwiperSlide>
-                    <SwiperSlide>
-                      <Text>3번</Text>
-                    </SwiperSlide>
-                  </Swiper>
-                </div>
-              </MediaQuery>
-            </Flex>
+                <MediaQuery
+                  largerThan={"md"}
+                  styles={{
+                    justifyContent: "center",
+                    alignContent: "center",
+                    width: "1060px",
+                  }}
+                >
+                  <div>
+                    <Swiper
+                      onSwiper={(onSwiper) => setSwiper(onSwiper)}
+                      spaceBetween={50}
+                      slidesPerView={1}
+                    >
+                      <SwiperSlide>
+                        <Image src={"./img/ai_1.png"}></Image>
+                      </SwiperSlide>
+                      <SwiperSlide>
+                        <Image src={"./img/ai_1.png"}></Image>
+                      </SwiperSlide>
+                      <SwiperSlide>
+                        <Image src={"./img/ai_1.png"}></Image>
+                      </SwiperSlide>
+                    </Swiper>
+                  </div>
+                </MediaQuery>
+              </Flex>
+            </Center>
           </MediaQuery>
 
           <MediaQuery largerThan={"md"} styles={{ display: "none" }}>
-            <Flex direction={"column"} align={"center"}>
-              <Text style={{ fontSize: "15px", fontWeight: "bold" }}>
-                2023.9.5일 기준
-              </Text>
-              <Title style={{ fontSize: "25px" }}>
-                1387명이 도파민 디펜스 사용 중
-              </Title>
-              <Text
-                style={{
-                  fontSize: "18px",
-                  margin: "20px",
-                  fontWeight: "bold",
-                  color: "grey",
-                }}
+            <Center>
+              <Flex
+                direction={"column"}
+                align={"center"}
+                style={{ marginTop: "40px" }}
               >
-                사용자들의 따근따끈한 리뷰를 확인해보세요.
-              </Text>
+                <Text style={{ fontSize: "15px", fontWeight: "bold" }}>
+                  2023.9.5일 기준
+                </Text>
+                <Title style={{ fontSize: "30px" }}>도파민 디펜스 사용자</Title>
+                <Title style={{ fontSize: "40px" }}>1378명</Title>
+                <Text
+                  style={{
+                    fontSize: "18px",
+                    margin: "10px",
+                    fontWeight: "bold",
+                    color: "grey",
+                  }}
+                >
+                  사용자들의 따근따끈한 리뷰를 확인해보세요.
+                </Text>
 
-              <MediaQuery
-                smallerThan={"md"}
-                styles={{
-                  justifyContent: "center",
-                  alignContent: "center",
-                  width: "350px",
-                  height: "300px",
-                  padding: "5px 20px 0px 20px",
-                }}
-              >
-                <div>
-                  <Swiper
-                    onSwiper={(onSwiper) => setSwiper(onSwiper)}
-                    spaceBetween={50}
-                    slidesPerView={1}
-                  >
-                    <SwiperSlide>
-                      <Image src={"./img/ai_1.png"}></Image>
-                    </SwiperSlide>
-                    <SwiperSlide>
-                      <Image src={"./img/ai_1.png"}></Image>
-                    </SwiperSlide>
-                    <SwiperSlide>
-                      <Image src={"./img/ai_1.png"}></Image>
-                    </SwiperSlide>
-                  </Swiper>
-                </div>
-              </MediaQuery>
-            </Flex>
+                <MediaQuery
+                  smallerThan={"md"}
+                  styles={{
+                    justifyContent: "center",
+                    alignContent: "center",
+                    width: "350px",
+                    height: "300px",
+                    padding: "5px 20px 0px 20px",
+                  }}
+                >
+                  <div>
+                    <Swiper
+                      onSwiper={(onSwiper) => setSwiper(onSwiper)}
+                      spaceBetween={50}
+                      slidesPerView={1}
+                    >
+                      <SwiperSlide>
+                        <Image src={"./img/ai_1.png"}></Image>
+                      </SwiperSlide>
+                      <SwiperSlide>
+                        <Image src={"./img/ai_1.png"}></Image>
+                      </SwiperSlide>
+                      <SwiperSlide>
+                        <Image src={"./img/ai_1.png"}></Image>
+                      </SwiperSlide>
+                    </Swiper>
+                  </div>
+                </MediaQuery>
+              </Flex>
+            </Center>
           </MediaQuery>
-        </Center>
+        </>
       </MediaQuery>
     </MediaQuery>
   );
