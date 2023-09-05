@@ -9,6 +9,14 @@ import {
   Title,
 } from "@mantine/core";
 import { Demo } from "../../components/slide";
+import { useState, useEffect } from "react";
+
+//Swiper
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
+import "swiper/css/pagination";
+import { Autoplay } from "swiper/modules";
+import SwiperCore from "swiper";
 
 // 사진 2장 + 도파민 디펜스 소개
 export function Hello() {
@@ -646,6 +654,18 @@ export function FunctionScoring() {
 
 // 채점 세부
 export function MoreInfoScoring() {
+  // 버튼 3개
+  const [activeAIButton, setActiveAIButton] = useState<number>(0);
+  const handleAIButtonClick = (buttonName: number) => {
+    setActiveAIButton(buttonName);
+  };
+
+  // 이미지 슬라이드 Swiper
+  SwiperCore.use([Autoplay]);
+  const [swiperIndex, setSwiperIndex] = useState<number>(0);
+  const [swiperLarge, setSwiperLarge] = useState<SwiperCore>();
+  const [swiperSmall, setSwiperSmall] = useState<SwiperCore>();
+
   return (
     <Center style={{ backgroundColor: "rgb(250, 250,250)" }}>
       <MediaQuery largerThan={"md"} styles={{ width: "1060px" }}>
@@ -688,14 +708,32 @@ export function MoreInfoScoring() {
                         height: "370px",
                       }}
                     >
-                      <div
-                        style={{
-                          display: "flex",
-                          justifyContent: "center",
-                          alignItems: "center",
-                        }}
-                      >
-                        <img src="./img/ai_1.png" width={"100%"} />
+                      <div>
+                        <Swiper
+                          spaceBetween={50}
+                          slidesPerView={1}
+                          onActiveIndexChange={(swiperCore) => {
+                            setSwiperIndex(swiperCore.activeIndex);
+                            handleAIButtonClick(swiperCore.activeIndex);
+                          }}
+                          onSwiper={(swiper) => {
+                            setSwiperLarge(swiper);
+                          }}
+                          autoplay={{
+                            delay: 4000,
+                            disableOnInteraction: false,
+                          }}
+                        >
+                          <SwiperSlide>
+                            <Image src={"./img/ai_1.png"}></Image>
+                          </SwiperSlide>
+                          <SwiperSlide>
+                            <Image src={"./img/ai_2.png"}></Image>
+                          </SwiperSlide>
+                          <SwiperSlide>
+                            <Image src={"./img/ai_3.png"}></Image>
+                          </SwiperSlide>
+                        </Swiper>
                       </div>
                     </MediaQuery>
                   </MediaQuery>
@@ -704,19 +742,79 @@ export function MoreInfoScoring() {
                   md={6}
                   order={2}
                   style={{
-                    padding: "0 0 0 20px",
+                    padding: "0 0 0 30px",
                   }}
                 >
-                  <Flex direction={"column"} align={"flex-start"}>
-                    <Flex direction={"row"} align="center" justify="center">
-                      <Button variant="outline" radius="xl" compact>
-                        고급 AI 기술
+                  <Flex direction={"column"} justify={"flex-start"}>
+                    <Flex
+                      direction={"row"}
+                      align="center"
+                      justify="center"
+                      gap="sm"
+                      style={{ marginBottom: "30px" }}
+                    >
+                      <Button
+                        variant={activeAIButton === 0 ? "light" : "outline"}
+                        radius="xl"
+                        compact
+                        size="30px"
+                        style={{ width: "200px" }}
+                        onClick={() => {
+                          handleAIButtonClick(0);
+                          swiperLarge?.slideTo(0);
+                          swiperSmall?.slideTo(0);
+                        }}
+                      >
+                        <Text
+                          style={{
+                            fontSize: "22px",
+                            margin: "4px 10px 4px 10px",
+                          }}
+                        >
+                          고급 AI 기술
+                        </Text>
                       </Button>
-                      <Button variant="outline" radius="xl" compact>
-                        점수 제공
+                      <Button
+                        variant={activeAIButton === 1 ? "light" : "outline"}
+                        radius="xl"
+                        compact
+                        size="30px"
+                        style={{ width: "200px" }}
+                        onClick={() => {
+                          handleAIButtonClick(1);
+                          swiperLarge?.slideTo(1);
+                          swiperSmall?.slideTo(1);
+                        }}
+                      >
+                        <Text
+                          style={{
+                            fontSize: "22px",
+                            margin: "4px 10px 4px 10px",
+                          }}
+                        >
+                          점수 제공
+                        </Text>
                       </Button>
-                      <Button variant="outline" radius="xl" compact>
-                        피드백 제공
+                      <Button
+                        variant={activeAIButton === 2 ? "light" : "outline"}
+                        radius="xl"
+                        compact
+                        size="30px"
+                        style={{ width: "200px" }}
+                        onClick={() => {
+                          handleAIButtonClick(2);
+                          swiperLarge?.slideTo(2);
+                          swiperSmall?.slideTo(2);
+                        }}
+                      >
+                        <Text
+                          style={{
+                            fontSize: "22px",
+                            margin: "4px 10px 4px 10px",
+                          }}
+                        >
+                          피드백 제공
+                        </Text>
                       </Button>
                     </Flex>
                     <Title style={{ marginBottom: "20px", fontSize: "45px" }}>
@@ -744,14 +842,45 @@ export function MoreInfoScoring() {
                       align="center"
                       justify="center"
                       style={{ marginBottom: "20px" }}
+                      gap={"5px"}
                     >
-                      <Button variant="outline" radius="xl" compact>
+                      <Button
+                        variant={activeAIButton === 0 ? "light" : "outline"}
+                        radius="xl"
+                        compact
+                        onClick={() => {
+                          handleAIButtonClick(0);
+                          swiperLarge?.slideTo(0);
+                          swiperSmall?.slideTo(0);
+                        }}
+                        style={{ width: "100px" }}
+                      >
                         고급 AI 기술
                       </Button>
-                      <Button variant="outline" radius="xl" compact>
+                      <Button
+                        variant={activeAIButton === 1 ? "light" : "outline"}
+                        radius="xl"
+                        compact
+                        onClick={() => {
+                          handleAIButtonClick(1);
+                          swiperLarge?.slideTo(1);
+                          swiperSmall?.slideTo(1);
+                        }}
+                        style={{ width: "100px" }}
+                      >
                         점수 제공
                       </Button>
-                      <Button variant="outline" radius="xl" compact>
+                      <Button
+                        variant={activeAIButton === 2 ? "light" : "outline"}
+                        radius="xl"
+                        compact
+                        onClick={() => {
+                          handleAIButtonClick(2);
+                          swiperLarge?.slideTo(2);
+                          swiperSmall?.slideTo(2);
+                        }}
+                        style={{ width: "100px" }}
+                      >
                         피드백 제공
                       </Button>
                     </Flex>
@@ -784,14 +913,32 @@ export function MoreInfoScoring() {
                         height: "370px",
                       }}
                     >
-                      <div
-                        style={{
-                          display: "flex",
-                          justifyContent: "center",
-                          alignItems: "center",
-                        }}
-                      >
-                        <img src="./img/ai_1.png" width={"400px"} />
+                      <div>
+                        <Swiper
+                          spaceBetween={50}
+                          slidesPerView={1}
+                          onActiveIndexChange={(swiperCore) => {
+                            setSwiperIndex(swiperCore.activeIndex);
+                            handleAIButtonClick(swiperCore.activeIndex);
+                          }}
+                          onSwiper={(swiper) => {
+                            setSwiperSmall(swiper);
+                          }}
+                          autoplay={{
+                            delay: 4000,
+                            disableOnInteraction: false,
+                          }}
+                        >
+                          <SwiperSlide>
+                            <Image src={"./img/ai_1.png"}></Image>
+                          </SwiperSlide>
+                          <SwiperSlide>
+                            <Image src={"./img/ai_2.png"}></Image>
+                          </SwiperSlide>
+                          <SwiperSlide>
+                            <Image src={"./img/ai_3.png"}></Image>
+                          </SwiperSlide>
+                        </Swiper>
                       </div>
                     </MediaQuery>
                   </MediaQuery>
@@ -996,6 +1143,12 @@ export function Report() {
 
 // 레포트 세부
 export function MoreInfoReport() {
+  const [activeReportButton, setActiveReportButton] = useState<string>("1");
+
+  const handleReportButtonClick = (buttonName: string) => {
+    setActiveReportButton(buttonName);
+  };
+
   return (
     <Center style={{ backgroundColor: "rgb(250, 250,250)" }}>
       <MediaQuery largerThan={"md"} styles={{ width: "1060px" }}>
@@ -1054,19 +1207,73 @@ export function MoreInfoReport() {
                   md={6}
                   order={2}
                   style={{
-                    padding: "0 0 0 20px",
+                    padding: "0 0 0 30px",
                   }}
                 >
-                  <Flex direction={"column"} align={"flex-start"}>
-                    <Flex direction={"row"} align="center" justify="center">
-                      <Button variant="outline" radius="xl" compact>
-                        점수 변화
+                  <Flex direction={"column"} justify={"flex-start"}>
+                    <Flex
+                      direction={"row"}
+                      align="center"
+                      justify="center"
+                      gap="sm"
+                      style={{ marginBottom: "30px" }}
+                    >
+                      <Button
+                        variant={
+                          activeReportButton === "1" ? "light" : "outline"
+                        }
+                        radius="50px"
+                        size="25px"
+                        style={{ width: "200px" }}
+                        compact
+                        onClick={() => handleReportButtonClick("1")}
+                      >
+                        <Text
+                          style={{
+                            fontSize: "22px",
+                            margin: "4px 10px 4px 10px",
+                          }}
+                        >
+                          점수 변화
+                        </Text>
                       </Button>
-                      <Button variant="outline" radius="xl" compact>
-                        주간 레포트
+                      <Button
+                        variant={
+                          activeReportButton === "2" ? "light" : "outline"
+                        }
+                        radius="xl"
+                        compact
+                        size="30px"
+                        style={{ width: "200px" }}
+                        onClick={() => handleReportButtonClick("2")}
+                      >
+                        <Text
+                          style={{
+                            fontSize: "22px",
+                            margin: "4px 10px 4px 10px",
+                          }}
+                        >
+                          주간 레포트
+                        </Text>
                       </Button>
-                      <Button variant="outline" radius="xl" compact>
-                        월간 레포트
+                      <Button
+                        variant={
+                          activeReportButton === "3" ? "light" : "outline"
+                        }
+                        radius="xl"
+                        compact
+                        size="30px"
+                        style={{ width: "200px" }}
+                        onClick={() => handleReportButtonClick("3")}
+                      >
+                        <Text
+                          style={{
+                            fontSize: "22px",
+                            margin: "4px 10px 4px 10px",
+                          }}
+                        >
+                          월간 레포트
+                        </Text>
                       </Button>
                     </Flex>
                     <Title style={{ marginBottom: "20px", fontSize: "45px" }}>
@@ -1091,13 +1298,34 @@ export function MoreInfoReport() {
                 <Grid.Col md={12}>
                   <Flex direction={"column"} align={"center"}>
                     <Flex direction={"row"} align="center" justify="center">
-                      <Button variant="outline" radius="xl" compact>
+                      <Button
+                        variant={
+                          activeReportButton === "1" ? "light" : "outline"
+                        }
+                        radius="xl"
+                        compact
+                        onClick={() => handleReportButtonClick("1")}
+                      >
                         점수 변화
                       </Button>
-                      <Button variant="outline" radius="xl" compact>
+                      <Button
+                        variant={
+                          activeReportButton === "2" ? "light" : "outline"
+                        }
+                        radius="xl"
+                        compact
+                        onClick={() => handleReportButtonClick("2")}
+                      >
                         주간 레포트
                       </Button>
-                      <Button variant="outline" radius="xl" compact>
+                      <Button
+                        variant={
+                          activeReportButton === "3" ? "light" : "outline"
+                        }
+                        radius="xl"
+                        compact
+                        onClick={() => handleReportButtonClick("3")}
+                      >
                         월간 레포트
                       </Button>
                     </Flex>
@@ -1161,57 +1389,6 @@ export function MoreInfoReport() {
         </MediaQuery>
       </MediaQuery>
     </Center>
-  );
-}
-
-// 지표
-export function Indicator() {
-  return (
-    <MediaQuery largerThan="md" styles={{ height: "500px" }}>
-      <MediaQuery smallerThan="md" styles={{ height: "300px" }}>
-        <MediaQuery smallerThan={"md"} styles={{ display: "none" }}>
-          <Center>
-            <div>
-              <Center style={{ marginBottom: "50px" }}>
-                <Title>이미 많은 사람들이 도파민 디펜스를 사용중입니다.</Title>
-              </Center>
-              <Grid style={{ width: "1060px" }}>
-                <Grid.Col span={4}>
-                  <Center>
-                    <Flex direction={"column"} align={"center"}>
-                      <Title style={{ margin: "20px", fontSize: "25px" }}>
-                        친구 수
-                      </Title>
-                      <Text style={{ fontSize: "20px" }}>1200명</Text>
-                    </Flex>
-                  </Center>
-                </Grid.Col>
-                <Grid.Col span={4}>
-                  <Center>
-                    <Flex direction={"column"} align={"center"}>
-                      <Title style={{ margin: "20px", fontSize: "25px" }}>
-                        누적 유료 결제자 수
-                      </Title>
-                      <Text style={{ fontSize: "20px" }}>142명</Text>
-                    </Flex>
-                  </Center>
-                </Grid.Col>
-                <Grid.Col span={4}>
-                  <Center>
-                    <Flex direction={"column"} align={"center"}>
-                      <Title style={{ margin: "20px", fontSize: "25px" }}>
-                        활성 사용자 수
-                      </Title>
-                      <Text style={{ fontSize: "20px" }}>97명</Text>
-                    </Flex>
-                  </Center>
-                </Grid.Col>
-              </Grid>
-            </div>
-          </Center>
-        </MediaQuery>
-      </MediaQuery>
-    </MediaQuery>
   );
 }
 
@@ -1296,23 +1473,7 @@ export default function About() {
       <FunctionScoring />
       <MoreInfoScoring />
       <Report />
-      <Center>
-        <MediaQuery
-          largerThan={"md"}
-          styles={{ width: "1000px", margin: "0 0 40px 0" }}
-        >
-          <MediaQuery
-            smallerThan={"md"}
-            styles={{ width: "100%", margin: "0 20px 0 20px" }}
-          >
-            <div>
-              <Demo />
-            </div>
-          </MediaQuery>
-        </MediaQuery>
-      </Center>
       <MoreInfoReport />
-      <Indicator />
       <Review />
       <Bye />
     </>
