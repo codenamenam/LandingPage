@@ -56,7 +56,12 @@ export function Hello() {
                     }}
                   >
                     <div>
-                      <Image src="./img/first.png" />
+                      <Image
+                        src="./img/first.png"
+                        style={{
+                          filter: "drop-shadow(5px 10px 10px #c3c3c3)",
+                        }}
+                      />
                     </div>
                   </MediaQuery>
                 </MediaQuery>
@@ -229,7 +234,13 @@ export function FunctionRead() {
                           alignItems: "center",
                         }}
                       >
-                        <img src="./img/Read.png" height={"100%"} />
+                        <img
+                          src="./img/Read.png"
+                          height={"100%"}
+                          style={{
+                            filter: "drop-shadow(5px 10px 10px #c3c3c3)",
+                          }}
+                        />
                       </div>
                     </MediaQuery>
                   </MediaQuery>
@@ -290,7 +301,13 @@ export function FunctionRead() {
                           alignItems: "center",
                         }}
                       >
-                        <img src="./img/Read.png" height={"100%"} />
+                        <img
+                          src="./img/Read.png"
+                          height={"100%"}
+                          style={{
+                            filter: "drop-shadow(5px 10px 10px #c3c3c3)",
+                          }}
+                        />
                       </div>
                     </MediaQuery>
                   </MediaQuery>
@@ -392,7 +409,13 @@ export function FunctionSummary() {
                           alignItems: "center",
                         }}
                       >
-                        <img src="./img/Summary.png" height={"100%"} />
+                        <img
+                          src="./img/Summary.png"
+                          height={"100%"}
+                          style={{
+                            filter: "drop-shadow(5px 10px 10px #c3c3c3)",
+                          }}
+                        />
                       </div>
                     </MediaQuery>
                   </MediaQuery>
@@ -462,7 +485,13 @@ export function FunctionSummary() {
                           alignItems: "center",
                         }}
                       >
-                        <img src="./img/Summary.png" height={"100%"} />
+                        <img
+                          src="./img/Summary.png"
+                          height={"100%"}
+                          style={{
+                            filter: "drop-shadow(5px 10px 10px #c3c3c3)",
+                          }}
+                        />
                       </div>
                     </MediaQuery>
                   </MediaQuery>
@@ -565,7 +594,13 @@ export function FunctionScoring() {
                           alignItems: "center",
                         }}
                       >
-                        <img src="./img/Scoring.png" height={"100%"} />
+                        <img
+                          src="./img/Scoring.png"
+                          height={"100%"}
+                          style={{
+                            filter: "drop-shadow(5px 10px 10px #c3c3c3)",
+                          }}
+                        />
                       </div>
                     </MediaQuery>
                   </MediaQuery>
@@ -627,7 +662,13 @@ export function FunctionScoring() {
                           alignItems: "center",
                         }}
                       >
-                        <img src="./img/Scoring.png" height={"100%"} />
+                        <img
+                          src="./img/Scoring.png"
+                          height={"100%"}
+                          style={{
+                            filter: "drop-shadow(5px 10px 10px #c3c3c3)",
+                          }}
+                        />
                       </div>
                     </MediaQuery>
                   </MediaQuery>
@@ -1046,7 +1087,13 @@ export function Report() {
                           alignItems: "center",
                         }}
                       >
-                        <img src="./img/Report.png" height={"100%"} />
+                        <img
+                          src="./img/Report.png"
+                          height={"100%"}
+                          style={{
+                            filter: "drop-shadow(5px 10px 10px #c3c3c3)",
+                          }}
+                        />
                       </div>
                     </MediaQuery>
                   </MediaQuery>
@@ -1117,7 +1164,13 @@ export function Report() {
                           alignItems: "center",
                         }}
                       >
-                        <img src="./img/Report.png" height={"100%"} />
+                        <img
+                          src="./img/Report.png"
+                          height={"100%"}
+                          style={{
+                            filter: "drop-shadow(5px 10px 10px #c3c3c3)",
+                          }}
+                        />
                       </div>
                     </MediaQuery>
                   </MediaQuery>
