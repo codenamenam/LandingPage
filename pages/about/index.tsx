@@ -217,7 +217,8 @@ export function FunctionRead() {
                       쉽고 재미있는 글 읽기
                     </Title>
                     <Text style={{ fontSize: "25px" }}>
-                      사전에 엄선된 지문을 매일 오전 8시에 보내드립니다.
+                      사전에 엄선된 독서 지문을 매일 오전 8시에 카톡으로
+                      보내드립니다.
                     </Text>
                   </Flex>
                 </Grid.Col>
@@ -337,11 +338,17 @@ export function FunctionRead() {
                 </Grid.Col>
                 <Grid.Col md={12}>
                   <Flex direction={"column"} align={"center"}>
-                    <Text style={{ fontSize: "14px", marginTop: "5px" }}>
-                      사전에 엄선된 지문을
+                    <Text
+                      style={{
+                        fontSize: "16px",
+                        marginTop: "15px",
+                        fontWeight: "500",
+                      }}
+                    >
+                      사전에 엄선된 독서 지문을
                     </Text>
-                    <Text style={{ fontSize: "14px" }}>
-                      매일 오전 8시에 보내드립니다.
+                    <Text style={{ fontSize: "16px", fontWeight: "500" }}>
+                      매일 오전 8시에 카톡으로 보내드립니다.
                     </Text>
                   </Flex>
                 </Grid.Col>
@@ -523,10 +530,16 @@ export function FunctionSummary() {
                 </Grid.Col>
                 <Grid.Col md={12}>
                   <Flex direction={"column"} align={"center"}>
-                    <Text style={{ fontSize: "14px", marginTop: "5px" }}>
+                    <Text
+                      style={{
+                        fontSize: "16px",
+                        fontWeight: "500",
+                        marginTop: "15px",
+                      }}
+                    >
                       문장을 잘 이해하고 요약하는 과정에서
                     </Text>
-                    <Text style={{ fontSize: "14px" }}>
+                    <Text style={{ fontSize: "16px", fontWeight: "500" }}>
                       문해력이 길러집니다.
                     </Text>
                   </Flex>
@@ -702,10 +715,16 @@ export function FunctionScoring() {
                 </Grid.Col>
                 <Grid.Col md={12}>
                   <Flex direction={"column"} align={"center"}>
-                    <Text style={{ fontSize: "14px", marginTop: "5px" }}>
+                    <Text
+                      style={{
+                        fontSize: "16px",
+                        fontWeight: "500",
+                        marginTop: "15px",
+                      }}
+                    >
                       요약을 잘 했는지 평가받고
                     </Text>
-                    <Text style={{ fontSize: "14px" }}>
+                    <Text style={{ fontSize: "16px", fontWeight: "500" }}>
                       어떤 부분을 잘 했는지, 못했는지 알게 됩니다.
                     </Text>
                   </Flex>
@@ -956,7 +975,7 @@ export function MoreInfoScoring() {
                             fontSize: "30px",
                           }}
                         >
-                          AI 채점
+                          선생님보다 정확한 AI
                         </Title>
                       </Flex>
                     </Flex>
@@ -976,11 +995,11 @@ export function MoreInfoScoring() {
                           justifyContent: "center",
                           alignContent: "center",
                           width: "100%",
-                          height: "300px",
+                          height: "100%",
                           padding: "5px 20px 0px 20px",
                         }}
                       >
-                        <div>
+                        <Center>
                           <Swiper
                             spaceBetween={50}
                             slidesPerView={1}
@@ -1006,13 +1025,18 @@ export function MoreInfoScoring() {
                               <Image src={"./img/ai_3.png"}></Image>
                             </SwiperSlide>
                           </Swiper>
-                        </div>
+                        </Center>
                       </MediaQuery>
                     </MediaQuery>
                   </Grid.Col>
                   <Grid.Col md={12}>
                     <Flex direction={"column"} align={"center"}>
-                      <Text style={{ fontSize: "14px", marginTop: "5px" }}>
+                      <Text
+                        style={{
+                          fontSize: "16px",
+                          fontWeight: "500",
+                        }}
+                      >
                         도파민 디펜스가 자체 개발한 AI로 채점해드립니다.
                       </Text>
                     </Flex>
@@ -1214,11 +1238,22 @@ export function Report() {
                 </Grid.Col>
                 <Grid.Col md={12}>
                   <Flex direction={"column"} align={"center"}>
-                    <Text style={{ fontSize: "14px", marginTop: "5px" }}>
-                      점수, 피드백은 기본! 내가 전체에서 몇등인지, 며칠 째
+                    <Text
+                      style={{
+                        fontSize: "16px",
+                        fontWeight: "500",
+                        marginTop: "15px",
+                      }}
+                    >
+                      점수, 피드백은 기본! 내가 전체에서 몇등인지,
                     </Text>
-                    <Text style={{ fontSize: "14px", marginTop: "5px" }}>
-                      참여중인지 동기부여도 해드립니다.
+                    <Text
+                      style={{
+                        fontSize: "16px",
+                        fontWeight: "500",
+                      }}
+                    >
+                      며칠 째 참여중인지 동기부여도 해드립니다.
                     </Text>
                   </Flex>
                 </Grid.Col>
@@ -1481,7 +1516,7 @@ export function MoreInfoReport() {
                             fontSize: "30px",
                           }}
                         >
-                          AI 채점
+                          꾸준히 받아보는 레포트
                         </Title>
                       </Flex>
                     </Flex>
@@ -1501,11 +1536,11 @@ export function MoreInfoReport() {
                           justifyContent: "center",
                           alignContent: "center",
                           width: "100%",
-                          height: "300px",
+                          height: "100%",
                           padding: "5px 20px 0px 20px",
                         }}
                       >
-                        <div>
+                        <Center>
                           <Swiper
                             spaceBetween={50}
                             slidesPerView={1}
@@ -1531,19 +1566,35 @@ export function MoreInfoReport() {
                               <Image src={"./img/graph.png"}></Image>
                             </SwiperSlide>
                           </Swiper>
-                        </div>
+                        </Center>
                       </MediaQuery>
                     </MediaQuery>
                   </Grid.Col>
                   <Grid.Col md={12}>
                     <Flex direction={"column"} align={"center"}>
-                      <Text style={{ fontSize: "14px", marginTop: "5px" }}>
+                      <Text
+                        style={{
+                          fontSize: "16px",
+                          fontWeight: "500",
+                          marginTop: "15px",
+                        }}
+                      >
                         꾸준히 참여할수록 쌓이는 데이터! 나의 참여 기록을
                       </Text>
-                      <Text style={{ fontSize: "14px", marginTop: "5px" }}>
+                      <Text
+                        style={{
+                          fontSize: "16px",
+                          fontWeight: "500",
+                        }}
+                      >
                         일별, 주별, 월별로 레포트로
                       </Text>
-                      <Text style={{ fontSize: "14px", marginTop: "5px" }}>
+                      <Text
+                        style={{
+                          fontSize: "16px",
+                          fontWeight: "500",
+                        }}
+                      >
                         한 눈에 확인할 수 있습니다.
                       </Text>
                     </Flex>
