@@ -9,7 +9,6 @@ import {
   Title,
   Card,
   Group,
-  Space,
 } from "@mantine/core";
 import { useState, useEffect } from "react";
 
@@ -19,6 +18,7 @@ import "swiper/css";
 import "swiper/css/pagination";
 import { Autoplay } from "swiper/modules";
 import SwiperCore from "swiper";
+import { style } from "@mui/system";
 
 // 사진 2장 + 도파민 디펜스 소개
 export function Hello() {
@@ -1524,23 +1524,76 @@ export function MoreInfoReport() {
   );
 }
 
+interface UserReviewProps {
+  imageURL: string;
+  name: string;
+  job: string;
+  title: string;
+  comment: string;
+}
+
+const userReviewData = [
+  {
+    imageURL: "./img/user.png",
+    name: "남동훈",
+    job: "세명대학교 재학생",
+    title: "문해력 향상이 필요하다면 추천!",
+    comment: "도파민 디펜스하고 세명대 갔습니다!",
+  },
+  {
+    imageURL: "./img/user.png",
+    name: "남훈동",
+    job: "상지대학교 재학생",
+    title: "문해력 최고!",
+    comment: "도파민 디펜스ㄱㄱ",
+  },
+  {
+    imageURL: "./img/user.png",
+    name: "김선효",
+    job: "상지대학교 재학생",
+    title: "문해력 최고!",
+    comment: "도파민 디펜스ㄱㄱ",
+  },
+  {
+    imageURL: "./img/user.png",
+    name: "김효선",
+    job: "상지대학교 재학생",
+    title: "문해력 최고!",
+    comment: "도파민 디펜스ㄱㄱ",
+  },
+  {
+    imageURL: "./img/user.png",
+    name: "이건협",
+    job: "상지대학교 재학생",
+    title: "문해력 최고!",
+    comment: "도파민 디펜스ㄱㄱ",
+  },
+  {
+    imageURL: "./img/user.png",
+    name: "이협건",
+    job: "상지대학교 재학생",
+    title: "문해력 최고!",
+    comment: "도파민 디펜스ㄱㄱ",
+  },
+];
+
 // 리뷰 - 카드
-export function UserReview() {
+export function UserReview(info: UserReviewProps) {
   return (
     <Card shadow="sm" padding="lg" radius="md" withBorder>
       <Group position="apart" mt="md" mb="xs">
         <Flex align={"center"} gap={"10px"}>
-          <Image src={"./img/user.png"} style={{ width: "40px" }}></Image>
+          <Image src={info.imageURL} style={{ width: "40px" }}></Image>
           <div>
-            <Text style={{ fontSize: "15px" }}>남동훈</Text>
-            <Text style={{ fontSize: "15px" }}>세명대학교 재학생</Text>
+            <Text style={{ fontSize: "15px" }}>{info.name}</Text>
+            <Text style={{ fontSize: "15px" }}>{info.job}</Text>
           </div>
         </Flex>
       </Group>
 
-      <Title style={{ fontSize: "22px" }}>문해력 향상이 필요하다면 추천!</Title>
+      <Title style={{ fontSize: "22px" }}>{info.title}</Title>
       <Text size="sm" style={{ fontSize: "15px" }}>
-        도파민 디펜스하고 세명대 갔습니다!
+        {info.comment}
       </Text>
     </Card>
   );
@@ -1548,8 +1601,19 @@ export function UserReview() {
 
 // 리뷰
 export function Review() {
-  SwiperCore.use([Autoplay]);
   const [swiper, setSwiper] = useState<SwiperCore>();
+
+  const userReivewsSlides = userReviewData.map((review, index) => (
+    <SwiperSlide key={index}>
+      <UserReview
+        imageURL={review.imageURL}
+        name={review.name}
+        job={review.job}
+        title={review.title}
+        comment={review.comment}
+      />
+    </SwiperSlide>
+  ));
 
   return (
     <MediaQuery largerThan="md" styles={{ width: "1060px" }}>
@@ -1594,7 +1658,7 @@ export function Review() {
                   <div>
                     <Swiper
                       onSwiper={(onSwiper) => setSwiper(onSwiper)}
-                      spaceBetween={5}
+                      spaceBetween={10}
                       slidesPerView={3}
                       style={{ margin: "30px 0 70px 0" }}
                       autoplay={{ delay: 0, disableOnInteraction: false }}
@@ -1602,24 +1666,7 @@ export function Review() {
                       loop={true}
                       loopedSlides={3}
                     >
-                      <SwiperSlide>
-                        <UserReview />
-                      </SwiperSlide>
-                      <SwiperSlide>
-                        <UserReview />
-                      </SwiperSlide>
-                      <SwiperSlide>
-                        <UserReview />
-                      </SwiperSlide>
-                      <SwiperSlide>
-                        <UserReview />
-                      </SwiperSlide>
-                      <SwiperSlide>
-                        <UserReview />
-                      </SwiperSlide>
-                      <SwiperSlide>
-                        <UserReview />
-                      </SwiperSlide>
+                      {userReivewsSlides}
                     </Swiper>
                   </div>
                 </MediaQuery>
@@ -1655,26 +1702,23 @@ export function Review() {
                   styles={{
                     justifyContent: "center",
                     alignContent: "center",
-                    width: "350px",
-                    height: "300px",
+                    width: "100%",
+                    height: "400px",
                     padding: "5px 20px 0px 20px",
                   }}
                 >
                   <div>
                     <Swiper
                       onSwiper={(onSwiper) => setSwiper(onSwiper)}
-                      spaceBetween={50}
-                      slidesPerView={1}
+                      slidesPerView={2}
+                      style={{ margin: "30px 0 70px 0", height: "350px" }}
+                      autoplay={{ delay: 0, disableOnInteraction: false }}
+                      speed={5000}
+                      loop={true}
+                      loopedSlides={2}
+                      direction="vertical"
                     >
-                      <SwiperSlide>
-                        <Image src={"./img/ai_1.png"}></Image>
-                      </SwiperSlide>
-                      <SwiperSlide>
-                        <Image src={"./img/ai_1.png"}></Image>
-                      </SwiperSlide>
-                      <SwiperSlide>
-                        <Image src={"./img/ai_1.png"}></Image>
-                      </SwiperSlide>
+                      {userReivewsSlides}
                     </Swiper>
                   </div>
                 </MediaQuery>
@@ -1690,20 +1734,43 @@ export function Review() {
 // 다시 한번 안내
 export function Bye() {
   return (
-    <MediaQuery largerThan="md" styles={{ height: "500px" }}>
-      <MediaQuery smallerThan="md" styles={{ height: "300px" }}>
-        <Center style={{ backgroundColor: "rgb(250,250,250)", width: "100%" }}>
-          <Flex
-            direction={"column"}
-            align={"center"}
-            style={{ padding: "30px" }}
-          >
-            <Title style={{ marginBottom: "20px", fontSize: "35px" }}>
-              오늘부터 시작해보세요!
-            </Title>
-            <Button>무료로 시작하기</Button>
-          </Flex>
-        </Center>
+    <MediaQuery largerThan="md" styles={{ width: "1060px" }}>
+      <MediaQuery
+        smallerThan="md"
+        styles={{
+          width: "100%",
+        }}
+      >
+        <>
+          <MediaQuery smallerThan={"md"} styles={{ display: "none" }}>
+            <Center style={{ height: "500px" }}>
+              <Flex
+                direction={"column"}
+                align={"center"}
+                style={{ padding: "30px" }}
+              >
+                <Title style={{ marginBottom: "20px", fontSize: "35px" }}>
+                  지금 바로 시작하세요!
+                </Title>
+
+                <Button>지금 바로 시작하기</Button>
+              </Flex>
+            </Center>
+          </MediaQuery>
+
+          <MediaQuery largerThan={"md"} styles={{ display: "none" }}>
+            <Center style={{ height: "300px" }}>
+              <Flex
+                direction={"column"}
+                align={"center"}
+                style={{ padding: "30px" }}
+              >
+                <Title>지금 바로 시작!</Title>
+                <Button>시작해</Button>
+              </Flex>
+            </Center>
+          </MediaQuery>
+        </>
       </MediaQuery>
     </MediaQuery>
   );
