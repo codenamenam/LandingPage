@@ -1799,7 +1799,17 @@ export function Bye() {
                   </Title>
                 </Flex>
 
-                <Button>무료 시작하기</Button>
+                <Button color="ddColorMain">
+                  <Text
+                    color="white"
+                    style={{
+                      fontWeight: 900,
+                      fontSize: "18px",
+                    }}
+                  >
+                    지금 시작하기
+                  </Text>
+                </Button>
               </Flex>
             </Center>
           </MediaQuery>
@@ -1811,9 +1821,21 @@ export function Bye() {
                 align={"center"}
                 style={{ padding: "30px" }}
               >
-                <Title color="ddColorMain">도파민 디펜스,</Title>
-                <Title>지금 바로 도전해보세요!</Title>
-                <Button style={{ marginTop: "20px" }}>무료 시작하기</Button>
+                <Title color="ddColorMain" size={30}>
+                  도파민 디펜스,
+                </Title>
+                <Title size={30}>지금 바로 도전해보세요!</Title>
+                <Button color="ddColorMain" style={{ marginTop: "20px" }}>
+                  <Text
+                    color="white"
+                    style={{
+                      fontWeight: 700,
+                      fontSize: "15px",
+                    }}
+                  >
+                    지금 시작하기
+                  </Text>
+                </Button>
               </Flex>
             </Center>
           </MediaQuery>

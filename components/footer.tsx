@@ -13,7 +13,6 @@ import { useRouter } from "next/router";
 
 const useStyles = createStyles((theme) => ({
   footer: {
-    marginTop: rem(120),
     paddingTop: `calc(${theme.spacing.xl} * 2)`,
     paddingBottom: `calc(${theme.spacing.xl} * 2)`,
     backgroundColor:
