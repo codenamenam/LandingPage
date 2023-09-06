@@ -7,6 +7,9 @@ import {
   Grid,
   MediaQuery,
   Title,
+  Card,
+  Group,
+  Space,
 } from "@mantine/core";
 import { useState, useEffect } from "react";
 
@@ -1521,8 +1524,31 @@ export function MoreInfoReport() {
   );
 }
 
+// 리뷰 - 카드
+export function UserReview() {
+  return (
+    <Card shadow="sm" padding="lg" radius="md" withBorder>
+      <Group position="apart" mt="md" mb="xs">
+        <Flex align={"center"} gap={"10px"}>
+          <Image src={"./img/user.png"} style={{ width: "40px" }}></Image>
+          <div>
+            <Text style={{ fontSize: "15px" }}>남동훈</Text>
+            <Text style={{ fontSize: "15px" }}>세명대학교 재학생</Text>
+          </div>
+        </Flex>
+      </Group>
+
+      <Title style={{ fontSize: "22px" }}>문해력 향상이 필요하다면 추천!</Title>
+      <Text size="sm" style={{ fontSize: "15px" }}>
+        도파민 디펜스하고 세명대 갔습니다!
+      </Text>
+    </Card>
+  );
+}
+
 // 리뷰
 export function Review() {
+  SwiperCore.use([Autoplay]);
   const [swiper, setSwiper] = useState<SwiperCore>();
 
   return (
@@ -1568,17 +1594,31 @@ export function Review() {
                   <div>
                     <Swiper
                       onSwiper={(onSwiper) => setSwiper(onSwiper)}
-                      spaceBetween={50}
-                      slidesPerView={1}
+                      spaceBetween={5}
+                      slidesPerView={3}
+                      style={{ margin: "30px 0 70px 0" }}
+                      autoplay={{ delay: 0, disableOnInteraction: false }}
+                      speed={5000}
+                      loop={true}
+                      loopedSlides={3}
                     >
                       <SwiperSlide>
-                        <Image src={"./img/ai_1.png"}></Image>
+                        <UserReview />
                       </SwiperSlide>
                       <SwiperSlide>
-                        <Image src={"./img/ai_1.png"}></Image>
+                        <UserReview />
                       </SwiperSlide>
                       <SwiperSlide>
-                        <Image src={"./img/ai_1.png"}></Image>
+                        <UserReview />
+                      </SwiperSlide>
+                      <SwiperSlide>
+                        <UserReview />
+                      </SwiperSlide>
+                      <SwiperSlide>
+                        <UserReview />
+                      </SwiperSlide>
+                      <SwiperSlide>
+                        <UserReview />
                       </SwiperSlide>
                     </Swiper>
                   </div>
