@@ -18,7 +18,7 @@ import "swiper/css";
 import "swiper/css/pagination";
 import { Autoplay } from "swiper/modules";
 import SwiperCore from "swiper";
-import { style } from "@mui/system";
+import { height } from "@mui/system";
 
 // 사진 2장 + 도파민 디펜스 소개
 export function Hello() {
@@ -99,11 +99,22 @@ export function Hello() {
                   </MediaQuery>
                   <MediaQuery
                     smallerThan={"md"}
-                    styles={{ margin: "20px 0 15px" }}
+                    styles={{ margin: "10px 0 40px" }}
                   >
-                    <MediaQuery largerThan={"md"} styles={{ margin: "20px" }}>
-                      <Button>
-                        <Text>지금 시작하기</Text>
+                    <MediaQuery
+                      largerThan={"md"}
+                      styles={{ margin: "0px", height: "45px" }}
+                    >
+                      <Button color="ddColorMain">
+                        <Text
+                          color="white"
+                          style={{
+                            fontWeight: 900,
+                            fontSize: "18px",
+                          }}
+                        >
+                          지금 시작하기
+                        </Text>
                       </Button>
                     </MediaQuery>
                   </MediaQuery>
@@ -122,11 +133,13 @@ export function SimpleHello() {
   return (
     <MediaQuery largerThan="md" styles={{ height: "500px" }}>
       <MediaQuery smallerThan="md" styles={{ height: "300px" }}>
-        <Center style={{ backgroundColor: "rgb(250,250,250)" }}>
+        <Center style={{ backgroundColor: "rgba(242, 29, 118, 0.10)" }}>
           <Flex direction={"column"} align={"center"}>
             <MediaQuery largerThan={"md"} styles={{ fontSize: "2em" }}>
               <MediaQuery smallerThan={"md"} styles={{ fontSize: "18px" }}>
-                <Text>가장 빠르게 문해력 향상하는법</Text>
+                <Text color="grey" weight={500}>
+                  가장 빠르게 문해력 향상하는법
+                </Text>
               </MediaQuery>
             </MediaQuery>
 
@@ -135,7 +148,12 @@ export function SimpleHello() {
               styles={{ fontSize: "3em", margin: "20px" }}
             >
               <MediaQuery smallerThan={"md"} styles={{ display: "none" }}>
-                <Title>독서나 신문이 아닌, 도파민 디펜스.</Title>
+                <Flex>
+                  <Title size={50}>독서나 신문이 아닌,&nbsp;</Title>
+                  <Title color="ddColorMain" size={50}>
+                    도파민 디펜스.
+                  </Title>
+                </Flex>
               </MediaQuery>
             </MediaQuery>
 
@@ -149,7 +167,7 @@ export function SimpleHello() {
             </MediaQuery>
             <MediaQuery largerThan={"md"} styles={{ display: "none" }}>
               <MediaQuery smallerThan={"md"} styles={{ fontSize: "30px" }}>
-                <Title>도파민 디펜스.</Title>
+                <Title color="ddColorMain">도파민 디펜스.</Title>
               </MediaQuery>
             </MediaQuery>
           </Flex>
@@ -191,6 +209,7 @@ export function FunctionRead() {
                         fontSize: "25px",
                         fontWeight: "bold",
                       }}
+                      color="ddColorMain"
                     >
                       글 읽기
                     </Text>
@@ -266,6 +285,7 @@ export function FunctionRead() {
                         fontSize: "18px",
                         fontWeight: "bold",
                       }}
+                      color="ddColorMain"
                     >
                       글 읽기
                     </Text>
@@ -366,6 +386,7 @@ export function FunctionSummary() {
                         fontSize: "25px",
                         fontWeight: "bold",
                       }}
+                      color="ddColorMain"
                     >
                       요약하기
                     </Text>
@@ -441,6 +462,7 @@ export function FunctionSummary() {
                         fontSize: "18px",
                         fontWeight: "bold",
                       }}
+                      color="ddColorMain"
                     >
                       요약하기
                     </Text>
@@ -550,6 +572,7 @@ export function FunctionScoring() {
                         fontSize: "25px",
                         fontWeight: "bold",
                       }}
+                      color="ddColorMain"
                     >
                       채점하기
                     </Text>
@@ -626,6 +649,7 @@ export function FunctionScoring() {
                         fontSize: "18px",
                         fontWeight: "bold",
                       }}
+                      color="ddColorMain"
                     >
                       채점하기
                     </Text>
@@ -712,7 +736,7 @@ export function MoreInfoScoring() {
   return (
     <MediaQuery
       largerThan={"md"}
-      styles={{ backgroundColor: "rgb(250, 250,250)" }}
+      styles={{ backgroundColor: "rgb(247, 250, 252)" }}
     >
       <Center>
         <MediaQuery largerThan={"md"} styles={{ width: "1060px" }}>
@@ -721,7 +745,7 @@ export function MoreInfoScoring() {
             styles={{
               width: "350px",
               marginTop: "30px",
-              backgroundColor: "rgb(250,250,250)",
+              backgroundColor: "rgb(247, 250, 252)",
               borderRadius: "20px",
             }}
           >
@@ -1029,29 +1053,37 @@ export function Report() {
                   }}
                 >
                   <Flex direction={"column"} align={"flex-start"}>
-                    <Text
-                      style={{
-                        marginBottom: "20px",
-                        fontSize: "26px",
-                        fontWeight: "bold",
-                      }}
+                    <Flex
+                      direction={"row"}
+                      align={"center"}
+                      style={{ marginBottom: "20px" }}
                     >
-                      레포트
-                    </Text>
+                      <Text
+                        style={{
+                          fontSize: "26px",
+                          fontWeight: "900",
+                        }}
+                        color="ddColorMain"
+                      >
+                        레포트
+                      </Text>
+                      <Text
+                        style={{
+                          fontSize: "26px",
+                          fontWeight: "600",
+                          marginLeft: "10px",
+                        }}
+                        color="rgba(0,0,0,0.3)"
+                      >
+                        9월 중 제공 예정
+                      </Text>
+                    </Flex>
                     <Title style={{ marginBottom: "20px", fontSize: "45px" }}>
                       꼼꼼한 레포트
                     </Title>
                     <Text style={{ fontSize: "25px", marginBottom: "10px" }}>
                       점수, 피드백은 기본! 내가 전체에서 몇등인지, 며칠 째
                       참여중인지 동기부여도 해드립니다.
-                    </Text>
-                    <Text
-                      style={{
-                        fontSize: "16px",
-                        fontWeight: "bold",
-                      }}
-                    >
-                      9월 중 제공 예정
                     </Text>
                   </Flex>
                 </Grid.Col>
@@ -1115,10 +1147,20 @@ export function Report() {
                   <Flex direction={"column"} align={"center"}>
                     <Text
                       style={{
+                        fontSize: "12px",
+                        fontWeight: "600",
+                      }}
+                      color="rgba(0,0,0,0.4)"
+                    >
+                      9월 중 제공예정
+                    </Text>
+                    <Text
+                      style={{
                         marginBottom: "5px",
                         fontSize: "18px",
                         fontWeight: "bold",
                       }}
+                      color="ddColorMain"
                     >
                       레포트
                     </Text>
@@ -1131,14 +1173,6 @@ export function Report() {
                       >
                         꼼꼼한 레포트
                       </Title>
-                      <Text
-                        style={{
-                          fontSize: "12px",
-                          fontWeight: "bold",
-                        }}
-                      >
-                        9월 중 제공예정
-                      </Text>
                     </Flex>
                   </Flex>
                 </Grid.Col>
@@ -1214,7 +1248,7 @@ export function MoreInfoReport() {
   return (
     <MediaQuery
       largerThan={"md"}
-      styles={{ backgroundColor: "rgb(250, 250,250)" }}
+      styles={{ backgroundColor: "rgb(247, 250, 252)" }}
     >
       <Center>
         <MediaQuery largerThan={"md"} styles={{ width: "1060px" }}>
@@ -1223,7 +1257,7 @@ export function MoreInfoReport() {
             styles={{
               width: "350px",
               marginTop: "30px",
-              backgroundColor: "rgb(250,250,250)",
+              backgroundColor: "rgb(247, 250, 252)",
               borderRadius: "20px",
             }}
           >
@@ -1629,13 +1663,15 @@ export function Review() {
               <Flex
                 direction={"column"}
                 align={"center"}
-                style={{ marginTop: "50px" }}
+                style={{ margin: "100px 0 100px 0" }}
               >
-                <Text style={{ fontSize: "30px", fontWeight: "bold" }}>
+                <Text style={{ fontSize: "25px", fontWeight: "bold" }}>
                   2023.9.5일 기준
                 </Text>
                 <Title style={{ fontSize: "60px" }}>도파민 디펜스 사용자</Title>
-                <Title style={{ fontSize: "60px" }}>1378명</Title>
+                <Title style={{ fontSize: "60px" }} color="ddColorMain">
+                  1378명
+                </Title>
                 <Text
                   style={{
                     fontSize: "30px",
@@ -1660,7 +1696,7 @@ export function Review() {
                       onSwiper={(onSwiper) => setSwiper(onSwiper)}
                       spaceBetween={10}
                       slidesPerView={3}
-                      style={{ margin: "30px 0 70px 0" }}
+                      style={{ margin: "100px 0 0 0" }}
                       autoplay={{ delay: 0, disableOnInteraction: false }}
                       speed={5000}
                       loop={true}
@@ -1685,7 +1721,9 @@ export function Review() {
                   2023.9.5일 기준
                 </Text>
                 <Title style={{ fontSize: "30px" }}>도파민 디펜스 사용자</Title>
-                <Title style={{ fontSize: "40px" }}>1378명</Title>
+                <Title style={{ fontSize: "40px" }} color="ddColorMain">
+                  1378명
+                </Title>
                 <Text
                   style={{
                     fontSize: "18px",
@@ -1749,11 +1787,19 @@ export function Bye() {
                 align={"center"}
                 style={{ padding: "30px" }}
               >
-                <Title style={{ marginBottom: "20px", fontSize: "35px" }}>
-                  지금 바로 시작하세요!
-                </Title>
+                <Flex>
+                  <Title
+                    style={{ marginBottom: "20px", fontSize: "50px" }}
+                    color="ddColorMain"
+                  >
+                    도파민 디펜스,&nbsp;
+                  </Title>
+                  <Title style={{ marginBottom: "20px", fontSize: "50px" }}>
+                    지금 바로 도전해보세요!
+                  </Title>
+                </Flex>
 
-                <Button>지금 바로 시작하기</Button>
+                <Button>무료 시작하기</Button>
               </Flex>
             </Center>
           </MediaQuery>
@@ -1765,8 +1811,9 @@ export function Bye() {
                 align={"center"}
                 style={{ padding: "30px" }}
               >
-                <Title>지금 바로 시작!</Title>
-                <Button>시작해</Button>
+                <Title color="ddColorMain">도파민 디펜스,</Title>
+                <Title>지금 바로 도전해보세요!</Title>
+                <Button style={{ marginTop: "20px" }}>무료 시작하기</Button>
               </Flex>
             </Center>
           </MediaQuery>

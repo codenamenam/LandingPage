@@ -14,6 +14,32 @@ export default function App({ Component, pageProps }: AppProps) {
           xl: "90em",
           md: "68em",
         },
+        colors: {
+          ddColorMain: [
+            "#F21D76",
+            "#F21D76",
+            "#F21D76",
+            "#F21D76",
+            "#F21D76",
+            "#F21D76",
+            "#F21D76",
+            "#F21D76",
+            "#F21D76",
+            "#F21D76",
+          ],
+          ddColorBackground: [
+            "rgba(242, 29, 118, 0.15)",
+            "rgba(242, 29, 118, 0.15)",
+            "rgba(242, 29, 118, 0.15)",
+            "rgba(242, 29, 118, 0.15)",
+            "rgba(242, 29, 118, 0.15)",
+            "rgba(242, 29, 118, 0.15)",
+            "rgba(242, 29, 118, 0.15)",
+            "rgba(242, 29, 118, 0.15)",
+            "rgba(242, 29, 118, 0.15)",
+            "rgba(242, 29, 118, 0.15)",
+          ],
+        },
       }}
     >
       <Component {...pageProps} />
