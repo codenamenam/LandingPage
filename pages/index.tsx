@@ -1095,15 +1095,16 @@ export function MoreInfoScoring() {
                           delay: 4000,
                           disableOnInteraction: false,
                         }}
+                        style={{ borderRadius: "15px" }}
                       >
                         <SwiperSlide>
                           <Image src={"./img/ai_1.png"}></Image>
                         </SwiperSlide>
                         <SwiperSlide>
-                          <Image src={"./img/ai_2.png"}></Image>
+                          <Image src={"./img/ai_1.png"}></Image>
                         </SwiperSlide>
                         <SwiperSlide>
-                          <Image src={"./img/ai_3.png"}></Image>
+                          <Image src={"./img/ai_1.png"}></Image>
                         </SwiperSlide>
                       </Swiper>
                     </Center>
@@ -1352,15 +1353,16 @@ export function MoreInfoScoring() {
                               delay: 4000,
                               disableOnInteraction: false,
                             }}
+                            style={{ borderRadius: "15px" }}
                           >
                             <SwiperSlide>
                               <Image src={"./img/ai_1.png"}></Image>
                             </SwiperSlide>
                             <SwiperSlide>
-                              <Image src={"./img/ai_2.png"}></Image>
+                              <Image src={"./img/ai_1.png"}></Image>
                             </SwiperSlide>
                             <SwiperSlide>
-                              <Image src={"./img/ai_3.png"}></Image>
+                              <Image src={"./img/ai_1.png"}></Image>
                             </SwiperSlide>
                           </Swiper>
                         </Center>
@@ -1715,6 +1717,7 @@ export function MoreInfoReport() {
                               delay: 4000,
                               disableOnInteraction: false,
                             }}
+                            style={{ borderRadius: "15px" }}
                           >
                             <SwiperSlide>
                               <Image src={"./img/graph.png"}></Image>
@@ -1976,6 +1979,7 @@ export function MoreInfoReport() {
                                 delay: 4000,
                                 disableOnInteraction: false,
                               }}
+                              style={{ borderRadius: "15px" }}
                             >
                               <SwiperSlide>
                                 <Image src={"./img/graph.png"}></Image>
