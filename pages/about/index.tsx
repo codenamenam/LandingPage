@@ -77,9 +77,7 @@ export function Hello() {
                       styles={{ fontSize: "25px" }}
                     >
                       <Title style={{ margin: "0px" }}>
-                        AI가 길러주는 문해력
-                        <br />
-                        매일 5분씩 도전하기.
+                        매일 5분 AI와 성장하는 문해력
                       </Title>
                     </MediaQuery>
                   </MediaQuery>
@@ -113,7 +111,7 @@ export function Hello() {
                             fontSize: "18px",
                           }}
                         >
-                          지금 시작하기
+                          무료 시작하기
                         </Text>
                       </Button>
                     </MediaQuery>
@@ -213,12 +211,19 @@ export function FunctionRead() {
                     >
                       글 읽기
                     </Text>
-                    <Title style={{ marginBottom: "20px", fontSize: "45px" }}>
+                    <Title
+                      style={{
+                        marginBottom: "20px",
+                        fontSize: "45px",
+                      }}
+                    >
                       쉽고 재미있는 글 읽기
                     </Title>
                     <Text style={{ fontSize: "25px" }}>
-                      사전에 엄선된 독서 지문을 매일 오전 8시에 카톡으로
-                      보내드립니다.
+                      사전에 선정한 지문을 매일 오전 8시에
+                    </Text>
+                    <Text style={{ fontSize: "25px" }}>
+                      카톡으로 보내드립니다.
                     </Text>
                   </Flex>
                 </Grid.Col>
@@ -398,10 +403,13 @@ export function FunctionSummary() {
                       요약하기
                     </Text>
                     <Title style={{ marginBottom: "20px", fontSize: "45px" }}>
-                      짧고 굵게! 핵심만 요약하기
+                      쉽게 길르는 문해력
                     </Title>
                     <Text style={{ fontSize: "25px" }}>
-                      문장을 잘 이해하고 요약하는 과정에서 문해력이 길러집니다.
+                      문장을 이해하고 요약하는 과정에서 문맥을 파악하고
+                    </Text>
+                    <Text style={{ fontSize: "25px" }}>
+                      단어의 의미를 유추하는 능력이 길러집니다.
                     </Text>
                   </Flex>
                 </Grid.Col>
@@ -476,18 +484,11 @@ export function FunctionSummary() {
                     <Flex direction={"column"} align={"center"}>
                       <Title
                         style={{
-                          fontSize: "30px",
-                        }}
-                      >
-                        짧고 굵게!
-                      </Title>
-                      <Title
-                        style={{
                           marginBottom: "5px",
                           fontSize: "30px",
                         }}
                       >
-                        핵심만 요약하기
+                        쉽게 길르는 문해력
                       </Title>
                     </Flex>
                   </Flex>
@@ -537,10 +538,13 @@ export function FunctionSummary() {
                         marginTop: "15px",
                       }}
                     >
-                      문장을 잘 이해하고 요약하는 과정에서
+                      문장을 이해하고 요약하는 과정에서
                     </Text>
                     <Text style={{ fontSize: "16px", fontWeight: "500" }}>
-                      문해력이 길러집니다.
+                      문맥을 파악하고 단어의 의미를 유추하는
+                    </Text>
+                    <Text style={{ fontSize: "16px", fontWeight: "500" }}>
+                      능력이 길러집니다.
                     </Text>
                   </Flex>
                 </Grid.Col>
@@ -587,14 +591,16 @@ export function FunctionScoring() {
                       }}
                       color="ddColorMain"
                     >
-                      채점하기
+                      피드백
                     </Text>
                     <Title style={{ marginBottom: "20px", fontSize: "45px" }}>
-                      AI 채점
+                      알기쉽고 재미있는 피드백
                     </Title>
                     <Text style={{ fontSize: "25px" }}>
-                      요약을 잘 했는지 평가받고 어떤 부분을 잘 했는지, 못했는지
-                      알게 됩니다.
+                      요약한 내용의 잘한 점과 아쉬운 점, 점수와 연속 참여
+                    </Text>
+                    <Text style={{ fontSize: "25px" }}>
+                      기록, 순위 제공으로 동기부여를 제공합니다.
                     </Text>
                   </Flex>
                 </Grid.Col>
@@ -664,7 +670,7 @@ export function FunctionScoring() {
                       }}
                       color="ddColorMain"
                     >
-                      채점하기
+                      피드백
                     </Text>
                     <Flex direction={"column"} align={"center"}>
                       <Title
@@ -672,7 +678,7 @@ export function FunctionScoring() {
                           fontSize: "30px",
                         }}
                       >
-                        AI 채점
+                        알기쉽고 재미있는 피드백
                       </Title>
                     </Flex>
                   </Flex>
@@ -722,10 +728,23 @@ export function FunctionScoring() {
                         marginTop: "15px",
                       }}
                     >
-                      요약을 잘 했는지 평가받고
+                      요약한 내용의 잘한 점과 아쉬운 점,
                     </Text>
-                    <Text style={{ fontSize: "16px", fontWeight: "500" }}>
-                      어떤 부분을 잘 했는지, 못했는지 알게 됩니다.
+                    <Text
+                      style={{
+                        fontSize: "16px",
+                        fontWeight: "500",
+                      }}
+                    >
+                      점수와 연속 참여 기록, 순위 제공으로
+                    </Text>
+                    <Text
+                      style={{
+                        fontSize: "16px",
+                        fontWeight: "500",
+                      }}
+                    >
+                      동기부여를 제공합니다.
                     </Text>
                   </Flex>
                 </Grid.Col>
@@ -856,7 +875,7 @@ export function MoreInfoScoring() {
                               margin: "4px 10px 4px 10px",
                             }}
                           >
-                            고급 AI 기술
+                            AI 엔지니어링
                           </Text>
                         </Button>
                         <Button
@@ -877,7 +896,7 @@ export function MoreInfoScoring() {
                               margin: "4px 10px 4px 10px",
                             }}
                           >
-                            점수 제공
+                            점수 계산
                           </Text>
                         </Button>
                         <Button
@@ -898,15 +917,17 @@ export function MoreInfoScoring() {
                               margin: "4px 10px 4px 10px",
                             }}
                           >
-                            피드백 제공
+                            피드백 생성
                           </Text>
                         </Button>
                       </Flex>
                       <Title style={{ marginBottom: "20px", fontSize: "45px" }}>
-                        선생님보다 정확한 AI
+                        피드백, 이렇게 만들었습니다.
                       </Title>
                       <Text style={{ fontSize: "25px" }}>
-                        도파민 디펜스가 자체 개발한 AI로 채점해드립니다.
+                        도파민 디펜스가 자체 개발한 AI 기술로 요약 내용을
+                        채점합니다. 요약을 세분화하여 채점 기준에 맞게 점수를
+                        부여하고 이후에 심화된 피드백을 생성합니다.
                       </Text>
                     </Flex>
                   </Grid.Col>
@@ -923,10 +944,30 @@ export function MoreInfoScoring() {
                   <Grid.Col md={12}>
                     <Flex direction={"column"} align={"center"}>
                       <Flex
+                        direction={"column"}
+                        align={"center"}
+                        style={{ marginTop: "20px" }}
+                      >
+                        <Title
+                          style={{
+                            fontSize: "30px",
+                          }}
+                        >
+                          피드백,
+                        </Title>
+                        <Title
+                          style={{
+                            fontSize: "30px",
+                          }}
+                        >
+                          이렇게 만들었습니다.
+                        </Title>
+                      </Flex>
+                      <Flex
                         direction={"row"}
                         align="center"
                         justify="center"
-                        style={{ marginBottom: "20px" }}
+                        style={{ marginTop: "40px" }}
                         gap={"5px"}
                       >
                         <Button
@@ -940,7 +981,7 @@ export function MoreInfoScoring() {
                           }}
                           style={{ width: "100px" }}
                         >
-                          고급 AI 기술
+                          AI 엔지니어링
                         </Button>
                         <Button
                           variant={activeAIButton === 1 ? "light" : "outline"}
@@ -953,7 +994,7 @@ export function MoreInfoScoring() {
                           }}
                           style={{ width: "100px" }}
                         >
-                          점수 제공
+                          점수 계산
                         </Button>
                         <Button
                           variant={activeAIButton === 2 ? "light" : "outline"}
@@ -966,17 +1007,8 @@ export function MoreInfoScoring() {
                           }}
                           style={{ width: "100px" }}
                         >
-                          피드백 제공
+                          피드백 생성
                         </Button>
-                      </Flex>
-                      <Flex direction={"column"} align={"center"}>
-                        <Title
-                          style={{
-                            fontSize: "30px",
-                          }}
-                        >
-                          선생님보다 정확한 AI
-                        </Title>
                       </Flex>
                     </Flex>
                   </Grid.Col>
@@ -1037,7 +1069,31 @@ export function MoreInfoScoring() {
                           fontWeight: "500",
                         }}
                       >
-                        도파민 디펜스가 자체 개발한 AI로 채점해드립니다.
+                        도파민 디펜스가 자체 개발한 AI 기술로
+                      </Text>
+                      <Text
+                        style={{
+                          fontSize: "16px",
+                          fontWeight: "500",
+                        }}
+                      >
+                        요약 내용을 채점합니다. 요약을 세분화하여
+                      </Text>
+                      <Text
+                        style={{
+                          fontSize: "16px",
+                          fontWeight: "500",
+                        }}
+                      >
+                        채점 기준에 맞게 점수를 부여하고 이후에
+                      </Text>
+                      <Text
+                        style={{
+                          fontSize: "16px",
+                          fontWeight: "500",
+                        }}
+                      >
+                        심화된 피드백을 생성합니다.
                       </Text>
                     </Flex>
                   </Grid.Col>
@@ -1103,11 +1159,12 @@ export function Report() {
                       </Text>
                     </Flex>
                     <Title style={{ marginBottom: "20px", fontSize: "45px" }}>
-                      꼼꼼한 레포트
+                      꼼꼼하고 자세한 레포트
                     </Title>
                     <Text style={{ fontSize: "25px", marginBottom: "10px" }}>
-                      점수, 피드백은 기본! 내가 전체에서 몇등인지, 며칠 째
-                      참여중인지 동기부여도 해드립니다.
+                      도파민 디펜스는 꾸준한 참여가 중요합니다. 주간 레포트,
+                      월간 레포트로 참여도와 평균 점수의 변화, 디펜스 총평을
+                      제공해드립니다.
                     </Text>
                   </Flex>
                 </Grid.Col>
@@ -1195,7 +1252,7 @@ export function Report() {
                           fontSize: "30px",
                         }}
                       >
-                        꼼꼼한 레포트
+                        꼼꼼하고 자세한 레포트
                       </Title>
                     </Flex>
                   </Flex>
@@ -1245,7 +1302,7 @@ export function Report() {
                         marginTop: "15px",
                       }}
                     >
-                      점수, 피드백은 기본! 내가 전체에서 몇등인지,
+                      도파민 디펜스는 꾸준한 참여가 중요합니다.
                     </Text>
                     <Text
                       style={{
@@ -1253,7 +1310,15 @@ export function Report() {
                         fontWeight: "500",
                       }}
                     >
-                      며칠 째 참여중인지 동기부여도 해드립니다.
+                      주간 레포트, 월간 레포트로 참여도와 평균
+                    </Text>
+                    <Text
+                      style={{
+                        fontSize: "16px",
+                        fontWeight: "500",
+                      }}
+                    >
+                      점수의 변화, 디펜스 총평을 제공해드립니다.
                     </Text>
                   </Flex>
                 </Grid.Col>
@@ -1386,7 +1451,7 @@ export function MoreInfoReport() {
                               margin: "4px 10px 4px 10px",
                             }}
                           >
-                            점수 변화
+                            참여도 변화
                           </Text>
                         </Button>
                         <Button
@@ -1409,7 +1474,7 @@ export function MoreInfoReport() {
                               margin: "4px 10px 4px 10px",
                             }}
                           >
-                            주간 레포트
+                            점수 변화
                           </Text>
                         </Button>
                         <Button
@@ -1432,16 +1497,18 @@ export function MoreInfoReport() {
                               margin: "4px 10px 4px 10px",
                             }}
                           >
-                            월간 레포트
+                            디펜스 총평
                           </Text>
                         </Button>
                       </Flex>
                       <Title style={{ marginBottom: "20px", fontSize: "45px" }}>
-                        꾸준히 받아보는 레포트
+                        레포트, 이렇게 만들었습니다.
                       </Title>
                       <Text style={{ fontSize: "25px" }}>
-                        꾸준히 참여할수록 쌓이는 데이터! 나의 참여 기록을 일별,
-                        주별, 월별로 레포트로 한 눈에 확인할 수 있습니다.
+                        꾸준히 참여할수록 데이터는 쌓입니다. 도파민 디펜스는
+                        데이터를 가공하여 사용자마다 개인화된 레포트를
+                        제공합니다. 또한 참여 기록을 평가하는 AI가 총평을
+                        생성하여 1:1 선생님이 평가해주는 듯한 경험을 제공합니다.
                       </Text>
                     </Flex>
                   </Grid.Col>
@@ -1458,10 +1525,30 @@ export function MoreInfoReport() {
                   <Grid.Col md={12}>
                     <Flex direction={"column"} align={"center"}>
                       <Flex
+                        direction={"column"}
+                        align={"center"}
+                        style={{ margin: "20px 0 20px 0" }}
+                      >
+                        <Title
+                          style={{
+                            fontSize: "30px",
+                          }}
+                        >
+                          레포트,
+                        </Title>
+                        <Title
+                          style={{
+                            fontSize: "30px",
+                          }}
+                        >
+                          이렇게 만들었습니다.
+                        </Title>
+                      </Flex>
+                      <Flex
                         direction={"row"}
                         align="center"
                         justify="center"
-                        style={{ marginBottom: "20px" }}
+                        style={{ marginTop: "20px" }}
                         gap={"5px"}
                       >
                         <Button
@@ -1477,7 +1564,7 @@ export function MoreInfoReport() {
                           }}
                           style={{ width: "100px" }}
                         >
-                          고급 AI 기술
+                          참여도 변화
                         </Button>
                         <Button
                           variant={
@@ -1492,7 +1579,7 @@ export function MoreInfoReport() {
                           }}
                           style={{ width: "100px" }}
                         >
-                          점수 제공
+                          점수 변화
                         </Button>
                         <Button
                           variant={
@@ -1507,17 +1594,8 @@ export function MoreInfoReport() {
                           }}
                           style={{ width: "100px" }}
                         >
-                          피드백 제공
+                          디펜스 총평
                         </Button>
-                      </Flex>
-                      <Flex direction={"column"} align={"center"}>
-                        <Title
-                          style={{
-                            fontSize: "30px",
-                          }}
-                        >
-                          꾸준히 받아보는 레포트
-                        </Title>
                       </Flex>
                     </Flex>
                   </Grid.Col>
@@ -1579,7 +1657,7 @@ export function MoreInfoReport() {
                           marginTop: "15px",
                         }}
                       >
-                        꾸준히 참여할수록 쌓이는 데이터! 나의 참여 기록을
+                        꾸준히 참여할수록 데이터는 쌓입니다.
                       </Text>
                       <Text
                         style={{
@@ -1587,7 +1665,7 @@ export function MoreInfoReport() {
                           fontWeight: "500",
                         }}
                       >
-                        일별, 주별, 월별로 레포트로
+                        도파민 디펜스는 데이터를 가공하여 사용자마다
                       </Text>
                       <Text
                         style={{
@@ -1595,7 +1673,23 @@ export function MoreInfoReport() {
                           fontWeight: "500",
                         }}
                       >
-                        한 눈에 확인할 수 있습니다.
+                        개인화된 레포트를 제공합니다. 또한 참여 기록을
+                      </Text>
+                      <Text
+                        style={{
+                          fontSize: "16px",
+                          fontWeight: "500",
+                        }}
+                      >
+                        평가하는 AI가 총평을 생성하여 1:1 선생님이
+                      </Text>
+                      <Text
+                        style={{
+                          fontSize: "16px",
+                          fontWeight: "500",
+                        }}
+                      >
+                        평가해주는 듯한 경험을 제공합니다.
                       </Text>
                     </Flex>
                   </Grid.Col>
@@ -1731,7 +1825,7 @@ export function Review() {
                     color: "grey",
                   }}
                 >
-                  사용자들의 따근따끈한 리뷰를 확인해보세요.
+                  실제 사용자들의 리뷰를 확인해보세요.
                 </Text>
 
                 <MediaQuery
@@ -1783,7 +1877,7 @@ export function Review() {
                     color: "grey",
                   }}
                 >
-                  사용자들의 따근따끈한 리뷰를 확인해보세요.
+                  실제 사용자들의 리뷰를 확인해보세요.
                 </Text>
 
                 <MediaQuery
