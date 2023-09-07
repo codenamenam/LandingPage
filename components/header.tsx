@@ -94,12 +94,8 @@ const useStyles = createStyles((theme) => ({
 
   linkActive: {
     "&, &:hover": {
-      backgroundColor: theme.fn.variant({
-        variant: "light",
-        color: theme.primaryColor,
-      }).background,
-      color: theme.fn.variant({ variant: "light", color: theme.primaryColor })
-        .color,
+      backgroundColor: "rgba(242, 29, 118, 0.10)",
+      color: "rgba(242, 29, 118, 1)",
     },
   },
 

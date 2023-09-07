@@ -129,9 +129,9 @@ export function Hello() {
                       largerThan={"md"}
                       styles={{ margin: "0px", height: "45px" }}
                     >
-                      <Button color="ddColorMain">
+                      <Button color="ddColorBackground">
                         <Text
-                          color="white"
+                          color="rgba(242, 29, 118, 1)"
                           style={{
                             fontWeight: 900,
                             fontSize: "18px",
@@ -854,7 +854,8 @@ export function MoreInfoScoring() {
                         style={{ marginBottom: "30px" }}
                       >
                         <Button
-                          variant={activeAIButton === 0 ? "light" : "outline"}
+                          color="ddColorMain"
+                          variant={activeAIButton === 0 ? "filled" : "outline"}
                           radius="xl"
                           compact
                           size="30px"
@@ -869,13 +870,15 @@ export function MoreInfoScoring() {
                             style={{
                               fontSize: "22px",
                               margin: "4px 10px 4px 10px",
+                              fontWeight: "700",
                             }}
                           >
                             AI 엔지니어링
                           </Text>
                         </Button>
                         <Button
-                          variant={activeAIButton === 1 ? "light" : "outline"}
+                          color="ddColorMain"
+                          variant={activeAIButton === 1 ? "filled" : "outline"}
                           radius="xl"
                           compact
                           size="30px"
@@ -890,13 +893,15 @@ export function MoreInfoScoring() {
                             style={{
                               fontSize: "22px",
                               margin: "4px 10px 4px 10px",
+                              fontWeight: "700",
                             }}
                           >
                             점수 계산
                           </Text>
                         </Button>
                         <Button
-                          variant={activeAIButton === 2 ? "light" : "outline"}
+                          color="ddColorMain"
+                          variant={activeAIButton === 2 ? "filled" : "outline"}
                           radius="xl"
                           compact
                           size="30px"
@@ -911,6 +916,7 @@ export function MoreInfoScoring() {
                             style={{
                               fontSize: "22px",
                               margin: "4px 10px 4px 10px",
+                              fontWeight: "700",
                             }}
                           >
                             피드백 생성
@@ -967,7 +973,8 @@ export function MoreInfoScoring() {
                         gap={"5px"}
                       >
                         <Button
-                          variant={activeAIButton === 0 ? "light" : "outline"}
+                          color="ddColorMain"
+                          variant={activeAIButton === 0 ? "filled" : "outline"}
                           radius="xl"
                           compact
                           onClick={() => {
@@ -977,10 +984,18 @@ export function MoreInfoScoring() {
                           }}
                           style={{ width: "100px" }}
                         >
-                          AI 엔지니어링
+                          <Text
+                            style={{
+                              fontSize: "14px",
+                              fontWeight: "700",
+                            }}
+                          >
+                            AI 엔지니어링
+                          </Text>
                         </Button>
                         <Button
-                          variant={activeAIButton === 1 ? "light" : "outline"}
+                          color="ddColorMain"
+                          variant={activeAIButton === 1 ? "filled" : "outline"}
                           radius="xl"
                           compact
                           onClick={() => {
@@ -990,10 +1005,18 @@ export function MoreInfoScoring() {
                           }}
                           style={{ width: "100px" }}
                         >
-                          점수 계산
+                          <Text
+                            style={{
+                              fontSize: "14px",
+                              fontWeight: "700",
+                            }}
+                          >
+                            점수 계산
+                          </Text>
                         </Button>
                         <Button
-                          variant={activeAIButton === 2 ? "light" : "outline"}
+                          color="ddColorMain"
+                          variant={activeAIButton === 2 ? "filled" : "outline"}
                           radius="xl"
                           compact
                           onClick={() => {
@@ -1003,7 +1026,14 @@ export function MoreInfoScoring() {
                           }}
                           style={{ width: "100px" }}
                         >
-                          피드백 생성
+                          <Text
+                            style={{
+                              fontSize: "14px",
+                              fontWeight: "700",
+                            }}
+                          >
+                            피드백 생성
+                          </Text>
                         </Button>
                       </Flex>
                     </Flex>
@@ -1428,8 +1458,9 @@ export function MoreInfoReport() {
                         style={{ marginBottom: "30px" }}
                       >
                         <Button
+                          color="ddColorMain"
                           variant={
-                            activeReportButton === 0 ? "light" : "outline"
+                            activeReportButton === 0 ? "filled" : "outline"
                           }
                           radius="xl"
                           compact
@@ -1451,8 +1482,9 @@ export function MoreInfoReport() {
                           </Text>
                         </Button>
                         <Button
+                          color="ddColorMain"
                           variant={
-                            activeReportButton === 1 ? "light" : "outline"
+                            activeReportButton === 1 ? "filled" : "outline"
                           }
                           radius="xl"
                           compact
@@ -1474,8 +1506,9 @@ export function MoreInfoReport() {
                           </Text>
                         </Button>
                         <Button
+                          color="ddColorMain"
                           variant={
-                            activeReportButton === 2 ? "light" : "outline"
+                            activeReportButton === 2 ? "filled" : "outline"
                           }
                           radius="xl"
                           compact
@@ -1548,8 +1581,9 @@ export function MoreInfoReport() {
                         gap={"5px"}
                       >
                         <Button
+                          color="ddColorMain"
                           variant={
-                            activeReportButton === 0 ? "light" : "outline"
+                            activeReportButton === 0 ? "filled" : "outline"
                           }
                           radius="xl"
                           compact
@@ -1560,11 +1594,19 @@ export function MoreInfoReport() {
                           }}
                           style={{ width: "100px" }}
                         >
-                          참여도 변화
+                          <Text
+                            style={{
+                              fontSize: "14px",
+                              fontWeight: "700",
+                            }}
+                          >
+                            참여도 변화
+                          </Text>
                         </Button>
                         <Button
+                          color="ddColorMain"
                           variant={
-                            activeReportButton === 1 ? "light" : "outline"
+                            activeReportButton === 1 ? "filled" : "outline"
                           }
                           radius="xl"
                           compact
@@ -1575,11 +1617,19 @@ export function MoreInfoReport() {
                           }}
                           style={{ width: "100px" }}
                         >
-                          점수 변화
+                          <Text
+                            style={{
+                              fontSize: "14px",
+                              fontWeight: "700",
+                            }}
+                          >
+                            점수 변화
+                          </Text>
                         </Button>
                         <Button
+                          color="ddColorMain"
                           variant={
-                            activeReportButton === 2 ? "light" : "outline"
+                            activeReportButton === 2 ? "filled" : "outline"
                           }
                           radius="xl"
                           compact
@@ -1590,7 +1640,14 @@ export function MoreInfoReport() {
                           }}
                           style={{ width: "100px" }}
                         >
-                          디펜스 총평
+                          <Text
+                            style={{
+                              fontSize: "14px",
+                              fontWeight: "700",
+                            }}
+                          >
+                            디펜스 총평
+                          </Text>
                         </Button>
                       </Flex>
                     </Flex>
