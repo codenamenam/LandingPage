@@ -574,7 +574,7 @@ export function FunctionScoring() {
                       피드백
                     </Text>
                     <Title style={{ marginBottom: "20px", fontSize: "45px" }}>
-                      알기쉽고 재미있는 피드백
+                      재미있는 피드백
                     </Title>
                     <Text style={{ fontSize: "25px" }}>
                       요약한 내용의 잘한 점과 아쉬운 점, 점수와 연속 참여
@@ -648,7 +648,7 @@ export function FunctionScoring() {
                           fontSize: "30px",
                         }}
                       >
-                        알기쉽고 재미있는 피드백
+                        재미있는 피드백
                       </Title>
                     </Flex>
                   </Flex>
