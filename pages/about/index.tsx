@@ -246,31 +246,21 @@ export function FunctionRead() {
                       height: "700px",
                     }}
                   >
-                    <MediaQuery
-                      smallerThan={"md"}
-                      styles={{
+                    <div
+                      style={{
+                        display: "flex",
                         justifyContent: "center",
-                        alignContent: "center",
-                        width: "100%",
-                        height: "370px",
+                        alignItems: "center",
                       }}
                     >
-                      <div
+                      <img
+                        src="./img/Read.png"
+                        height={"100%"}
                         style={{
-                          display: "flex",
-                          justifyContent: "center",
-                          alignItems: "center",
+                          filter: "drop-shadow(5px 10px 10px #c3c3c3)",
                         }}
-                      >
-                        <img
-                          src="./img/Read.png"
-                          height={"100%"}
-                          style={{
-                            filter: "drop-shadow(5px 10px 10px #c3c3c3)",
-                          }}
-                        />
-                      </div>
-                    </MediaQuery>
+                      />
+                    </div>
                   </MediaQuery>
                 </Grid.Col>
               </Grid>
@@ -320,7 +310,7 @@ export function FunctionRead() {
                         justifyContent: "center",
                         alignContent: "center",
                         width: "100%",
-                        height: "370px",
+                        height: "430px",
                       }}
                     >
                       <div
