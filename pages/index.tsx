@@ -20,7 +20,7 @@ import { Autoplay } from "swiper/modules";
 import SwiperCore from "swiper";
 
 //react-reveal
-import Fade from "react-reveal/Fade";
+import { Fade } from "react-awesome-reveal";
 
 // 사진 2장 + 도파민 디펜스 소개
 export function Hello() {
@@ -163,7 +163,7 @@ export function SimpleHello() {
     <MediaQuery largerThan="md" styles={{ height: "500px" }}>
       <MediaQuery smallerThan="md" styles={{ height: "300px" }}>
         <Center style={{ backgroundColor: "rgba(242, 29, 118, 0.10)" }}>
-          <Fade bottom>
+          <Fade>
             <Flex direction={"column"} align={"center"}>
               <MediaQuery largerThan={"md"} styles={{ fontSize: "2em" }}>
                 <MediaQuery smallerThan={"md"} styles={{ fontSize: "18px" }}>
@@ -338,7 +338,7 @@ export function Review() {
         <>
           <MediaQuery smallerThan={"md"} styles={{ display: "none" }}>
             <Center>
-              <Fade Bottom>
+              <Fade>
                 <Flex
                   direction={"column"}
                   align={"center"}
@@ -397,7 +397,7 @@ export function Review() {
 
           <MediaQuery largerThan={"md"} styles={{ display: "none" }}>
             <Center>
-              <Fade Bottom>
+              <Fade>
                 <Flex
                   direction={"column"}
                   align={"center"}
@@ -488,7 +488,7 @@ export function FunctionRead() {
                     padding: "0px",
                   }}
                 >
-                  <Fade bottom>
+                  <Fade>
                     <Flex direction={"column"} align={"flex-start"}>
                       <Text
                         style={{
@@ -564,7 +564,7 @@ export function FunctionRead() {
                 align="center"
               >
                 <Grid.Col md={12}>
-                  <Fade bottom>
+                  <Fade>
                     <Flex direction={"column"} align={"center"}>
                       <Text
                         style={{
@@ -624,7 +624,7 @@ export function FunctionRead() {
                   </MediaQuery>
                 </Grid.Col>
                 <Grid.Col md={12}>
-                  <Fade bottom>
+                  <Fade>
                     <Flex direction={"column"} align={"center"}>
                       <Text
                         style={{
@@ -675,7 +675,7 @@ export function FunctionSummary() {
                     padding: "0px",
                   }}
                 >
-                  <Fade bottom>
+                  <Fade>
                     <Flex direction={"column"} align={"flex-start"}>
                       <Text
                         style={{
@@ -746,7 +746,7 @@ export function FunctionSummary() {
                 align="center"
               >
                 <Grid.Col md={12}>
-                  <Fade bottom>
+                  <Fade>
                     <Flex direction={"column"} align={"center"}>
                       <Text
                         style={{
@@ -808,7 +808,7 @@ export function FunctionSummary() {
                   </MediaQuery>
                 </Grid.Col>
                 <Grid.Col md={12}>
-                  <Fade bottom>
+                  <Fade>
                     <Flex direction={"column"} align={"center"}>
                       <Text
                         style={{
@@ -862,7 +862,7 @@ export function FunctionScoring() {
                     padding: "0px",
                   }}
                 >
-                  <Fade bottom>
+                  <Fade>
                     <Flex direction={"column"} align={"flex-start"}>
                       <Text
                         style={{
@@ -933,7 +933,7 @@ export function FunctionScoring() {
                 align="center"
               >
                 <Grid.Col md={12}>
-                  <Fade bottom>
+                  <Fade>
                     <Flex direction={"column"} align={"center"}>
                       <Text
                         style={{
@@ -994,7 +994,7 @@ export function FunctionScoring() {
                   </MediaQuery>
                 </Grid.Col>
                 <Grid.Col md={12}>
-                  <Fade bottom>
+                  <Fade>
                     <Flex direction={"column"} align={"center"}>
                       <Text
                         style={{
@@ -1207,7 +1207,7 @@ export function MoreInfoScoring() {
               </Grid>
             </div>
           </MediaQuery>
-          <Fade bottom>
+          <Fade>
             <MediaQuery largerThan={"md"} styles={{ display: "none" }}>
               <div
                 style={{
@@ -1438,7 +1438,7 @@ export function Report() {
                     padding: "0px",
                   }}
                 >
-                  <Fade bottom>
+                  <Fade>
                     <Flex direction={"column"} align={"flex-start"}>
                       <Flex
                         direction={"row"}
@@ -1533,7 +1533,7 @@ export function Report() {
                 align="center"
               >
                 <Grid.Col md={12}>
-                  <Fade bottom>
+                  <Fade>
                     <Flex direction={"column"} align={"center"}>
                       <Text
                         style={{
@@ -1604,7 +1604,7 @@ export function Report() {
                   </MediaQuery>
                 </Grid.Col>
                 <Grid.Col md={12}>
-                  <Fade bottom>
+                  <Fade>
                     <Flex direction={"column"} align={"center"}>
                       <Text
                         style={{
@@ -2060,7 +2060,7 @@ export function Bye() {
         <>
           <MediaQuery smallerThan={"md"} styles={{ display: "none" }}>
             <Center style={{ height: "600px" }}>
-              <Fade bottom>
+              <Fade>
                 <Flex
                   direction={"column"}
                   align={"center"}
@@ -2096,7 +2096,7 @@ export function Bye() {
 
           <MediaQuery largerThan={"md"} styles={{ display: "none" }}>
             <Center style={{ height: "500px" }}>
-              <Fade bottom>
+              <Fade>
                 <Flex
                   direction={"column"}
                   align={"center"}
