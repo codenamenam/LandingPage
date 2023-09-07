@@ -9,7 +9,7 @@ const links = [
     label: "서비스 소개",
   },
   {
-    link: "/pricing/ab",
+    link: "/pricing",
     label: "Pricing",
   },
 ];
