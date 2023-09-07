@@ -18,7 +18,6 @@ import "swiper/css";
 import "swiper/css/pagination";
 import { Autoplay } from "swiper/modules";
 import SwiperCore from "swiper";
-import { height } from "@mui/system";
 
 // 사진 2장 + 도파민 디펜스 소개
 export function Hello() {
@@ -81,7 +80,7 @@ export function Hello() {
                           style={{
                             margin: "0px",
                             color: "rgba(242, 29, 118)",
-                            fontWeight: "800",
+                            fontWeight: "700",
                           }}
                         >
                           AI
@@ -1764,61 +1763,88 @@ interface UserReviewProps {
   comment: string;
 }
 
+// 리뷰 인풋 데이터
 const userReviewData = [
   {
     imageURL: "./img/user.png",
-    name: "남동훈",
-    job: "세명대학교 재학생",
-    title: "문해력 향상이 필요하다면 추천!",
-    comment: "도파민 디펜스하고 세명대 갔습니다!",
+    name: "정OO",
+    job: "고등학교 1학년",
+    title: "국어 공부에 도움이 돼요!",
+    comment: "항상 잘 이용하고 있어요!! 앞으로도 잘 부탁드립니다 >.<",
   },
   {
     imageURL: "./img/user.png",
-    name: "남훈동",
-    job: "상지대학교 재학생",
-    title: "문해력 최고!",
-    comment: "도파민 디펜스ㄱㄱ",
+    name: "김OO",
+    job: "고등학교 1학년",
+    title: "독해력이 좋아지는 느낌이에요.",
+    comment: "덕분에 아침마다 독해력 늘리고 있어서 감사해요!",
   },
   {
     imageURL: "./img/user.png",
-    name: "김선효",
-    job: "상지대학교 재학생",
-    title: "문해력 최고!",
-    comment: "도파민 디펜스ㄱㄱ",
+    name: "최OO",
+    job: "고등학교 2학년",
+    title: "좋은 서비스라고 생각합니다.",
+    comment:
+      "좋은 서비스 제공해주셔서 너무 감사하다구 말씀드리고 싶어요! 문해력 향상에 도움이 되고 있는 것 같아요!! 앞으로도 응원합니다 ..!!!",
   },
   {
     imageURL: "./img/user.png",
-    name: "김효선",
-    job: "상지대학교 재학생",
-    title: "문해력 최고!",
-    comment: "도파민 디펜스ㄱㄱ",
+    name: "박OO",
+    job: "대학생",
+    title: "매일 아침마다 도전중입니다!!",
+    comment:
+      "꾸준히 하는 습관을 만들고 싶었는데 요즘엔 아침마다 글을 읽게 되었어요!",
   },
   {
     imageURL: "./img/user.png",
-    name: "이건협",
-    job: "상지대학교 재학생",
-    title: "문해력 최고!",
-    comment: "도파민 디펜스ㄱㄱ",
+    name: "남OO",
+    job: "고등학교 1학년",
+    title: "피드백이 신기하고 재미있어요.",
+    comment:
+      "실제로 사람이 쓴것처럼 자세하게 설명해주니까 요약할때 도움이 돼요.",
   },
   {
     imageURL: "./img/user.png",
-    name: "이협건",
-    job: "상지대학교 재학생",
-    title: "문해력 최고!",
-    comment: "도파민 디펜스ㄱㄱ",
+    name: "이OO",
+    job: "고등학교 3학년",
+    title: "수능을 앞두고 사용중입니다.",
+    comment:
+      "감 떨어지지 않게 매일 아침 읽고 있는데 실제로도 도움이 되는것같아요..!!",
   },
 ];
 
 // 리뷰 - 카드
 export function UserReview(info: UserReviewProps) {
   return (
-    <Card shadow="sm" padding="lg" radius="md" withBorder>
+    <Card
+      shadow="sm"
+      padding="lg"
+      radius="md"
+      withBorder
+      style={{ height: "200px" }}
+    >
       <Group position="apart" mt="md" mb="xs">
         <Flex align={"center"} gap={"10px"}>
           <Image src={info.imageURL} style={{ width: "40px" }}></Image>
           <div>
-            <Text style={{ fontSize: "15px" }}>{info.name}</Text>
-            <Text style={{ fontSize: "15px" }}>{info.job}</Text>
+            <Text
+              style={{
+                fontSize: "15px",
+                fontWeight: "700",
+                color: "rgba(0,0,0,0.8)",
+              }}
+            >
+              {info.name}
+            </Text>
+            <Text
+              style={{
+                fontSize: "15px",
+                fontWeight: "700",
+                color: "rgba(0,0,0,0.5)",
+              }}
+            >
+              {info.job}
+            </Text>
           </div>
         </Flex>
       </Group>
@@ -1861,7 +1887,7 @@ export function Review() {
               <Flex
                 direction={"column"}
                 align={"center"}
-                style={{ margin: "100px 0 100px 0" }}
+                style={{ margin: "150px 0 50px 0" }}
               >
                 <Text style={{ fontSize: "25px", fontWeight: "bold" }}>
                   2023.9.5일 기준
@@ -1894,7 +1920,7 @@ export function Review() {
                       onSwiper={(onSwiper) => setSwiper(onSwiper)}
                       spaceBetween={10}
                       slidesPerView={3}
-                      style={{ margin: "100px 0 0 0" }}
+                      style={{ margin: "100px 0 100px 0" }}
                       autoplay={{ delay: 0, disableOnInteraction: false }}
                       speed={5000}
                       loop={true}
@@ -1949,7 +1975,8 @@ export function Review() {
                       slidesPerView={2}
                       style={{
                         margin: "30px 0 70px 0",
-                        height: "350px",
+                        height: "420px",
+                        width: "330px",
                         pointerEvents: "none",
                       }}
                       autoplay={{ delay: 0, disableOnInteraction: false }}
@@ -2051,13 +2078,13 @@ export default function About() {
     <>
       <Hello />
       <SimpleHello />
+      <Review />
       <FunctionRead />
       <FunctionSummary />
       <FunctionScoring />
       <MoreInfoScoring />
       <Report />
       <MoreInfoReport />
-      <Review />
       <Bye />
     </>
   );
