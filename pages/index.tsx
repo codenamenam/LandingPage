@@ -1114,7 +1114,7 @@ export function MoreInfoScoring() {
                   md={6}
                   order={2}
                   style={{
-                    padding: "0 0 0 30px",
+                    padding: "0 0 0 50px",
                   }}
                 >
                   <Flex direction={"column"} justify={"flex-start"}>
@@ -1195,7 +1195,7 @@ export function MoreInfoScoring() {
                         </Text>
                       </Button>
                     </Flex>
-                    <Title style={{ marginBottom: "20px", fontSize: "45px" }}>
+                    <Title style={{ margin: "0 0 20px 0", fontSize: "40px" }}>
                       피드백, 이렇게 만들었습니다.
                     </Title>
                     <Text style={{ fontSize: "25px" }}>
@@ -1736,7 +1736,7 @@ export function MoreInfoReport() {
                       md={6}
                       order={2}
                       style={{
-                        padding: "0 0 0 30px",
+                        padding: "0 0 0 50px",
                       }}
                     >
                       <Flex direction={"column"} justify={"flex-start"}>
@@ -1821,7 +1821,7 @@ export function MoreInfoReport() {
                           </Button>
                         </Flex>
                         <Title
-                          style={{ marginBottom: "20px", fontSize: "45px" }}
+                          style={{ marginBottom: "20px", fontSize: "40px" }}
                         >
                           레포트, 이렇게 만들었습니다.
                         </Title>
