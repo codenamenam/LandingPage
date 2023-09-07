@@ -7,14 +7,14 @@ import {
   rem,
   MediaQuery,
   Center,
+  Flex,
 } from "@mantine/core";
 
 import { useRouter } from "next/router";
 
 const useStyles = createStyles((theme) => ({
   footer: {
-    paddingTop: `calc(${theme.spacing.xl} * 2)`,
-    paddingBottom: `calc(${theme.spacing.xl} * 2)`,
+    paddingBottom: "12px",
     backgroundColor:
       theme.colorScheme === "dark"
         ? theme.colors.dark[6]
@@ -93,7 +93,6 @@ const useStyles = createStyles((theme) => ({
     display: "flex",
     justifyContent: "space-between",
     alignItems: "center",
-    marginTop: theme.spacing.xl,
     paddingTop: theme.spacing.xl,
     paddingBottom: theme.spacing.xl,
     borderTop: `${rem(1)} solid ${
@@ -149,22 +148,41 @@ export function FooterLinks({ data }: FooterLinksProps) {
 
   return (
     <footer className={classes.footer}>
-      <Container className={classes.inner}>
-        <div className={classes.logo} style={{ alignContent: "center" }}>
-          <div style={{ width: "100px" }}>
-            <Image src="./img/dd-logo.png" style={{ margin: "20px" }} />
-          </div>
-          <Text size="xs" color="dimmed" className={classes.description}>
-            하루 5분, 도파민으로부터 멀어지는 시간
-          </Text>
-        </div>
-
-        <div className={classes.groups}>{groups}</div>
-      </Container>
       <Container className={classes.afterFooter}>
-        <Text color="dimmed" size="md">
-          © 2023 도파민 디펜스. All rights reserved.
-        </Text>
+        <MediaQuery smallerThan={"md"} styles={{ display: "none" }}>
+          <Flex direction={"column"}>
+            <Text color="dimmed" size="md">
+              사업자등록번호: 747-35-01319 | 통신판매업 신고번호:
+              2023-서울용산-1169 | 대표: 김선효
+            </Text>
+            <Text color="dimmed" size="md">
+              상호명: 도파민디펜스 | 유선번호: 01055099750 주소: 서울특별시
+              용산구 효창원로69길 42-3(효창동)
+            </Text>
+            <Text color="dimmed" size="md">
+              © 2023 도파민 디펜스. All rights reserved.
+            </Text>
+          </Flex>
+        </MediaQuery>
+        <MediaQuery largerThan={"md"} styles={{ display: "none" }}>
+          <Flex direction={"column"}>
+            <Text color="dimmed" size="12px">
+              사업자등록번호: 747-35-01319
+            </Text>
+            <Text color="dimmed" size="12px">
+              통신판매업 신고번호: 2023-서울용산-1169 | 대표: 김선효
+            </Text>
+            <Text color="dimmed" size="12px">
+              상호명: 도파민디펜스 | 유선번호: 01055099750
+            </Text>
+            <Text color="dimmed" size="12px">
+              주소: 서울특별시 용산구 효창원로69길 42-3(효창동)
+            </Text>
+            <Text color="dimmed" size="12px">
+              © 2023 도파민 디펜스. All rights reserved.
+            </Text>
+          </Flex>
+        </MediaQuery>
       </Container>
     </footer>
   );
