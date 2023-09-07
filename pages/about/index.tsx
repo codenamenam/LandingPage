@@ -77,7 +77,7 @@ export function Hello() {
                       styles={{ fontSize: "25px" }}
                     >
                       <Title style={{ margin: "0px" }}>
-                        매일 5분 AI와 성장하는 문해력
+                        AI가 길러주는 문해력
                       </Title>
                     </MediaQuery>
                   </MediaQuery>
@@ -1894,7 +1894,11 @@ export function Review() {
                     <Swiper
                       onSwiper={(onSwiper) => setSwiper(onSwiper)}
                       slidesPerView={2}
-                      style={{ margin: "30px 0 70px 0", height: "350px" }}
+                      style={{
+                        margin: "30px 0 70px 0",
+                        height: "350px",
+                        pointerEvents: "none",
+                      }}
                       autoplay={{ delay: 0, disableOnInteraction: false }}
                       speed={5000}
                       loop={true}
