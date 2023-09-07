@@ -110,8 +110,11 @@ interface HeaderResponsiveProps {
 }
 
 export function HeaderResponsive({ links }: HeaderResponsiveProps) {
+  const safeLinks = links || [];
   const [opened, { toggle, close }] = useDisclosure(false);
-  const [active, setActive] = useState(links[0].link);
+  const [active, setActive] = useState(
+    safeLinks.length > 0 ? safeLinks[0].link : ""
+  );
   const { classes, cx } = useStyles();
   const router = useRouter();
 

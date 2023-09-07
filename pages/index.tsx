@@ -1,25 +1,5 @@
-import { HeaderResponsive } from "@/components/header";
 import About from "./about";
 import { FooterLinks } from "@/components/footer";
-
-const links = [
-  {
-    link: "/",
-    label: "서비스 소개",
-  },
-  {
-    link: "/pay",
-    label: "결제하기",
-  },
-  {
-    link: "/pricing",
-    label: "Pricing",
-  },
-  {
-    link: "support",
-    label: "고객센터",
-  },
-];
 
 const footerLinks = [
   {
@@ -27,7 +7,7 @@ const footerLinks = [
     links: [
       {
         label: "서비스 소개",
-        link: "/",
+        link: "/about",
       },
       {
         label: "결제하기",
@@ -48,7 +28,6 @@ const footerLinks = [
 export default function Home() {
   return (
     <div style={{ backgroundColor: "white", margin: "0px" }}>
-      <HeaderResponsive links={links} />
       <About />
       <FooterLinks data={footerLinks} />
     </div>
