@@ -29,7 +29,6 @@ export default function Home() {
   return (
     <div style={{ backgroundColor: "white", margin: "0px" }}>
       <About />
-      <FooterLinks data={footerLinks} />
     </div>
   );
 }
