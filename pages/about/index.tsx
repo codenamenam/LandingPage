@@ -1940,9 +1940,9 @@ export function Review() {
               <Flex
                 direction={"column"}
                 align={"center"}
-                style={{ marginTop: "40px" }}
+                style={{ margin: "60px 0 70px 0" }}
               >
-                <Text style={{ fontSize: "15px", fontWeight: "bold" }}>
+                <Text style={{ fontSize: "18px", fontWeight: "bold" }}>
                   2023.9.5일 기준
                 </Text>
                 <Title style={{ fontSize: "30px" }}>도파민 디펜스 사용자</Title>
