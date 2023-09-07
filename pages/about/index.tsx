@@ -27,7 +27,7 @@ export function Hello() {
       <MediaQuery largerThan={"md"} styles={{ width: "1060px" }}>
         <MediaQuery
           smallerThan={"md"}
-          styles={{ width: "300px", marginTop: "30px" }}
+          styles={{ width: "280px", marginTop: "30px" }}
         >
           <div>
             <Grid style={{ padding: "100px 0 100px 0" }} align="center">
@@ -76,9 +76,35 @@ export function Hello() {
                       smallerThan={"md"}
                       styles={{ fontSize: "25px" }}
                     >
-                      <Title style={{ margin: "0px" }}>
-                        AI가 길러주는 문해력
-                      </Title>
+                      <Flex>
+                        <Title
+                          style={{
+                            margin: "0px",
+                            color: "rgba(242, 29, 118)",
+                            fontWeight: "800",
+                          }}
+                        >
+                          AI
+                        </Title>
+                        <Title
+                          style={{
+                            margin: "0px",
+                            color: "rgba(0,0,0,0.4)",
+                            fontWeight: "700",
+                          }}
+                        >
+                          가 길러주는&nbsp;
+                        </Title>
+                        <Title
+                          style={{
+                            margin: "0px",
+                            color: "rgba(242, 29, 118)",
+                            fontWeight: "800",
+                          }}
+                        >
+                          문해력
+                        </Title>
+                      </Flex>
                     </MediaQuery>
                   </MediaQuery>
 
@@ -310,7 +336,7 @@ export function FunctionRead() {
                         justifyContent: "center",
                         alignContent: "center",
                         width: "100%",
-                        height: "600px",
+                        height: "550px",
                       }}
                     >
                       <div
@@ -488,7 +514,7 @@ export function FunctionSummary() {
                         justifyContent: "center",
                         alignContent: "center",
                         width: "100%",
-                        height: "600px",
+                        height: "550px",
                       }}
                     >
                       <div
@@ -668,7 +694,7 @@ export function FunctionScoring() {
                         justifyContent: "center",
                         alignContent: "center",
                         width: "100%",
-                        height: "600px",
+                        height: "550px",
                       }}
                     >
                       <div
@@ -1242,7 +1268,7 @@ export function Report() {
                         justifyContent: "center",
                         alignContent: "center",
                         width: "100%",
-                        height: "600px",
+                        height: "550px",
                       }}
                     >
                       <div
@@ -1900,7 +1926,7 @@ export function Bye() {
       >
         <>
           <MediaQuery smallerThan={"md"} styles={{ display: "none" }}>
-            <Center style={{ height: "500px" }}>
+            <Center style={{ height: "600px" }}>
               <Flex
                 direction={"column"}
                 align={"center"}
@@ -1926,7 +1952,7 @@ export function Bye() {
                       fontSize: "18px",
                     }}
                   >
-                    지금 시작하기
+                    무료 시작하기
                   </Text>
                 </Button>
               </Flex>
@@ -1934,7 +1960,7 @@ export function Bye() {
           </MediaQuery>
 
           <MediaQuery largerThan={"md"} styles={{ display: "none" }}>
-            <Center style={{ height: "300px" }}>
+            <Center style={{ height: "500px" }}>
               <Flex
                 direction={"column"}
                 align={"center"}
@@ -1952,7 +1978,7 @@ export function Bye() {
                       fontSize: "15px",
                     }}
                   >
-                    지금 시작하기
+                    무료 시작하기
                   </Text>
                 </Button>
               </Flex>
