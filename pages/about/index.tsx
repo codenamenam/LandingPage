@@ -310,7 +310,7 @@ export function FunctionRead() {
                         justifyContent: "center",
                         alignContent: "center",
                         width: "100%",
-                        height: "430px",
+                        height: "500px",
                       }}
                     >
                       <div
@@ -488,7 +488,7 @@ export function FunctionSummary() {
                         justifyContent: "center",
                         alignContent: "center",
                         width: "100%",
-                        height: "430px",
+                        height: "500px",
                       }}
                     >
                       <div
@@ -668,7 +668,7 @@ export function FunctionScoring() {
                         justifyContent: "center",
                         alignContent: "center",
                         width: "100%",
-                        height: "430px",
+                        height: "500px",
                       }}
                     >
                       <div
@@ -1242,7 +1242,7 @@ export function Report() {
                         justifyContent: "center",
                         alignContent: "center",
                         width: "100%",
-                        height: "430px",
+                        height: "500px",
                       }}
                     >
                       <div
