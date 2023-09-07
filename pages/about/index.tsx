@@ -1860,6 +1860,7 @@ export function UserReview(info: UserReviewProps) {
 // 리뷰
 export function Review() {
   const [swiper, setSwiper] = useState<SwiperCore>();
+  SwiperCore.use([Autoplay]);
 
   const userReivewsSlides = userReviewData.map((review, index) => (
     <SwiperSlide key={index}>
