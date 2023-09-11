@@ -88,6 +88,25 @@ fbq('track', 'PageView');
           }}
         />
         ;
+        <Script
+          async
+          src="https://www.googletagmanager.com/gtag/js?id=G-YDM6TNMLS9"
+        />
+        ;
+        <Script
+          id="GA"
+          strategy="lazyOnload"
+          dangerouslySetInnerHTML={{
+            __html: `
+window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-YDM6TNMLS9');
+`,
+          }}
+        />
+        ;
       </Head>
       <body style={{ margin: "0px" }}>
         <Main />

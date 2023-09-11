@@ -75,17 +75,29 @@ export function Hello() {
               <Grid.Col md={6} orderMd={2} order={1} style={{ padding: "0px" }}>
                 <Fade>
                   <Flex direction={"column"} align={"center"}>
-                    <MediaQuery largerThan={"md"} styles={{ fontSize: "35px" }}>
+                    <MediaQuery
+                      largerThan={"md"}
+                      styles={{ width: "350px", margin: "0 0 50px 0" }}
+                    >
                       <MediaQuery
                         smallerThan={"md"}
-                        styles={{ fontSize: "25px" }}
+                        styles={{ width: "280px", margin: "0 0 0 0" }}
                       >
-                        <Flex>
+                        <div>
+                          <Image src={"./img/dd-logo.png"} />
+                        </div>
+                      </MediaQuery>
+                    </MediaQuery>
+
+                    <MediaQuery smallerThan={"md"} styles={{ display: "none" }}>
+                      <Flex direction={"column"}>
+                        <Flex style={{ marginBottom: "15px" }}>
                           <Title
                             style={{
                               margin: "0px",
                               color: "rgba(242, 29, 118)",
                               fontWeight: "700",
+                              fontSize: "45px",
                             }}
                           >
                             AI
@@ -95,6 +107,7 @@ export function Hello() {
                               margin: "0px",
                               color: "rgba(0,0,0,0.4)",
                               fontWeight: "700",
+                              fontSize: "45px",
                             }}
                           >
                             가 길러주는&nbsp;
@@ -104,47 +117,87 @@ export function Hello() {
                               margin: "0px",
                               color: "rgba(242, 29, 118)",
                               fontWeight: "800",
+                              fontSize: "45px",
                             }}
                           >
                             문해력
                           </Title>
                         </Flex>
-                      </MediaQuery>
+                        <Center>
+                          <Button
+                            color="ddColorBackground"
+                            style={{ height: "40px" }}
+                          >
+                            <Text
+                              color="rgba(242, 29, 118, 1)"
+                              style={{
+                                fontWeight: 900,
+                                fontSize: "18px",
+                              }}
+                            >
+                              무료 시작하기
+                            </Text>
+                          </Button>
+                        </Center>
+                      </Flex>
                     </MediaQuery>
 
-                    <MediaQuery
-                      largerThan={"md"}
-                      styles={{ width: "350px", margin: "10px" }}
-                    >
-                      <MediaQuery
-                        smallerThan={"md"}
-                        styles={{ width: "280px", margin: "10px 0 0 0" }}
-                      >
-                        <div>
-                          <Image src={"./img/dd-logo.png"} />
-                        </div>
-                      </MediaQuery>
-                    </MediaQuery>
-                    <MediaQuery
-                      smallerThan={"md"}
-                      styles={{ margin: "10px 0 40px" }}
-                    >
-                      <MediaQuery
-                        largerThan={"md"}
-                        styles={{ margin: "0px", height: "45px" }}
-                      >
-                        <Button color="ddColorBackground">
-                          <Text
-                            color="rgba(242, 29, 118, 1)"
+                    <MediaQuery largerThan={"md"} styles={{ display: "none" }}>
+                      <Flex direction={"column"}>
+                        <Flex style={{ marginTop: "30px" }}>
+                          <Title
                             style={{
-                              fontWeight: 900,
-                              fontSize: "18px",
+                              margin: "0px",
+                              color: "rgba(242, 29, 118)",
+                              fontWeight: "700",
+                              fontSize: "32px",
                             }}
                           >
-                            무료 시작하기
-                          </Text>
-                        </Button>
-                      </MediaQuery>
+                            AI
+                          </Title>
+                          <Title
+                            style={{
+                              margin: "0px",
+                              color: "rgba(0,0,0,0.4)",
+                              fontWeight: "700",
+                              fontSize: "32px",
+                            }}
+                          >
+                            가 길러주는&nbsp;
+                          </Title>
+                          <Title
+                            style={{
+                              margin: "0px",
+                              color: "rgba(242, 29, 118)",
+                              fontWeight: "800",
+                              fontSize: "32px",
+                            }}
+                          >
+                            문해력
+                          </Title>
+                        </Flex>
+                        <Center>
+                          <Button
+                            color="ddColorBackground"
+                            style={{
+                              margin: "10px 0 20px 0",
+                              height: "35px",
+                              width: "110px",
+                              padding: "5px",
+                            }}
+                          >
+                            <Text
+                              color="rgba(242, 29, 118, 1)"
+                              style={{
+                                fontWeight: 900,
+                                fontSize: "16px",
+                              }}
+                            >
+                              무료 시작하기
+                            </Text>
+                          </Button>
+                        </Center>
+                      </Flex>
                     </MediaQuery>
                   </Flex>
                 </Fade>
