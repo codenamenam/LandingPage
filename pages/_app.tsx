@@ -55,6 +55,7 @@ export default function App({ Component, pageProps }: AppProps) {
       router.events.off("hashChangeComplete", handleRouteChange);
     };
   }, [router.events]);
+
   return (
     <>
       <Script
