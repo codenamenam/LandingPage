@@ -77,7 +77,7 @@ export function Hello() {
                   <Flex direction={"column"} align={"center"}>
                     <MediaQuery
                       largerThan={"md"}
-                      styles={{ width: "350px", margin: "0 0 50px 0" }}
+                      styles={{ width: "300px", margin: "0 0 5px 0" }}
                     >
                       <MediaQuery
                         smallerThan={"md"}
@@ -91,13 +91,13 @@ export function Hello() {
 
                     <MediaQuery smallerThan={"md"} styles={{ display: "none" }}>
                       <Flex direction={"column"}>
-                        <Flex style={{ marginBottom: "15px" }}>
+                        <Flex style={{ marginBottom: "50px" }}>
                           <Title
                             style={{
                               margin: "0px",
                               color: "rgba(242, 29, 118)",
-                              fontWeight: "700",
-                              fontSize: "45px",
+                              fontWeight: "800",
+                              fontSize: "30px",
                             }}
                           >
                             AI
@@ -106,8 +106,8 @@ export function Hello() {
                             style={{
                               margin: "0px",
                               color: "rgba(0,0,0,0.4)",
-                              fontWeight: "700",
-                              fontSize: "45px",
+                              fontWeight: "900",
+                              fontSize: "30px",
                             }}
                           >
                             가 길러주는&nbsp;
@@ -116,8 +116,8 @@ export function Hello() {
                             style={{
                               margin: "0px",
                               color: "rgba(242, 29, 118)",
-                              fontWeight: "800",
-                              fontSize: "45px",
+                              fontWeight: "900",
+                              fontSize: "30px",
                             }}
                           >
                             문해력
@@ -127,14 +127,15 @@ export function Hello() {
                           <Button
                             component="a"
                             color="ddColorBackground"
-                            style={{ height: "40px" }}
+                            style={{ height: "60px", width: "170px" }}
                             href="https://pf.kakao.com/_zmTAG/chat"
+                            radius={"10px"}
                           >
                             <Text
                               color="rgba(242, 29, 118, 1)"
                               style={{
                                 fontWeight: 900,
-                                fontSize: "18px",
+                                fontSize: "24px",
                               }}
                             >
                               무료 시작하기
@@ -146,13 +147,13 @@ export function Hello() {
 
                     <MediaQuery largerThan={"md"} styles={{ display: "none" }}>
                       <Flex direction={"column"}>
-                        <Flex style={{ marginTop: "30px" }}>
+                        <Flex style={{ margin: "5px 0 20px 0" }}>
                           <Title
                             style={{
                               margin: "0px",
                               color: "rgba(242, 29, 118)",
                               fontWeight: "700",
-                              fontSize: "32px",
+                              fontSize: "24px",
                             }}
                           >
                             AI
@@ -162,7 +163,7 @@ export function Hello() {
                               margin: "0px",
                               color: "rgba(0,0,0,0.4)",
                               fontWeight: "700",
-                              fontSize: "32px",
+                              fontSize: "24px",
                             }}
                           >
                             가 길러주는&nbsp;
@@ -172,7 +173,7 @@ export function Hello() {
                               margin: "0px",
                               color: "rgba(242, 29, 118)",
                               fontWeight: "800",
-                              fontSize: "32px",
+                              fontSize: "24px",
                             }}
                           >
                             문해력
@@ -184,17 +185,18 @@ export function Hello() {
                             href="https://pf.kakao.com/_zmTAG/chat"
                             color="ddColorBackground"
                             style={{
-                              margin: "10px 0 20px 0",
-                              height: "35px",
-                              width: "110px",
+                              margin: "20px 0 30px 0",
+                              height: "50px",
+                              width: "140px",
                               padding: "5px",
                             }}
+                            radius={"10px"}
                           >
                             <Text
                               color="rgba(242, 29, 118, 1)"
                               style={{
                                 fontWeight: 900,
-                                fontSize: "16px",
+                                fontSize: "20px",
                               }}
                             >
                               무료 시작하기
@@ -404,10 +406,10 @@ export function Review() {
                   <Text style={{ fontSize: "25px", fontWeight: "bold" }}>
                     2023.9.5일 기준
                   </Text>
-                  <Title style={{ fontSize: "60px" }}>
+                  <Title style={{ fontSize: "50px" }}>
                     도파민 디펜스 사용자
                   </Title>
-                  <Title style={{ fontSize: "60px" }} color="ddColorMain">
+                  <Title style={{ fontSize: "90px" }} color="ddColorMain">
                     1378명
                   </Title>
                   <Text
@@ -463,10 +465,10 @@ export function Review() {
                   <Text style={{ fontSize: "18px", fontWeight: "bold" }}>
                     2023.9.5일 기준
                   </Text>
-                  <Title style={{ fontSize: "30px" }}>
+                  <Title style={{ fontSize: "26px" }}>
                     도파민 디펜스 사용자
                   </Title>
-                  <Title style={{ fontSize: "40px" }} color="ddColorMain">
+                  <Title style={{ fontSize: "52px" }} color="ddColorMain">
                     1378명
                   </Title>
                   <Text
@@ -551,7 +553,7 @@ export function FunctionRead() {
                         style={{
                           marginBottom: "20px",
                           fontSize: "25px",
-                          fontWeight: "bold",
+                          fontWeight: 900,
                         }}
                         color="ddColorMain"
                       >
@@ -560,15 +562,28 @@ export function FunctionRead() {
                       <Title
                         style={{
                           marginBottom: "20px",
-                          fontSize: "45px",
+                          fontSize: "55px",
+                          fontWeight: 900,
                         }}
                       >
                         쉽고 재미있는 글 읽기
                       </Title>
-                      <Text style={{ fontSize: "25px" }}>
+                      <Text
+                        style={{
+                          fontSize: "21px",
+                          color: "grey",
+                          fontWeight: 500,
+                        }}
+                      >
                         사전에 선정한 지문을 매일 오전 8시에
                       </Text>
-                      <Text style={{ fontSize: "25px" }}>
+                      <Text
+                        style={{
+                          fontSize: "21px",
+                          color: "grey",
+                          fontWeight: 500,
+                        }}
+                      >
                         카톡으로 보내드립니다.
                       </Text>
                     </Flex>
@@ -627,7 +642,7 @@ export function FunctionRead() {
                         style={{
                           marginBottom: "5px",
                           fontSize: "18px",
-                          fontWeight: "bold",
+                          fontWeight: 900,
                         }}
                         color="ddColorMain"
                       >
@@ -636,7 +651,8 @@ export function FunctionRead() {
                       <Title
                         style={{
                           marginBottom: "5px",
-                          fontSize: "30px",
+                          fontSize: "33px",
+                          fontWeight: 900,
                         }}
                       >
                         쉽고 재미있는 글 읽기
@@ -688,11 +704,18 @@ export function FunctionRead() {
                           fontSize: "16px",
                           marginTop: "15px",
                           fontWeight: "500",
+                          color: "grey",
                         }}
                       >
                         사전에 엄선된 독서 지문을
                       </Text>
-                      <Text style={{ fontSize: "16px", fontWeight: "500" }}>
+                      <Text
+                        style={{
+                          fontSize: "16px",
+                          fontWeight: "500",
+                          color: "grey",
+                        }}
+                      >
                         매일 오전 8시에 카톡으로 보내드립니다.
                       </Text>
                     </Flex>
@@ -726,8 +749,8 @@ export function FunctionSummary() {
               >
                 <Grid.Col
                   md={6}
-                  orderMd={1}
-                  order={2}
+                  orderMd={2}
+                  order={1}
                   style={{
                     padding: "0px",
                   }}
@@ -738,19 +761,37 @@ export function FunctionSummary() {
                         style={{
                           marginBottom: "20px",
                           fontSize: "25px",
-                          fontWeight: "bold",
+                          fontWeight: "900",
                         }}
                         color="ddColorMain"
                       >
                         요약하기
                       </Text>
-                      <Title style={{ marginBottom: "20px", fontSize: "45px" }}>
+                      <Title
+                        style={{
+                          marginBottom: "20px",
+                          fontSize: "55px",
+                          fontWeight: "900",
+                        }}
+                      >
                         쉽게 기르는 문해력
                       </Title>
-                      <Text style={{ fontSize: "25px" }}>
+                      <Text
+                        style={{
+                          fontSize: "21px",
+                          color: "grey",
+                          fontWeight: "500",
+                        }}
+                      >
                         문장을 이해하고 요약하는 과정에서 문맥을 파악하고
                       </Text>
-                      <Text style={{ fontSize: "25px" }}>
+                      <Text
+                        style={{
+                          fontSize: "21px",
+                          color: "grey",
+                          fontWeight: "500",
+                        }}
+                      >
                         단어의 의미를 유추하는 능력이 길러집니다.
                       </Text>
                     </Flex>
@@ -758,8 +799,8 @@ export function FunctionSummary() {
                 </Grid.Col>
                 <Grid.Col
                   md={6}
-                  orderMd={2}
-                  order={1}
+                  orderMd={1}
+                  order={2}
                   style={{
                     padding: "0px",
                     display: "flex",
@@ -809,7 +850,7 @@ export function FunctionSummary() {
                         style={{
                           marginBottom: "5px",
                           fontSize: "18px",
-                          fontWeight: "bold",
+                          fontWeight: 900,
                         }}
                         color="ddColorMain"
                       >
@@ -819,7 +860,8 @@ export function FunctionSummary() {
                         <Title
                           style={{
                             marginBottom: "5px",
-                            fontSize: "30px",
+                            fontSize: "33px",
+                            fontWeight: 900,
                           }}
                         >
                           쉽게 기르는 문해력
@@ -872,14 +914,27 @@ export function FunctionSummary() {
                           fontSize: "16px",
                           fontWeight: "500",
                           marginTop: "15px",
+                          color: "grey",
                         }}
                       >
                         문장을 이해하고 요약하는 과정에서
                       </Text>
-                      <Text style={{ fontSize: "16px", fontWeight: "500" }}>
+                      <Text
+                        style={{
+                          fontSize: "16px",
+                          fontWeight: "500",
+                          color: "grey",
+                        }}
+                      >
                         문맥을 파악하고 단어의 의미를 유추하는
                       </Text>
-                      <Text style={{ fontSize: "16px", fontWeight: "500" }}>
+                      <Text
+                        style={{
+                          fontSize: "16px",
+                          fontWeight: "500",
+                          color: "grey",
+                        }}
+                      >
                         능력이 길러집니다.
                       </Text>
                     </Flex>
@@ -925,19 +980,25 @@ export function FunctionScoring() {
                         style={{
                           marginBottom: "20px",
                           fontSize: "25px",
-                          fontWeight: "bold",
+                          fontWeight: 900,
                         }}
                         color="ddColorMain"
                       >
                         피드백
                       </Text>
-                      <Title style={{ marginBottom: "20px", fontSize: "45px" }}>
+                      <Title
+                        style={{
+                          marginBottom: "20px",
+                          fontSize: "55px",
+                          fontWeight: 900,
+                        }}
+                      >
                         재미있는 피드백
                       </Title>
-                      <Text style={{ fontSize: "25px" }}>
+                      <Text style={{ fontSize: "21px", color: "grey" }}>
                         요약한 내용의 잘한 점과 아쉬운 점, 점수와 연속 참여
                       </Text>
-                      <Text style={{ fontSize: "25px" }}>
+                      <Text style={{ fontSize: "21px", color: "grey" }}>
                         기록, 순위 제공으로 동기부여를 제공합니다.
                       </Text>
                     </Flex>
@@ -996,7 +1057,7 @@ export function FunctionScoring() {
                         style={{
                           marginBottom: "5px",
                           fontSize: "18px",
-                          fontWeight: "bold",
+                          fontWeight: 900,
                         }}
                         color="ddColorMain"
                       >
@@ -1005,7 +1066,8 @@ export function FunctionScoring() {
                       <Flex direction={"column"} align={"center"}>
                         <Title
                           style={{
-                            fontSize: "30px",
+                            fontSize: "33px",
+                            fontWeight: 900,
                           }}
                         >
                           재미있는 피드백
@@ -1058,6 +1120,7 @@ export function FunctionScoring() {
                           fontSize: "16px",
                           fontWeight: "500",
                           marginTop: "15px",
+                          color: "grey",
                         }}
                       >
                         요약한 내용의 잘한 점과 아쉬운 점,
@@ -1066,6 +1129,7 @@ export function FunctionScoring() {
                         style={{
                           fontSize: "16px",
                           fontWeight: "500",
+                          color: "grey",
                         }}
                       >
                         점수와 연속 참여 기록, 순위 제공으로
@@ -1074,6 +1138,7 @@ export function FunctionScoring() {
                         style={{
                           fontSize: "16px",
                           fontWeight: "500",
+                          color: "grey",
                         }}
                       >
                         동기부여를 제공합니다.
@@ -1252,10 +1317,22 @@ export function MoreInfoScoring() {
                         </Text>
                       </Button>
                     </Flex>
-                    <Title style={{ margin: "0 0 20px 0", fontSize: "40px" }}>
+                    <Title
+                      style={{
+                        margin: "0 0 20px 0",
+                        fontSize: "42px",
+                        fontWeight: 900,
+                      }}
+                    >
                       피드백, 이렇게 만들었습니다.
                     </Title>
-                    <Text style={{ fontSize: "25px" }}>
+                    <Text
+                      style={{
+                        fontSize: "21px",
+                        fontWeight: 500,
+                        color: "grey",
+                      }}
+                    >
                       도파민 디펜스가 자체 개발한 AI 기술로 요약 내용을
                       채점합니다. 요약을 세분화하여 채점 기준에 맞게 점수를
                       부여하고 이후에 심화된 피드백을 생성합니다.
@@ -1290,14 +1367,16 @@ export function MoreInfoScoring() {
                       >
                         <Title
                           style={{
-                            fontSize: "30px",
+                            fontSize: "33px",
+                            fontWeight: 900,
                           }}
                         >
                           피드백,
                         </Title>
                         <Title
                           style={{
-                            fontSize: "30px",
+                            fontSize: "33px",
+                            fontWeight: 900,
                           }}
                         >
                           이렇게 만들었습니다.
@@ -1432,6 +1511,7 @@ export function MoreInfoScoring() {
                         style={{
                           fontSize: "16px",
                           fontWeight: "500",
+                          color: "grey",
                         }}
                       >
                         도파민 디펜스가 자체 개발한 AI 기술로
@@ -1440,6 +1520,7 @@ export function MoreInfoScoring() {
                         style={{
                           fontSize: "16px",
                           fontWeight: "500",
+                          color: "grey",
                         }}
                       >
                         요약 내용을 채점합니다. 요약을 세분화하여
@@ -1448,6 +1529,7 @@ export function MoreInfoScoring() {
                         style={{
                           fontSize: "16px",
                           fontWeight: "500",
+                          color: "grey",
                         }}
                       >
                         채점 기준에 맞게 점수를 부여하고 이후에
@@ -1456,6 +1538,7 @@ export function MoreInfoScoring() {
                         style={{
                           fontSize: "16px",
                           fontWeight: "500",
+                          color: "grey",
                         }}
                       >
                         심화된 피드백을 생성합니다.
@@ -1519,15 +1602,28 @@ export function Report() {
                             fontWeight: "600",
                             marginLeft: "10px",
                           }}
-                          color="rgba(0,0,0,0.3)"
+                          color="rgba(0,0,0,0.4)"
                         >
                           9월 중 제공 예정
                         </Text>
                       </Flex>
-                      <Title style={{ marginBottom: "20px", fontSize: "45px" }}>
+                      <Title
+                        style={{
+                          marginBottom: "20px",
+                          fontSize: "55px",
+                          fontWeight: 900,
+                        }}
+                      >
                         꼼꼼하고 자세한 레포트
                       </Title>
-                      <Text style={{ fontSize: "25px", marginBottom: "10px" }}>
+                      <Text
+                        style={{
+                          fontSize: "21px",
+                          marginBottom: "10px",
+                          color: "grey",
+                          fontWeight: 500,
+                        }}
+                      >
                         도파민 디펜스는 꾸준한 참여가 중요합니다. 주간 레포트,
                         월간 레포트로 참여도와 평균 점수의 변화, 디펜스 총평을
                         제공해드립니다.
@@ -1599,7 +1695,7 @@ export function Report() {
                           fontSize: "12px",
                           fontWeight: "600",
                         }}
-                        color="rgba(0,0,0,0.4)"
+                        color="rgba(0,0,0,0.5)"
                       >
                         9월 중 제공예정
                       </Text>
@@ -1607,7 +1703,7 @@ export function Report() {
                         style={{
                           marginBottom: "5px",
                           fontSize: "18px",
-                          fontWeight: "bold",
+                          fontWeight: 900,
                         }}
                         color="ddColorMain"
                       >
@@ -1617,7 +1713,8 @@ export function Report() {
                       <Flex direction={"column"} align={"center"}>
                         <Title
                           style={{
-                            fontSize: "30px",
+                            fontSize: "33px",
+                            fontWeight: 900,
                           }}
                         >
                           꼼꼼하고 자세한 레포트
@@ -1670,6 +1767,7 @@ export function Report() {
                           fontSize: "16px",
                           fontWeight: "500",
                           marginTop: "15px",
+                          color: "grey",
                         }}
                       >
                         도파민 디펜스는 꾸준한 참여가 중요합니다.
@@ -1678,6 +1776,7 @@ export function Report() {
                         style={{
                           fontSize: "16px",
                           fontWeight: "500",
+                          color: "grey",
                         }}
                       >
                         주간 레포트, 월간 레포트로 참여도와 평균
@@ -1686,6 +1785,7 @@ export function Report() {
                         style={{
                           fontSize: "16px",
                           fontWeight: "500",
+                          color: "grey",
                         }}
                       >
                         점수의 변화, 디펜스 총평을 제공해드립니다.
@@ -1878,11 +1978,21 @@ export function MoreInfoReport() {
                           </Button>
                         </Flex>
                         <Title
-                          style={{ marginBottom: "20px", fontSize: "40px" }}
+                          style={{
+                            marginBottom: "20px",
+                            fontSize: "40px",
+                            fontWeight: 800,
+                          }}
                         >
                           작심 30일, 오늘부터 도전하기
                         </Title>
-                        <Text style={{ fontSize: "25px" }}>
+                        <Text
+                          style={{
+                            fontSize: "21px",
+                            fontWeight: 500,
+                            color: "grey",
+                          }}
+                        >
                           꾸준히 참여할수록 데이터는 쌓입니다. 도파민 디펜스는
                           데이터를 가공하여 사용자마다 개인화된 레포트를
                           제공합니다. 또한 참여 기록을 평가하는 AI가 총평을
@@ -1910,14 +2020,16 @@ export function MoreInfoReport() {
                         >
                           <Title
                             style={{
-                              fontSize: "30px",
+                              fontSize: "33px",
+                              fontWeight: 800,
                             }}
                           >
                             작심 30일,
                           </Title>
                           <Title
                             style={{
-                              fontSize: "30px",
+                              fontSize: "33px",
+                              fontWeight: 800,
                             }}
                           >
                             오늘부터 도전하기
@@ -2059,6 +2171,7 @@ export function MoreInfoReport() {
                             fontSize: "16px",
                             fontWeight: "500",
                             marginTop: "15px",
+                            color: "grey",
                           }}
                         >
                           꾸준히 참여할수록 데이터는 쌓입니다.
@@ -2067,6 +2180,7 @@ export function MoreInfoReport() {
                           style={{
                             fontSize: "16px",
                             fontWeight: "500",
+                            color: "grey",
                           }}
                         >
                           도파민 디펜스는 데이터를 가공하여 사용자마다
@@ -2075,6 +2189,7 @@ export function MoreInfoReport() {
                           style={{
                             fontSize: "16px",
                             fontWeight: "500",
+                            color: "grey",
                           }}
                         >
                           개인화된 레포트를 제공합니다. 또한 참여 기록을
@@ -2083,6 +2198,7 @@ export function MoreInfoReport() {
                           style={{
                             fontSize: "16px",
                             fontWeight: "500",
+                            color: "grey",
                           }}
                         >
                           평가하는 AI가 총평을 생성하여 1:1 선생님이
@@ -2091,6 +2207,7 @@ export function MoreInfoReport() {
                           style={{
                             fontSize: "16px",
                             fontWeight: "500",
+                            color: "grey",
                           }}
                         >
                           평가해주는 듯한 경험을 제공합니다.
@@ -2129,12 +2246,17 @@ export function Bye() {
                 >
                   <Flex>
                     <Title
-                      style={{ marginBottom: "20px", fontSize: "50px" }}
+                      style={{ marginBottom: "20px", fontSize: "65px" }}
                       color="ddColorMain"
                     >
                       도파민 디펜스,&nbsp;
                     </Title>
-                    <Title style={{ marginBottom: "20px", fontSize: "50px" }}>
+                    <Title
+                      style={{
+                        marginBottom: "20px",
+                        fontSize: "65px",
+                      }}
+                    >
                       지금 바로 도전해보세요!
                     </Title>
                   </Flex>
@@ -2143,12 +2265,14 @@ export function Bye() {
                     color="ddColorMain"
                     component="a"
                     href="https://pf.kakao.com/_zmTAG/chat"
+                    style={{ height: "70px", marginTop: "20px" }}
+                    radius={"15px"}
                   >
                     <Text
                       color="white"
                       style={{
                         fontWeight: 900,
-                        fontSize: "18px",
+                        fontSize: "30px",
                       }}
                     >
                       무료 시작하기
@@ -2167,21 +2291,26 @@ export function Bye() {
                   align={"center"}
                   style={{ padding: "30px" }}
                 >
-                  <Title color="ddColorMain" size={30}>
+                  <Title
+                    color="ddColorMain"
+                    size={33}
+                    style={{ fontWeight: 900 }}
+                  >
                     도파민 디펜스,
                   </Title>
-                  <Title size={30}>지금 바로 도전해보세요!</Title>
+                  <Title size={33}>지금 바로 도전해보세요!</Title>
                   <Button
                     color="ddColorMain"
-                    style={{ marginTop: "20px" }}
+                    style={{ marginTop: "20px", height: "40px" }}
                     component="a"
+                    radius={"10px"}
                     href="https://pf.kakao.com/_zmTAG/chat"
                   >
                     <Text
                       color="white"
                       style={{
-                        fontWeight: 700,
-                        fontSize: "15px",
+                        fontWeight: 900,
+                        fontSize: "20px",
                       }}
                     >
                       무료 시작하기
