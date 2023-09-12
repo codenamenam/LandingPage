@@ -7,6 +7,25 @@ export default function Document() {
       <Head>
         <meta name="format-detection" content="telephone=no"></meta>
         <Script
+          async
+          src="https://www.googletagmanager.com/gtag/js?id=G-YDM6TNMLS9"
+        />
+        ;
+        <Script
+          id="GA"
+          strategy="lazyOnload"
+          dangerouslySetInnerHTML={{
+            __html: `
+window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-YDM6TNMLS9');
+`,
+          }}
+        />
+        ;
+        <Script
           id="channelTalk"
           strategy="lazyOnload"
           dangerouslySetInnerHTML={{
@@ -65,25 +84,6 @@ export default function Document() {
         r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
         a.appendChild(r);
     })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
-`,
-          }}
-        />
-        ;
-        <Script
-          async
-          src="https://www.googletagmanager.com/gtag/js?id=G-YDM6TNMLS9"
-        />
-        ;
-        <Script
-          id="GA"
-          strategy="lazyOnload"
-          dangerouslySetInnerHTML={{
-            __html: `
-window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-YDM6TNMLS9');
 `,
           }}
         />
