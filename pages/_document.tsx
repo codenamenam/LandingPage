@@ -1,47 +1,11 @@
 import { Html, Head, Main, NextScript } from "next/document";
 import Script from "next/script";
-import * as gtag from "../lib/gtag";
-import { useRouter } from "next/router";
-import { useEffect } from "react";
 
 export default function Document() {
-  const router = useRouter();
-  useEffect(() => {
-    const handleRouteChange = (url: any) => {
-      gtag.pageview(url);
-    };
-    router.events.on("routeChangeComplete", handleRouteChange);
-    router.events.on("hashChangeComplete", handleRouteChange);
-    return () => {
-      router.events.off("routeChangeComplete", handleRouteChange);
-      router.events.off("hashChangeComplete", handleRouteChange);
-    };
-  }, [router.events]);
-
   return (
     <Html lang="en">
       <Head>
         <meta name="format-detection" content="telephone=no"></meta>
-        <Script
-          async
-          src="https://www.googletagmanager.com/gtag/js?id=G-YDM6TNMLS9"
-        />
-        ;
-        <Script
-          id="GA"
-          strategy="lazyOnload"
-          dangerouslySetInnerHTML={{
-            __html: `
-            window.dataLayer = window.dataLayer || [];
-  function gtag(){
-    dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-YDM6TNMLS9');
-`,
-          }}
-        />
-        ;
         <Script
           id="channelTalk"
           strategy="lazyOnload"
