@@ -32,7 +32,7 @@ export function Hello() {
           styles={{ width: "280px", marginTop: "30px" }}
         >
           <div>
-            <Grid style={{ padding: "100px 0 100px 0" }} align="center">
+            <Grid style={{ padding: "30px 0 100px 0" }} align="center">
               <Grid.Col
                 md={6}
                 orderMd={1}
