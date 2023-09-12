@@ -125,8 +125,10 @@ export function Hello() {
                         </Flex>
                         <Center>
                           <Button
+                            component="a"
                             color="ddColorBackground"
                             style={{ height: "40px" }}
+                            href="https://pf.kakao.com/_zmTAG"
                           >
                             <Text
                               color="rgba(242, 29, 118, 1)"
@@ -178,6 +180,8 @@ export function Hello() {
                         </Flex>
                         <Center>
                           <Button
+                            component="a"
+                            href="https://pf.kakao.com/_zmTAG"
                             color="ddColorBackground"
                             style={{
                               margin: "10px 0 20px 0",
@@ -1154,10 +1158,10 @@ export function MoreInfoScoring() {
                           <Image src={"./img/ai_1.png"}></Image>
                         </SwiperSlide>
                         <SwiperSlide>
-                          <Image src={"./img/ai_1.png"}></Image>
+                          <Image src={"./img/ai_2.png"}></Image>
                         </SwiperSlide>
                         <SwiperSlide>
-                          <Image src={"./img/ai_1.png"}></Image>
+                          <Image src={"./img/ai_3.png"}></Image>
                         </SwiperSlide>
                       </Swiper>
                     </Center>
@@ -1412,10 +1416,10 @@ export function MoreInfoScoring() {
                               <Image src={"./img/ai_1.png"}></Image>
                             </SwiperSlide>
                             <SwiperSlide>
-                              <Image src={"./img/ai_1.png"}></Image>
+                              <Image src={"./img/ai_2.png"}></Image>
                             </SwiperSlide>
                             <SwiperSlide>
-                              <Image src={"./img/ai_1.png"}></Image>
+                              <Image src={"./img/ai_3.png"}></Image>
                             </SwiperSlide>
                           </Swiper>
                         </Center>
@@ -1773,13 +1777,13 @@ export function MoreInfoReport() {
                             style={{ borderRadius: "15px" }}
                           >
                             <SwiperSlide>
-                              <Image src={"./img/graph.png"}></Image>
+                              <Image src={"./img/report_1.png"}></Image>
                             </SwiperSlide>
                             <SwiperSlide>
-                              <Image src={"./img/graph.png"}></Image>
+                              <Image src={"./img/report_2.png"}></Image>
                             </SwiperSlide>
                             <SwiperSlide>
-                              <Image src={"./img/graph.png"}></Image>
+                              <Image src={"./img/report_3.png"}></Image>
                             </SwiperSlide>
                           </Swiper>
                         </Center>
@@ -1876,7 +1880,7 @@ export function MoreInfoReport() {
                         <Title
                           style={{ marginBottom: "20px", fontSize: "40px" }}
                         >
-                          레포트, 이렇게 만들었습니다.
+                          작심 30일, 오늘부터 도전하기
                         </Title>
                         <Text style={{ fontSize: "25px" }}>
                           꾸준히 참여할수록 데이터는 쌓입니다. 도파민 디펜스는
@@ -1909,14 +1913,14 @@ export function MoreInfoReport() {
                               fontSize: "30px",
                             }}
                           >
-                            레포트,
+                            작심 30일,
                           </Title>
                           <Title
                             style={{
                               fontSize: "30px",
                             }}
                           >
-                            이렇게 만들었습니다.
+                            오늘부터 도전하기
                           </Title>
                         </Flex>
                         <Flex
@@ -2035,13 +2039,13 @@ export function MoreInfoReport() {
                               style={{ borderRadius: "15px" }}
                             >
                               <SwiperSlide>
-                                <Image src={"./img/graph.png"}></Image>
+                                <Image src={"./img/report_1.png"}></Image>
                               </SwiperSlide>
                               <SwiperSlide>
-                                <Image src={"./img/graph.png"}></Image>
+                                <Image src={"./img/report_2.png"}></Image>
                               </SwiperSlide>
                               <SwiperSlide>
-                                <Image src={"./img/graph.png"}></Image>
+                                <Image src={"./img/report_3.png"}></Image>
                               </SwiperSlide>
                             </Swiper>
                           </Center>
@@ -2135,7 +2139,11 @@ export function Bye() {
                     </Title>
                   </Flex>
 
-                  <Button color="ddColorMain">
+                  <Button
+                    color="ddColorMain"
+                    component="a"
+                    href="https://pf.kakao.com/_zmTAG"
+                  >
                     <Text
                       color="white"
                       style={{
@@ -2163,7 +2171,12 @@ export function Bye() {
                     도파민 디펜스,
                   </Title>
                   <Title size={30}>지금 바로 도전해보세요!</Title>
-                  <Button color="ddColorMain" style={{ marginTop: "20px" }}>
+                  <Button
+                    color="ddColorMain"
+                    style={{ marginTop: "20px" }}
+                    component="a"
+                    href="https://pf.kakao.com/_zmTAG"
+                  >
                     <Text
                       color="white"
                       style={{
