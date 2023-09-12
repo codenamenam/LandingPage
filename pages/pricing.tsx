@@ -16,7 +16,7 @@ export default function Pricing() {
       <Fade>
         <MediaQuery smallerThan={"md"} styles={{ display: "none" }}>
           <Center styles={{ width: "1060px" }}>
-            <Flex direction={"column"} style={{ margin: "200px 0 200px 0" }}>
+            <Flex direction={"column"} style={{ margin: "100px 0 200px 0" }}>
               <Center>
                 <Title size={50}>가격 안내</Title>
               </Center>
@@ -113,7 +113,7 @@ export default function Pricing() {
 
         <MediaQuery largerThan={"md"} styles={{ display: "none" }}>
           <Center styles={{ width: "350px" }}>
-            <Flex direction={"column"} style={{ margin: "150px 0 150px 0" }}>
+            <Flex direction={"column"} style={{ margin: "50px 0 150px 0" }}>
               <Center>
                 <Title size={40}>가격 안내</Title>
               </Center>
