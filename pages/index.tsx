@@ -745,7 +745,7 @@ export function FunctionSummary() {
                         요약하기
                       </Text>
                       <Title style={{ marginBottom: "20px", fontSize: "45px" }}>
-                        쉽게 길르는 문해력
+                        쉽게 기르는 문해력
                       </Title>
                       <Text style={{ fontSize: "25px" }}>
                         문장을 이해하고 요약하는 과정에서 문맥을 파악하고
@@ -822,7 +822,7 @@ export function FunctionSummary() {
                             fontSize: "30px",
                           }}
                         >
-                          쉽게 길르는 문해력
+                          쉽게 기르는 문해력
                         </Title>
                       </Flex>
                     </Flex>
