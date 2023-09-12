@@ -128,7 +128,7 @@ export function Hello() {
                             component="a"
                             color="ddColorBackground"
                             style={{ height: "40px" }}
-                            href="https://pf.kakao.com/_zmTAG"
+                            href="https://pf.kakao.com/_zmTAG/chat"
                           >
                             <Text
                               color="rgba(242, 29, 118, 1)"
@@ -181,7 +181,7 @@ export function Hello() {
                         <Center>
                           <Button
                             component="a"
-                            href="https://pf.kakao.com/_zmTAG"
+                            href="https://pf.kakao.com/_zmTAG/chat"
                             color="ddColorBackground"
                             style={{
                               margin: "10px 0 20px 0",
@@ -2142,7 +2142,7 @@ export function Bye() {
                   <Button
                     color="ddColorMain"
                     component="a"
-                    href="https://pf.kakao.com/_zmTAG"
+                    href="https://pf.kakao.com/_zmTAG/chat"
                   >
                     <Text
                       color="white"
@@ -2175,7 +2175,7 @@ export function Bye() {
                     color="ddColorMain"
                     style={{ marginTop: "20px" }}
                     component="a"
-                    href="https://pf.kakao.com/_zmTAG"
+                    href="https://pf.kakao.com/_zmTAG/chat"
                   >
                     <Text
                       color="white"
