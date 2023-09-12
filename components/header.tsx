@@ -153,7 +153,7 @@ export function HeaderResponsive({ links }: HeaderResponsiveProps) {
           <MediaQuery smallerThan={"md"} styles={{ width: "70px" }}>
             <div>
               <Link href="/">
-                <Image src="./img/dd-logo.png" />
+                <Image src="./img/dd-logo.png" alt="logo" />
               </Link>
             </div>
           </MediaQuery>

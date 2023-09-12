@@ -4,8 +4,22 @@ import Script from "next/script";
 export default function Document() {
   return (
     <Html lang="en">
+      <title>하루 5분, 도파민 디펜스</title>
       <Head>
+        <link rel="shortcut icon" href="/favicon.ico" />
         <meta name="format-detection" content="telephone=no"></meta>
+        <meta
+          name="description"
+          content="하루 5분, AI가 길러주는 문해력"
+        ></meta>
+        <meta
+          name="keywords"
+          content="문해력, 도파민 디펜스, 도파민 디톡스"
+        ></meta>
+        <meta
+          name="google-site-verification"
+          content="DnlPSmw_TfyIvECuUFKABiKJaWb_2QHPqLDFXGaHlYE"
+        />
         <Script
           id="channelTalk"
           strategy="lazyOnload"
