@@ -127,7 +127,11 @@ export function Hello() {
                           <Button
                             component="a"
                             color="ddColorBackground"
-                            style={{ height: "60px", width: "170px" }}
+                            style={{
+                              height: "60px",
+                              width: "170px",
+                              padding: "0",
+                            }}
                             href="https://pf.kakao.com/_zmTAG/chat"
                             radius={"10px"}
                           >
