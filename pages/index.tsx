@@ -22,6 +22,13 @@ import SwiperCore from "swiper";
 //react-reveal
 import { Fade } from "react-awesome-reveal";
 
+//mixpanel
+import mixpanel from "mixpanel-browser";
+mixpanel.init("35aa2885dce190a9cb92b377f8844e9a");
+mixpanel.identify("<user_id>");
+import { Input } from "@mantine/core";
+import { IMaskInput } from "react-imask";
+
 // 사진 2장 + 도파민 디펜스 소개
 export function Hello() {
   return (
@@ -90,7 +97,7 @@ export function Hello() {
                     </MediaQuery>
 
                     <MediaQuery smallerThan={"md"} styles={{ display: "none" }}>
-                      <Flex direction={"column"}>
+                      <Flex direction={"column"} align={"center"}>
                         <Flex style={{ marginBottom: "50px" }}>
                           <Title
                             style={{
@@ -124,27 +131,50 @@ export function Hello() {
                           </Title>
                         </Flex>
                         <Center>
-                          <Button
-                            component="a"
-                            color="ddColorBackground"
-                            style={{
-                              height: "60px",
-                              width: "170px",
-                              padding: "0",
-                            }}
-                            href="https://pf.kakao.com/_zmTAG/chat"
-                            radius={"10px"}
-                          >
-                            <Text
-                              color="rgba(242, 29, 118, 1)"
-                              style={{
-                                fontWeight: 900,
-                                fontSize: "24px",
-                              }}
-                            >
-                              무료 시작하기
+                          <Flex direction={"column"}>
+                            <Text>
+                              전화번호를 남겨주시면 카톡을 보내드립니다!
                             </Text>
-                          </Button>
+                            <Flex
+                              direction={"row"}
+                              justify={"center"}
+                              gap={"10px"}
+                            >
+                              <Input<any>
+                                component={IMaskInput}
+                                mask="000-0000-0000"
+                                placeholder="Your phone"
+                                style={{
+                                  height: "60px",
+                                  width: "150px",
+                                }}
+                              />
+                              <Button
+                                component="a"
+                                color="ddColorBackground"
+                                style={{
+                                  height: "40px",
+                                  width: "120px",
+                                  padding: "0",
+                                }}
+                                href="https://pf.kakao.com/_zmTAG/chat"
+                                radius={"10px"}
+                                onClick={() => {
+                                  mixpanel.track("clicked");
+                                }}
+                              >
+                                <Text
+                                  color="rgba(242, 29, 118, 1)"
+                                  style={{
+                                    fontWeight: 900,
+                                    fontSize: "18px",
+                                  }}
+                                >
+                                  무료 시작하기
+                                </Text>
+                              </Button>
+                            </Flex>
+                          </Flex>
                         </Center>
                       </Flex>
                     </MediaQuery>
@@ -195,6 +225,9 @@ export function Hello() {
                               padding: "5px",
                             }}
                             radius={"10px"}
+                            onClick={() => {
+                              mixpanel.track("clicked");
+                            }}
                           >
                             <Text
                               color="rgba(242, 29, 118, 1)"
@@ -2271,6 +2304,9 @@ export function Bye() {
                     href="https://pf.kakao.com/_zmTAG/chat"
                     style={{ height: "70px", marginTop: "20px" }}
                     radius={"15px"}
+                    onClick={() => {
+                      mixpanel.track("clicked");
+                    }}
                   >
                     <Text
                       color="white"
@@ -2309,6 +2345,9 @@ export function Bye() {
                     component="a"
                     radius={"10px"}
                     href="https://pf.kakao.com/_zmTAG/chat"
+                    onClick={() => {
+                      mixpanel.track("clicked");
+                    }}
                   >
                     <Text
                       color="white"
