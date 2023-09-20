@@ -257,6 +257,16 @@ export function Hello() {
                         </Flex>
                         <Center>
                           <Flex direction={"column"} align={"center"}>
+                            <Text
+                              style={{
+                                fontSize: "13px",
+                                fontWeight: "600",
+                                color: "grey",
+                                margin: "0 0 0 0",
+                              }}
+                            >
+                              *전화번호를 남겨주시면 카톡을 보내드립니다.
+                            </Text>
                             <Flex direction={"row"} align={"center"}>
                               <Input<any>
                                 component={IMaskInput}
@@ -2342,6 +2352,14 @@ export function MoreInfoReport() {
 
 // 다시 한번 안내
 export function Bye() {
+  const [phoneNumber, setPhoneNumber] = useState("");
+  const [alertMessage, setAlertMessage] = useState("");
+  const [isValid, setIsValid] = useState(false);
+
+  const savePhoneNumber = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setPhoneNumber(event.target.value);
+  };
+
   return (
     <MediaQuery largerThan="md" styles={{ width: "1060px" }}>
       <MediaQuery
@@ -2376,26 +2394,71 @@ export function Bye() {
                     </Title>
                   </Flex>
 
-                  <Button
-                    color="ddColorMain"
-                    component="a"
-                    href="https://pf.kakao.com/_zmTAG/chat"
-                    style={{ height: "70px", marginTop: "20px" }}
-                    radius={"15px"}
-                    onClick={() => {
-                      mixpanel.track("clicked");
+                  <Text
+                    style={{
+                      fontSize: "19px",
+                      fontWeight: "600",
+                      color: "grey",
                     }}
                   >
-                    <Text
-                      color="white"
+                    *전화번호를 남겨주시면 카톡을 보내드립니다.
+                  </Text>
+
+                  <Flex
+                    direction={"row"}
+                    align={"center"}
+                    gap={"10px"}
+                    style={{ marginTop: "5px" }}
+                  >
+                    <Input<any>
+                      component={IMaskInput}
+                      mask="000-0000-0000"
+                      placeholder="전화번호 입력"
                       style={{
-                        fontWeight: 900,
-                        fontSize: "30px",
+                        width: "180px",
+                      }}
+                      onChange={savePhoneNumber}
+                      size="lg"
+                    />
+                    <Button
+                      color="ddColorMain"
+                      component="a"
+                      style={{ height: "50px" }}
+                      radius={"15px"}
+                      onClick={() => {
+                        var regExp = /^01(?:0|1|[6-9])-(?:\d{3}|\d{4})-\d{4}$/;
+                        if (regExp.test(phoneNumber)) {
+                          setIsValid(true);
+                          mixpanel.track("clicked");
+                          console.log(phoneNumber);
+                          setAlertMessage("카카오톡 메세지를 발송했습니다.");
+                        } else {
+                          setIsValid(false);
+                          setAlertMessage("전화번호를 다시 확인해주세요.");
+                        }
                       }}
                     >
-                      무료 시작하기
-                    </Text>
-                  </Button>
+                      <Text
+                        color="white"
+                        style={{
+                          fontWeight: 900,
+                          fontSize: "25px",
+                        }}
+                      >
+                        무료 시작하기
+                      </Text>
+                    </Button>
+                  </Flex>
+                  <Text
+                    style={{
+                      color: isValid ? "black" : "red",
+                      fontWeight: "500",
+                      fontSize: "14px",
+                      marginTop: "5px",
+                    }}
+                  >
+                    {alertMessage}
+                  </Text>
                 </Flex>
               </Fade>
             </Center>
@@ -2417,26 +2480,73 @@ export function Bye() {
                     도파민 디펜스,
                   </Title>
                   <Title size={33}>지금 바로 도전해보세요!</Title>
-                  <Button
-                    color="ddColorMain"
-                    style={{ marginTop: "20px", height: "40px" }}
-                    component="a"
-                    radius={"10px"}
-                    href="https://pf.kakao.com/_zmTAG/chat"
-                    onClick={() => {
-                      mixpanel.track("clicked");
-                    }}
-                  >
+
+                  <Flex direction={"column"} align={"center"}>
                     <Text
-                      color="white"
                       style={{
-                        fontWeight: 900,
-                        fontSize: "20px",
+                        fontSize: "14px",
+                        fontWeight: "600",
+                        color: "grey",
+                        margin: "10px 0 5px 0",
                       }}
                     >
-                      무료 시작하기
+                      *전화번호를 남겨주시면 카톡을 보내드립니다.
                     </Text>
-                  </Button>
+                    <Flex align={"center"} direction={"row"} gap={"5px"}>
+                      <Input<any>
+                        component={IMaskInput}
+                        mask="000-0000-0000"
+                        placeholder="전화번호 입력"
+                        style={{
+                          width: "140px",
+                        }}
+                        onChange={savePhoneNumber}
+                      />
+                      <Button
+                        color="ddColorMain"
+                        style={{
+                          height: "36px",
+                          width: "100px",
+                          padding: "0",
+                        }}
+                        component="a"
+                        radius={"10px"}
+                        onClick={() => {
+                          var regExp =
+                            /^01(?:0|1|[6-9])-(?:\d{3}|\d{4})-\d{4}$/;
+                          if (regExp.test(phoneNumber)) {
+                            setIsValid(true);
+                            mixpanel.track("clicked");
+                            console.log(phoneNumber);
+                            setAlertMessage("카카오톡 메세지를 발송했습니다.");
+                          } else {
+                            setIsValid(false);
+                            setAlertMessage("전화번호를 다시 확인해주세요.");
+                          }
+                        }}
+                      >
+                        <Text
+                          color="white"
+                          style={{
+                            fontWeight: 900,
+                            fontSize: "15px",
+                          }}
+                        >
+                          무료 시작하기
+                        </Text>
+                      </Button>
+                    </Flex>
+                    <Text
+                      style={{
+                        color: isValid ? "black" : "red",
+                        fontWeight: "500",
+                        fontSize: "14px",
+                        margin: "10px 0 0 0",
+                      }}
+                    >
+                      {alertMessage}
+                    </Text>
+                  </Flex>
                 </Flex>
               </Fade>
             </Center>
