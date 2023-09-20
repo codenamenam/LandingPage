@@ -39,7 +39,7 @@ export function Hello() {
   const [alertMessage, setAlertMessage] = useState("");
   const [isValid, setIsValid] = useState(false);
 
-  const savePhoneNumber = (event) => {
+  const savePhoneNumber = (event: React.ChangeEvent<HTMLInputElement>) => {
     setPhoneNumber(event.target.value);
   };
 
