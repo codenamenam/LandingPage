@@ -1,3 +1,4 @@
+//Mantine
 import {
   Button,
   Center,
@@ -9,8 +10,11 @@ import {
   Title,
   Card,
   Group,
+  Input,
 } from "@mantine/core";
-import { useState, useEffect } from "react";
+
+//React
+import { useState, useEffect, useRef } from "react";
 
 //Swiper
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -26,11 +30,19 @@ import { Fade } from "react-awesome-reveal";
 import mixpanel from "mixpanel-browser";
 mixpanel.init("35aa2885dce190a9cb92b377f8844e9a");
 mixpanel.identify("<user_id>");
-import { Input } from "@mantine/core";
 import { IMaskInput } from "react-imask";
+import { setConstantValue } from "typescript";
 
 // 사진 2장 + 도파민 디펜스 소개
 export function Hello() {
+  const [phoneNumber, setPhoneNumber] = useState("");
+  const [alertMessage, setAlertMessage] = useState("");
+  const [isValid, setIsValid] = useState(false);
+
+  const savePhoneNumber = (event) => {
+    setPhoneNumber(event.target.value);
+  };
+
   return (
     <Center>
       <MediaQuery largerThan={"md"} styles={{ width: "1060px" }}>
@@ -131,9 +143,16 @@ export function Hello() {
                           </Title>
                         </Flex>
                         <Center>
-                          <Flex direction={"column"}>
-                            <Text>
-                              전화번호를 남겨주시면 카톡을 보내드립니다!
+                          <Flex direction={"column"} align={"center"}>
+                            <Text
+                              style={{
+                                fontSize: "15px",
+                                fontWeight: "600",
+                                color: "grey",
+                                margin: "0 0 5px 0",
+                              }}
+                            >
+                              *전화번호를 남겨주시면 카톡을 보내드립니다.
                             </Text>
                             <Flex
                               direction={"row"}
@@ -143,44 +162,67 @@ export function Hello() {
                               <Input<any>
                                 component={IMaskInput}
                                 mask="000-0000-0000"
-                                placeholder="Your phone"
+                                placeholder="전화번호 입력"
                                 style={{
-                                  height: "60px",
                                   width: "150px",
                                 }}
+                                onChange={savePhoneNumber}
                               />
                               <Button
                                 component="a"
                                 color="ddColorBackground"
                                 style={{
-                                  height: "40px",
+                                  height: "37px",
                                   width: "120px",
                                   padding: "0",
                                 }}
-                                href="https://pf.kakao.com/_zmTAG/chat"
                                 radius={"10px"}
                                 onClick={() => {
-                                  mixpanel.track("clicked");
+                                  var regExp =
+                                    /^01(?:0|1|[6-9])-(?:\d{3}|\d{4})-\d{4}$/;
+                                  if (regExp.test(phoneNumber)) {
+                                    setIsValid(true);
+                                    mixpanel.track("clicked");
+                                    console.log(phoneNumber);
+                                    setAlertMessage(
+                                      "카카오톡 메세지를 발송했습니다."
+                                    );
+                                  } else {
+                                    setIsValid(false);
+                                    setAlertMessage(
+                                      "전화번호를 다시 확인해주세요."
+                                    );
+                                  }
                                 }}
                               >
                                 <Text
                                   color="rgba(242, 29, 118, 1)"
                                   style={{
                                     fontWeight: 900,
-                                    fontSize: "18px",
+                                    fontSize: "17px",
                                   }}
                                 >
                                   무료 시작하기
                                 </Text>
                               </Button>
                             </Flex>
+                            <Text
+                              style={{
+                                color: isValid ? "black" : "red",
+                                fontWeight: "500",
+                                fontSize: "14px",
+                                marginTop: "5px",
+                              }}
+                            >
+                              {alertMessage}
+                            </Text>
                           </Flex>
                         </Center>
                       </Flex>
                     </MediaQuery>
 
                     <MediaQuery largerThan={"md"} styles={{ display: "none" }}>
-                      <Flex direction={"column"}>
+                      <Flex direction={"column"} align={"center"}>
                         <Flex style={{ margin: "5px 0 20px 0" }}>
                           <Title
                             style={{
@@ -214,31 +256,67 @@ export function Hello() {
                           </Title>
                         </Flex>
                         <Center>
-                          <Button
-                            component="a"
-                            href="https://pf.kakao.com/_zmTAG/chat"
-                            color="ddColorBackground"
-                            style={{
-                              margin: "20px 0 30px 0",
-                              height: "50px",
-                              width: "140px",
-                              padding: "5px",
-                            }}
-                            radius={"10px"}
-                            onClick={() => {
-                              mixpanel.track("clicked");
-                            }}
-                          >
+                          <Flex direction={"column"} align={"center"}>
+                            <Flex direction={"row"} align={"center"}>
+                              <Input<any>
+                                component={IMaskInput}
+                                mask="000-0000-0000"
+                                placeholder="전화번호 입력"
+                                style={{
+                                  width: "130px",
+                                }}
+                                onChange={savePhoneNumber}
+                              />
+                              <Button
+                                component="a"
+                                color="ddColorBackground"
+                                style={{
+                                  margin: "10px",
+                                  height: "36px",
+                                  width: "100px",
+                                  padding: "5px",
+                                }}
+                                radius={"10px"}
+                                onClick={() => {
+                                  var regExp =
+                                    /^01(?:0|1|[6-9])-(?:\d{3}|\d{4})-\d{4}$/;
+                                  if (regExp.test(phoneNumber)) {
+                                    setIsValid(true);
+                                    mixpanel.track("clicked");
+                                    console.log(phoneNumber);
+                                    setAlertMessage(
+                                      "카카오톡 메세지를 발송했습니다."
+                                    );
+                                  } else {
+                                    setIsValid(false);
+                                    setAlertMessage(
+                                      "전화번호를 다시 확인해주세요."
+                                    );
+                                  }
+                                }}
+                              >
+                                <Text
+                                  color="rgba(242, 29, 118, 1)"
+                                  style={{
+                                    fontWeight: 900,
+                                    fontSize: "15px",
+                                  }}
+                                >
+                                  무료 시작하기
+                                </Text>
+                              </Button>
+                            </Flex>
                             <Text
-                              color="rgba(242, 29, 118, 1)"
                               style={{
-                                fontWeight: 900,
-                                fontSize: "20px",
+                                color: isValid ? "black" : "red",
+                                fontWeight: "500",
+                                fontSize: "14px",
+                                margin: "0 0 10px 0",
                               }}
                             >
-                              무료 시작하기
+                              {alertMessage}
                             </Text>
-                          </Button>
+                          </Flex>
                         </Center>
                       </Flex>
                     </MediaQuery>
