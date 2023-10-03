@@ -150,7 +150,7 @@ export function Hello() {
                                 fontSize: "24px",
                               }}
                             >
-                              지금 구독하기
+                              지금 시작하기
                             </Text>
                           </Button>
                         </Center>
@@ -211,7 +211,7 @@ export function Hello() {
                                 fontSize: "20px",
                               }}
                             >
-                              지금 구독하기
+                              지금 시작하기
                             </Text>
                           </Button>
                         </Center>
@@ -2287,7 +2287,7 @@ export function Bye() {
                         fontSize: "30px",
                       }}
                     >
-                      지금 구독하기
+                      지금 시작하기
                     </Text>
                   </Button>
                 </Flex>
@@ -2325,7 +2325,7 @@ export function Bye() {
                         fontSize: "20px",
                       }}
                     >
-                      지금 구독하기
+                      지금 시작하기
                     </Text>
                   </Button>
                 </Flex>
