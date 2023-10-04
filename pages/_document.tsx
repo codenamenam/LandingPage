@@ -21,21 +21,6 @@ export default function Document() {
           content="DnlPSmw_TfyIvECuUFKABiKJaWb_2QHPqLDFXGaHlYE"
         />
         <Script
-          id="googleAds"
-          strategy="lazyOnLoad"
-          dangerouslySetInnerHTML={{
-            __html: `<!-- Google tag (gtag.js) -->
-            <script async src="https://www.googletagmanager.com/gtag/js?id=AW-11239562685"></script>
-            <script>
-              window.dataLayer = window.dataLayer || [];
-              function gtag(){dataLayer.push(arguments);}
-              gtag('js', new Date());
-            
-              gtag('config', 'AW-11239562685');
-            </script>`,
-          }}
-        />
-        <Script
           id="channelTalk"
           strategy="lazyOnload"
           dangerouslySetInnerHTML={{
