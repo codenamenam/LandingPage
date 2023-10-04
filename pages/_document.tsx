@@ -7,19 +7,6 @@ export default function Document() {
     <Html lang="en">
       <title>하루 5분, 도파민 디펜스</title>
       <Head>
-        {/* Google Analytics Measurement ID*/}
-        <Script async src="https://www.googletagmanager.com/gtag/js?id=AW-11239562685" />
-        <Script
-          id="gtag"
-          dangerouslySetInnerHTML={{
-            __html: `
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', 'AW-11239562685');
-            `,
-          }}
-        />
         <link rel="shortcut icon" href="/favicon.ico" />
         <meta name="format-detection" content="telephone=no"></meta>
         <meta
@@ -116,6 +103,19 @@ fbq('track', 'PageView');
         />
         ;
       </Head>
+      {/* Google Analytics Measurement ID*/}
+      <Script async src="https://www.googletagmanager.com/gtag/js?id=AW-11239562685" />
+        <Script
+          id="gtag"
+          dangerouslySetInnerHTML={{
+            __html: `
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'AW-11239562685');
+            `,
+          }}
+        />
       <body style={{ margin: "0px" }}>
         <Main />
         <NextScript />
