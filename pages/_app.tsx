@@ -81,7 +81,7 @@ export default function App({ Component, pageProps }: AppProps) {
         src="https://www.googletagmanager.com/gtag/js?id=AW-11239562685"
       />
       <Script
-        id="GoogleAds"
+        id="GoogleTag"
         strategy="lazyOnload"
         dangerouslySetInnerHTML={{
           __html: `
