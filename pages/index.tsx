@@ -133,10 +133,9 @@ export function Hello() {
                         </Flex>
                         <Center>
                           <Button
-                            onClick={()=>{
-                            
-                              gtag('event', 'conversion', {
-                                  'send_to': 'AW-11239562685/a_pfCOWDq-gYEL27uO8p',
+                            onClick={() => {
+                              gtag("event", "conversion", {
+                                send_to: "AW-11239562685/a_pfCOWDq-gYEL27uO8p",
                               });
                               return false;
                             }}
@@ -423,13 +422,13 @@ export function Review() {
                   style={{ margin: "150px 0 50px 0" }}
                 >
                   <Text style={{ fontSize: "25px", fontWeight: "bold" }}>
-                    2023.9.5일 기준
+                    2023.10.9일 기준
                   </Text>
                   <Title style={{ fontSize: "50px" }}>
                     도파민 디펜스 사용자
                   </Title>
                   <Title style={{ fontSize: "90px" }} color="ddColorMain">
-                    1378명
+                    2559명
                   </Title>
                   <Text
                     style={{
@@ -482,13 +481,13 @@ export function Review() {
                   style={{ margin: "60px 0 70px 0" }}
                 >
                   <Text style={{ fontSize: "18px", fontWeight: "bold" }}>
-                    2023.9.5일 기준
+                    2023.10.9일 기준
                   </Text>
                   <Title style={{ fontSize: "26px" }}>
                     도파민 디펜스 사용자
                   </Title>
                   <Title style={{ fontSize: "52px" }} color="ddColorMain">
-                    1378명
+                    2559명
                   </Title>
                   <Text
                     style={{
