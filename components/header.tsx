@@ -8,6 +8,7 @@ import {
   Transition,
   rem,
   MediaQuery,
+  Flex,
 } from "@mantine/core";
 import { useDisclosure } from "@mantine/hooks";
 import { useState, useEffect } from "react";
@@ -151,7 +152,7 @@ export function HeaderResponsive({ links }: HeaderResponsiveProps) {
       <Container className={classes.header} style={{ maxWidth: "1100px" }}>
         <MediaQuery largerThan={"md"} styles={{ width: "100px" }}>
           <MediaQuery smallerThan={"md"} styles={{ width: "70px" }}>
-            <div>
+            <Flex>
               <Link href="/">
                 <Image
                   src="/img/dd-logo.png"
@@ -162,7 +163,7 @@ export function HeaderResponsive({ links }: HeaderResponsiveProps) {
                   style={{ width: "100%", height: "auto" }}
                 />
               </Link>
-            </div>
+            </Flex>
           </MediaQuery>
         </MediaQuery>
 

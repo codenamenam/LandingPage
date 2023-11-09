@@ -79,6 +79,7 @@ export function Hello() {
                           width: "100%",
                           height: "auto",
                         }}
+                        placeholder="empty"
                         alt="description image 1"
                         width={0}
                         height={0}
@@ -108,6 +109,8 @@ export function Hello() {
                               width: "100%",
                               height: "auto",
                             }}
+                            priority={true}
+                            placeholder="empty"
                             width={0}
                             height={0}
                             sizes="100vw"
