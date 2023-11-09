@@ -7,14 +7,14 @@ import {
   Paper,
   Transition,
   rem,
-  Text,
-  Image,
   MediaQuery,
 } from "@mantine/core";
 import { useDisclosure } from "@mantine/hooks";
 import { useState, useEffect } from "react";
 import { useRouter } from "next/router";
 import Link from "next/link";
+
+import Image from "next/image";
 
 const HEADER_HEIGHT = rem(60);
 
@@ -153,7 +153,14 @@ export function HeaderResponsive({ links }: HeaderResponsiveProps) {
           <MediaQuery smallerThan={"md"} styles={{ width: "70px" }}>
             <div>
               <Link href="/">
-                <Image src="./img/dd-logo.png" alt="logo" />
+                <Image
+                  src="/img/dd-logo.png"
+                  alt="logo"
+                  height={0}
+                  width={0}
+                  sizes="100vh"
+                  style={{ width: "100%", height: "auto" }}
+                />
               </Link>
             </div>
           </MediaQuery>

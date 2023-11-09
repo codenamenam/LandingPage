@@ -3,7 +3,6 @@ import {
   Button,
   Center,
   Flex,
-  Image,
   Text,
   Grid,
   MediaQuery,
@@ -11,6 +10,9 @@ import {
   Card,
   Group,
 } from "@mantine/core";
+
+//Next
+import Image from "next/image";
 
 //React
 import { useState, useEffect, useRef } from "react";
@@ -70,10 +72,17 @@ export function Hello() {
                   >
                     <div>
                       <Image
-                        src="./img/first.png"
+                        src="/img/first.png"
                         style={{
                           filter: "drop-shadow(5px 10px 10px #c3c3c3)",
+                          objectFit: "fill",
+                          width: "100%",
+                          height: "auto",
                         }}
+                        alt="description image 1"
+                        width={0}
+                        height={0}
+                        sizes="100vw"
                       />
                     </div>
                   </MediaQuery>
@@ -92,7 +101,17 @@ export function Hello() {
                         styles={{ width: "280px", margin: "0 0 0 0" }}
                       >
                         <div>
-                          <Image src={"./img/dd-logo.png"} />
+                          <Image
+                            src={"/img/dd-logo.png"}
+                            alt="dopamine defense logo"
+                            style={{
+                              width: "100%",
+                              height: "auto",
+                            }}
+                            width={0}
+                            height={0}
+                            sizes="100vw"
+                          />
                         </div>
                       </MediaQuery>
                     </MediaQuery>
@@ -296,21 +315,21 @@ interface UserReviewProps {
 // 리뷰 인풋 데이터
 const userReviewData = [
   {
-    imageURL: "./img/user.png",
+    imageURL: "/img/user.png",
     name: "정OO",
     job: "고등학교 1학년",
     title: "국어 공부에 도움이 돼요!",
     comment: "항상 잘 이용하고 있어요!! 앞으로도 잘 부탁드립니다 >.<",
   },
   {
-    imageURL: "./img/user.png",
+    imageURL: "/img/user.png",
     name: "김OO",
     job: "고등학교 1학년",
     title: "독해력이 좋아지는 느낌이에요.",
     comment: "덕분에 아침마다 독해력 늘리고 있어서 감사해요!",
   },
   {
-    imageURL: "./img/user.png",
+    imageURL: "/img/user.png",
     name: "최OO",
     job: "고등학교 2학년",
     title: "좋은 서비스라고 생각합니다.",
@@ -318,7 +337,7 @@ const userReviewData = [
       "좋은 서비스 제공해주셔서 너무 감사하다구 말씀드리고 싶어요! 문해력 향상에 도움이 되고 있는 것 같아요!! 앞으로도 응원합니다 ..!!!",
   },
   {
-    imageURL: "./img/user.png",
+    imageURL: "/img/user.png",
     name: "박OO",
     job: "대학생",
     title: "매일 아침마다 도전중입니다!!",
@@ -326,7 +345,7 @@ const userReviewData = [
       "꾸준히 하는 습관을 만들고 싶었는데 요즘엔 아침마다 글을 읽게 되었어요!",
   },
   {
-    imageURL: "./img/user.png",
+    imageURL: "/img/user.png",
     name: "남OO",
     job: "고등학교 1학년",
     title: "피드백이 신기하고 재미있어요.",
@@ -334,7 +353,7 @@ const userReviewData = [
       "실제로 사람이 쓴것처럼 자세하게 설명해주니까 요약할때 도움이 돼요.",
   },
   {
-    imageURL: "./img/user.png",
+    imageURL: "/img/user.png",
     name: "이OO",
     job: "고등학교 3학년",
     title: "수능을 앞두고 사용중입니다.",
@@ -353,10 +372,10 @@ export function UserReview(info: UserReviewProps) {
       withBorder
       style={{ height: "200px" }}
     >
-      <Group position="apart" mt="md" mb="xs">
+      <Flex direction={"column"} gap={"12px"}>
         <Flex align={"center"} gap={"10px"}>
-          <Image src={info.imageURL} style={{ width: "40px" }}></Image>
-          <div>
+          <Image alt="card image" src={info.imageURL} width={45} height={45} />
+          <Flex direction={"column"}>
             <Text
               style={{
                 fontSize: "15px",
@@ -375,14 +394,16 @@ export function UserReview(info: UserReviewProps) {
             >
               {info.job}
             </Text>
-          </div>
+          </Flex>
         </Flex>
-      </Group>
 
-      <Title style={{ fontSize: "22px" }}>{info.title}</Title>
-      <Text size="sm" style={{ fontSize: "15px" }}>
-        {info.comment}
-      </Text>
+        <Flex direction={"column"} gap={"3px"}>
+          <Title style={{ fontSize: "22px" }}>{info.title}</Title>
+          <Text size="sm" style={{ fontSize: "15px" }}>
+            {info.comment}
+          </Text>
+        </Flex>
+      </Flex>
     </Card>
   );
 }
@@ -422,13 +443,13 @@ export function Review() {
                   style={{ margin: "150px 0 50px 0" }}
                 >
                   <Text style={{ fontSize: "25px", fontWeight: "bold" }}>
-                    2023.10.9일 기준
+                    2023.11.9일 기준
                   </Text>
                   <Title style={{ fontSize: "50px" }}>
                     도파민 디펜스 사용자
                   </Title>
                   <Title style={{ fontSize: "90px" }} color="ddColorMain">
-                    2559명
+                    3839명
                   </Title>
                   <Text
                     style={{
@@ -481,13 +502,13 @@ export function Review() {
                   style={{ margin: "60px 0 70px 0" }}
                 >
                   <Text style={{ fontSize: "18px", fontWeight: "bold" }}>
-                    2023.10.9일 기준
+                    2023.11.9일 기준
                   </Text>
                   <Title style={{ fontSize: "26px" }}>
                     도파민 디펜스 사용자
                   </Title>
                   <Title style={{ fontSize: "52px" }} color="ddColorMain">
-                    2559명
+                    3839명
                   </Title>
                   <Text
                     style={{
@@ -633,10 +654,15 @@ export function FunctionRead() {
                         alignItems: "center",
                       }}
                     >
-                      <img
-                        src="./img/Read.png"
-                        height={"100%"}
+                      <Image
+                        src="/img/Read.png"
+                        height={0}
+                        width={0}
+                        sizes="100vh"
+                        alt="read description 1"
                         style={{
+                          width: "auto",
+                          height: "100%",
                           filter: "drop-shadow(5px 10px 10px #c3c3c3)",
                         }}
                       />
@@ -703,10 +729,15 @@ export function FunctionRead() {
                           alignItems: "center",
                         }}
                       >
-                        <img
-                          src="./img/Read.png"
-                          height={"100%"}
+                        <Image
+                          src="/img/Read.png"
+                          width={0}
+                          height={0}
+                          sizes="100vh"
+                          alt="read description 1"
                           style={{
+                            width: "auto",
+                            height: "100%",
                             filter: "drop-shadow(5px 10px 10px #c3c3c3)",
                           }}
                         />
@@ -841,10 +872,15 @@ export function FunctionSummary() {
                         alignItems: "center",
                       }}
                     >
-                      <img
-                        src="./img/Summary.png"
-                        height={"100%"}
+                      <Image
+                        src="/img/Summary.png"
+                        width={0}
+                        height={0}
+                        sizes="100vh"
+                        alt="summary description 1"
                         style={{
+                          width: "auto",
+                          height: "100%",
                           filter: "drop-shadow(5px 10px 10px #c3c3c3)",
                         }}
                       />
@@ -913,10 +949,15 @@ export function FunctionSummary() {
                           alignItems: "center",
                         }}
                       >
-                        <img
-                          src="./img/Summary.png"
-                          height={"100%"}
+                        <Image
+                          src="/img/Summary.png"
+                          width={0}
+                          height={0}
+                          sizes="100vh"
+                          alt="summary description 1"
                           style={{
+                            width: "auto",
+                            height: "100%",
                             filter: "drop-shadow(5px 10px 10px #c3c3c3)",
                           }}
                         />
@@ -1048,10 +1089,15 @@ export function FunctionScoring() {
                         alignItems: "center",
                       }}
                     >
-                      <img
-                        src="./img/Scoring.png"
-                        height={"100%"}
+                      <Image
+                        src="/img/Scoring.png"
+                        width={0}
+                        height={0}
+                        sizes="100vh"
+                        alt="scoring description image 1"
                         style={{
+                          height: "100%",
+                          width: "auto",
                           filter: "drop-shadow(5px 10px 10px #c3c3c3)",
                         }}
                       />
@@ -1119,10 +1165,15 @@ export function FunctionScoring() {
                           alignItems: "center",
                         }}
                       >
-                        <img
-                          src="./img/Scoring.png"
-                          height={"100%"}
+                        <Image
+                          src="/img/Scoring.png"
+                          width={0}
+                          height={0}
+                          sizes="100vh"
+                          alt="scoring description image 1"
                           style={{
+                            width: "auto",
+                            height: "100%",
                             filter: "drop-shadow(5px 10px 10px #c3c3c3)",
                           }}
                         />
@@ -1238,13 +1289,43 @@ export function MoreInfoScoring() {
                         style={{ borderRadius: "15px" }}
                       >
                         <SwiperSlide>
-                          <Image src={"./img/ai_1.png"}></Image>
+                          <Image
+                            alt="ai description image 1"
+                            src={"/img/ai_1.png"}
+                            width={0}
+                            height={0}
+                            sizes="100vh"
+                            style={{
+                              width: "100%",
+                              height: "auto",
+                            }}
+                          ></Image>
                         </SwiperSlide>
                         <SwiperSlide>
-                          <Image src={"./img/ai_2.png"}></Image>
+                          <Image
+                            alt="ai description image 2"
+                            src={"/img/ai_2.png"}
+                            width={0}
+                            height={0}
+                            sizes="100vh"
+                            style={{
+                              width: "100%",
+                              height: "auto",
+                            }}
+                          ></Image>
                         </SwiperSlide>
                         <SwiperSlide>
-                          <Image src={"./img/ai_3.png"}></Image>
+                          <Image
+                            alt="ai description image 3"
+                            src={"/img/ai_3.png"}
+                            width={0}
+                            height={0}
+                            sizes="100vh"
+                            style={{
+                              width: "100%",
+                              height: "auto",
+                            }}
+                          ></Image>
                         </SwiperSlide>
                       </Swiper>
                     </Center>
@@ -1510,13 +1591,43 @@ export function MoreInfoScoring() {
                             style={{ borderRadius: "15px" }}
                           >
                             <SwiperSlide>
-                              <Image src={"./img/ai_1.png"}></Image>
+                              <Image
+                                alt="ai description image 1"
+                                src={"/img/ai_1.png"}
+                                width={0}
+                                height={0}
+                                sizes="100vh"
+                                style={{
+                                  width: "100%",
+                                  height: "auto",
+                                }}
+                              ></Image>
                             </SwiperSlide>
                             <SwiperSlide>
-                              <Image src={"./img/ai_2.png"}></Image>
+                              <Image
+                                alt="ai description image 1"
+                                src={"/img/ai_2.png"}
+                                width={0}
+                                height={0}
+                                sizes="100vh"
+                                style={{
+                                  width: "100%",
+                                  height: "auto",
+                                }}
+                              ></Image>
                             </SwiperSlide>
                             <SwiperSlide>
-                              <Image src={"./img/ai_3.png"}></Image>
+                              <Image
+                                alt="ai description image 1"
+                                src={"/img/ai_3.png"}
+                                width={0}
+                                height={0}
+                                sizes="100vh"
+                                style={{
+                                  width: "100%",
+                                  height: "auto",
+                                }}
+                              ></Image>
                             </SwiperSlide>
                           </Swiper>
                         </Center>
@@ -1614,16 +1725,6 @@ export function Report() {
                         >
                           레포트
                         </Text>
-                        <Text
-                          style={{
-                            fontSize: "26px",
-                            fontWeight: "600",
-                            marginLeft: "10px",
-                          }}
-                          color="rgba(0,0,0,0.4)"
-                        >
-                          9월 중 제공 예정
-                        </Text>
                       </Flex>
                       <Title
                         style={{
@@ -1684,10 +1785,15 @@ export function Report() {
                           alignItems: "center",
                         }}
                       >
-                        <img
-                          src="./img/Report.png"
-                          height={"100%"}
+                        <Image
+                          src="/img/Report.png"
+                          width={0}
+                          height={0}
+                          sizes="100vh"
+                          alt="report description image 1"
                           style={{
+                            width: "auto",
+                            height: "100%",
                             filter: "drop-shadow(5px 10px 10px #c3c3c3)",
                           }}
                         />
@@ -1708,15 +1814,6 @@ export function Report() {
                 <Grid.Col md={12}>
                   <Fade>
                     <Flex direction={"column"} align={"center"}>
-                      <Text
-                        style={{
-                          fontSize: "12px",
-                          fontWeight: "600",
-                        }}
-                        color="rgba(0,0,0,0.5)"
-                      >
-                        9월 중 제공예정
-                      </Text>
                       <Text
                         style={{
                           marginBottom: "5px",
@@ -1895,13 +1992,43 @@ export function MoreInfoReport() {
                             style={{ borderRadius: "15px" }}
                           >
                             <SwiperSlide>
-                              <Image src={"./img/report_1.png"}></Image>
+                              <Image
+                                alt="report description image 1"
+                                src={"/img/report_1.png"}
+                                width={0}
+                                height={0}
+                                sizes="100vh"
+                                style={{
+                                  width: "100%",
+                                  height: "auto",
+                                }}
+                              ></Image>
                             </SwiperSlide>
                             <SwiperSlide>
-                              <Image src={"./img/report_2.png"}></Image>
+                              <Image
+                                alt="report description image 2"
+                                src={"/img/report_2.png"}
+                                width={0}
+                                height={0}
+                                sizes="100vh"
+                                style={{
+                                  width: "100%",
+                                  height: "auto",
+                                }}
+                              ></Image>
                             </SwiperSlide>
                             <SwiperSlide>
-                              <Image src={"./img/report_3.png"}></Image>
+                              <Image
+                                alt="report description image 3"
+                                src={"/img/report_3.png"}
+                                width={0}
+                                height={0}
+                                sizes="100vh"
+                                style={{
+                                  width: "100%",
+                                  height: "auto",
+                                }}
+                              ></Image>
                             </SwiperSlide>
                           </Swiper>
                         </Center>
@@ -2169,13 +2296,43 @@ export function MoreInfoReport() {
                               style={{ borderRadius: "15px" }}
                             >
                               <SwiperSlide>
-                                <Image src={"./img/report_1.png"}></Image>
+                                <Image
+                                  alt="report description image 1"
+                                  src={"/img/report_1.png"}
+                                  width={0}
+                                  height={0}
+                                  sizes="100vh"
+                                  style={{
+                                    width: "100%",
+                                    height: "auto",
+                                  }}
+                                ></Image>
                               </SwiperSlide>
                               <SwiperSlide>
-                                <Image src={"./img/report_2.png"}></Image>
+                                <Image
+                                  alt="report description image 2"
+                                  src={"/img/report_2.png"}
+                                  width={0}
+                                  height={0}
+                                  sizes="100vh"
+                                  style={{
+                                    width: "100%",
+                                    height: "auto",
+                                  }}
+                                ></Image>
                               </SwiperSlide>
                               <SwiperSlide>
-                                <Image src={"./img/report_3.png"}></Image>
+                                <Image
+                                  alt="report description image 3"
+                                  src={"/img/report_3.png"}
+                                  width={0}
+                                  height={0}
+                                  sizes="100vh"
+                                  style={{
+                                    width: "100%",
+                                    height: "auto",
+                                  }}
+                                ></Image>
                               </SwiperSlide>
                             </Swiper>
                           </Center>
