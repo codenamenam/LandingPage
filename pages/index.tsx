@@ -446,13 +446,13 @@ export function Review() {
                   style={{ margin: "150px 0 50px 0" }}
                 >
                   <Text style={{ fontSize: "25px", fontWeight: "bold" }}>
-                    2023.11.9일 기준
+                    2023.12.12일 기준
                   </Text>
                   <Title style={{ fontSize: "50px" }}>
                     도파민 디펜스 사용자
                   </Title>
                   <Title style={{ fontSize: "90px" }} color="ddColorMain">
-                    3839명
+                    5000+명
                   </Title>
                   <Text
                     style={{
