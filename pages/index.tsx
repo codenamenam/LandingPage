@@ -617,7 +617,7 @@ export function FunctionRead() {
                           fontWeight: 500,
                         }}
                       >
-                        사전에 선정한 지문을 매일 오전 8시에
+                        선별된 기출 지문을 매일 원하는 시간에
                       </Text>
                       <Text
                         style={{
