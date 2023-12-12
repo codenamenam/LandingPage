@@ -452,7 +452,7 @@ export function Review() {
                     도파민 디펜스 사용자
                   </Title>
                   <Title style={{ fontSize: "90px" }} color="ddColorMain">
-                    5000+명
+                    5043명
                   </Title>
                   <Text
                     style={{
