@@ -17,13 +17,6 @@ import Image from "next/image";
 //React
 import { useState, useEffect, useRef } from "react";
 
-//Swiper
-import { Swiper, SwiperSlide } from "swiper/react";
-import "swiper/css";
-import "swiper/css/pagination";
-import { Autoplay } from "swiper/modules";
-import SwiperCore from "swiper";
-
 //react-reveal
 import { Fade } from "react-awesome-reveal";
 
@@ -413,21 +406,6 @@ export function UserReview(info: UserReviewProps) {
 
 // 리뷰
 export function Review() {
-  const [swiper, setSwiper] = useState<SwiperCore>();
-  SwiperCore.use([Autoplay]);
-
-  const userReivewsSlides = userReviewData.map((review, index) => (
-    <SwiperSlide key={index}>
-      <UserReview
-        imageURL={review.imageURL}
-        name={review.name}
-        job={review.job}
-        title={review.title}
-        comment={review.comment}
-      />
-    </SwiperSlide>
-  ));
-
   return (
     <MediaQuery largerThan="md" styles={{ width: "1060px" }}>
       <MediaQuery
@@ -465,32 +443,19 @@ export function Review() {
                     실제 사용자들의 리뷰를 확인해보세요.
                   </Text>
 
-                  <MediaQuery
-                    largerThan={"md"}
-                    styles={{
-                      justifyContent: "center",
-                      alignContent: "center",
-                      width: "1060px",
-                    }}
-                  >
-                    <div>
-                      <Swiper
-                        onSwiper={(onSwiper) => setSwiper(onSwiper)}
-                        spaceBetween={10}
-                        slidesPerView={3}
-                        style={{
-                          margin: "100px 0 100px 0",
-                          pointerEvents: "none",
-                        }}
-                        autoplay={{ delay: 0, disableOnInteraction: false }}
-                        speed={5000}
-                        loop={true}
-                        loopedSlides={3}
-                      >
-                        {userReivewsSlides}
-                      </Swiper>
-                    </div>
-                  </MediaQuery>
+                  <Grid style={{ margin: "100px 0 100px 0" }}>
+                    {userReviewData.slice(0, 3).map((review, index) => (
+                      <Grid.Col key={index} md={4}>
+                        <UserReview
+                          imageURL={review.imageURL}
+                          name={review.name}
+                          job={review.job}
+                          title={review.title}
+                          comment={review.comment}
+                        />
+                      </Grid.Col>
+                    ))}
+                  </Grid>
                 </Flex>
               </Fade>
             </Center>
@@ -524,36 +489,19 @@ export function Review() {
                     실제 사용자들의 리뷰를 확인해보세요.
                   </Text>
 
-                  <MediaQuery
-                    smallerThan={"md"}
-                    styles={{
-                      justifyContent: "center",
-                      alignContent: "center",
-                      width: "100%",
-                      height: "400px",
-                      padding: "5px 20px 0px 20px",
-                    }}
-                  >
-                    <div>
-                      <Swiper
-                        onSwiper={(onSwiper) => setSwiper(onSwiper)}
-                        slidesPerView={2}
-                        style={{
-                          margin: "30px 0 70px 0",
-                          height: "420px",
-                          width: "330px",
-                          pointerEvents: "none",
-                        }}
-                        autoplay={{ delay: 0, disableOnInteraction: false }}
-                        speed={5000}
-                        loop={true}
-                        loopedSlides={2}
-                        direction="vertical"
-                      >
-                        {userReivewsSlides}
-                      </Swiper>
-                    </div>
-                  </MediaQuery>
+                  <Grid style={{ margin: "30px 0 70px 0" }}>
+                    {userReviewData.slice(0, 2).map((review, index) => (
+                      <Grid.Col key={index} md={6}>
+                        <UserReview
+                          imageURL={review.imageURL}
+                          name={review.name}
+                          job={review.job}
+                          title={review.title}
+                          comment={review.comment}
+                        />
+                      </Grid.Col>
+                    ))}
+                  </Grid>
                 </Flex>
               </Fade>
             </Center>
@@ -1235,11 +1183,7 @@ export function MoreInfoScoring() {
     setActiveAIButton(buttonName);
   };
 
-  // 이미지 슬라이드 Swiper
-  SwiperCore.use([Autoplay]);
-  const [swiperIndex, setSwiperIndex] = useState<number>(0);
-  const [swiperLarge, setSwiperLarge] = useState<SwiperCore>();
-  const [swiperSmall, setSwiperSmall] = useState<SwiperCore>();
+  const aiImages = ["/img/ai_1.png", "/img/ai_2.png", "/img/ai_3.png"];
 
   return (
     <MediaQuery
@@ -1275,62 +1219,18 @@ export function MoreInfoScoring() {
                     }}
                   >
                     <Center>
-                      <Swiper
-                        spaceBetween={50}
-                        slidesPerView={1}
-                        onActiveIndexChange={(swiperCore) => {
-                          setSwiperIndex(swiperCore.activeIndex);
-                          handleAIButtonClick(swiperCore.activeIndex);
+                      <Image
+                        alt="ai description image"
+                        src={aiImages[activeAIButton]}
+                        width={0}
+                        height={0}
+                        sizes="100vh"
+                        style={{
+                          width: "100%",
+                          height: "auto",
+                          borderRadius: "15px",
                         }}
-                        onSwiper={(swiper) => {
-                          setSwiperLarge(swiper);
-                        }}
-                        autoplay={{
-                          delay: 4000,
-                          disableOnInteraction: false,
-                        }}
-                        style={{ borderRadius: "15px" }}
-                      >
-                        <SwiperSlide>
-                          <Image
-                            alt="ai description image 1"
-                            src={"/img/ai_1.png"}
-                            width={0}
-                            height={0}
-                            sizes="100vh"
-                            style={{
-                              width: "100%",
-                              height: "auto",
-                            }}
-                          ></Image>
-                        </SwiperSlide>
-                        <SwiperSlide>
-                          <Image
-                            alt="ai description image 2"
-                            src={"/img/ai_2.png"}
-                            width={0}
-                            height={0}
-                            sizes="100vh"
-                            style={{
-                              width: "100%",
-                              height: "auto",
-                            }}
-                          ></Image>
-                        </SwiperSlide>
-                        <SwiperSlide>
-                          <Image
-                            alt="ai description image 3"
-                            src={"/img/ai_3.png"}
-                            width={0}
-                            height={0}
-                            sizes="100vh"
-                            style={{
-                              width: "100%",
-                              height: "auto",
-                            }}
-                          ></Image>
-                        </SwiperSlide>
-                      </Swiper>
+                      />
                     </Center>
                   </MediaQuery>
                 </Grid.Col>
@@ -1358,8 +1258,6 @@ export function MoreInfoScoring() {
                         style={{ width: "200px" }}
                         onClick={() => {
                           handleAIButtonClick(0);
-                          swiperLarge?.slideTo(0);
-                          swiperSmall?.slideTo(0);
                         }}
                       >
                         <Text
@@ -1381,8 +1279,6 @@ export function MoreInfoScoring() {
                         style={{ width: "200px" }}
                         onClick={() => {
                           handleAIButtonClick(1);
-                          swiperLarge?.slideTo(1);
-                          swiperSmall?.slideTo(1);
                         }}
                       >
                         <Text
@@ -1404,8 +1300,6 @@ export function MoreInfoScoring() {
                         style={{ width: "200px" }}
                         onClick={() => {
                           handleAIButtonClick(2);
-                          swiperLarge?.slideTo(2);
-                          swiperSmall?.slideTo(2);
                         }}
                       >
                         <Text
@@ -1498,8 +1392,6 @@ export function MoreInfoScoring() {
                           compact
                           onClick={() => {
                             handleAIButtonClick(0);
-                            swiperLarge?.slideTo(0);
-                            swiperSmall?.slideTo(0);
                           }}
                           style={{ width: "100px" }}
                         >
@@ -1519,8 +1411,6 @@ export function MoreInfoScoring() {
                           compact
                           onClick={() => {
                             handleAIButtonClick(1);
-                            swiperLarge?.slideTo(1);
-                            swiperSmall?.slideTo(1);
                           }}
                           style={{ width: "100px" }}
                         >
@@ -1540,8 +1430,6 @@ export function MoreInfoScoring() {
                           compact
                           onClick={() => {
                             handleAIButtonClick(2);
-                            swiperLarge?.slideTo(2);
-                            swiperSmall?.slideTo(2);
                           }}
                           style={{ width: "100px" }}
                         >
@@ -1577,62 +1465,18 @@ export function MoreInfoScoring() {
                         }}
                       >
                         <Center>
-                          <Swiper
-                            spaceBetween={50}
-                            slidesPerView={1}
-                            onActiveIndexChange={(swiperCore) => {
-                              setSwiperIndex(swiperCore.activeIndex);
-                              handleAIButtonClick(swiperCore.activeIndex);
+                          <Image
+                            alt="ai description image"
+                            src={aiImages[activeAIButton]}
+                            width={0}
+                            height={0}
+                            sizes="100vh"
+                            style={{
+                              width: "100%",
+                              height: "auto",
+                              borderRadius: "15px",
                             }}
-                            onSwiper={(swiper) => {
-                              setSwiperSmall(swiper);
-                            }}
-                            autoplay={{
-                              delay: 4000,
-                              disableOnInteraction: false,
-                            }}
-                            style={{ borderRadius: "15px" }}
-                          >
-                            <SwiperSlide>
-                              <Image
-                                alt="ai description image 1"
-                                src={"/img/ai_1.png"}
-                                width={0}
-                                height={0}
-                                sizes="100vh"
-                                style={{
-                                  width: "100%",
-                                  height: "auto",
-                                }}
-                              ></Image>
-                            </SwiperSlide>
-                            <SwiperSlide>
-                              <Image
-                                alt="ai description image 1"
-                                src={"/img/ai_2.png"}
-                                width={0}
-                                height={0}
-                                sizes="100vh"
-                                style={{
-                                  width: "100%",
-                                  height: "auto",
-                                }}
-                              ></Image>
-                            </SwiperSlide>
-                            <SwiperSlide>
-                              <Image
-                                alt="ai description image 1"
-                                src={"/img/ai_3.png"}
-                                width={0}
-                                height={0}
-                                sizes="100vh"
-                                style={{
-                                  width: "100%",
-                                  height: "auto",
-                                }}
-                              ></Image>
-                            </SwiperSlide>
-                          </Swiper>
+                          />
                         </Center>
                       </MediaQuery>
                     </MediaQuery>
@@ -1928,11 +1772,7 @@ export function MoreInfoReport() {
     setActiveReportButton(buttonName);
   };
 
-  // 이미지 슬라이드 Swiper
-  SwiperCore.use([Autoplay]);
-  const [swiperIndex, setSwiperIndex] = useState<number>(0);
-  const [swiperLarge, setSwiperLarge] = useState<SwiperCore>();
-  const [swiperSmall, setSwiperSmall] = useState<SwiperCore>();
+  const reportImages = ["/img/report_1.png", "/img/report_2.png", "/img/report_3.png"];
 
   return (
     <MediaQuery
@@ -1978,62 +1818,18 @@ export function MoreInfoReport() {
                         }}
                       >
                         <Center>
-                          <Swiper
-                            spaceBetween={50}
-                            slidesPerView={1}
-                            onActiveIndexChange={(swiperCore) => {
-                              setSwiperIndex(swiperCore.activeIndex);
-                              handleReportButtonClick(swiperCore.activeIndex);
+                          <Image
+                            alt="report description image"
+                            src={reportImages[activeReportButton]}
+                            width={0}
+                            height={0}
+                            sizes="100vh"
+                            style={{
+                              width: "100%",
+                              height: "auto",
+                              borderRadius: "15px",
                             }}
-                            onSwiper={(swiper) => {
-                              setSwiperLarge(swiper);
-                            }}
-                            autoplay={{
-                              delay: 4000,
-                              disableOnInteraction: false,
-                            }}
-                            style={{ borderRadius: "15px" }}
-                          >
-                            <SwiperSlide>
-                              <Image
-                                alt="report description image 1"
-                                src={"/img/report_1.png"}
-                                width={0}
-                                height={0}
-                                sizes="100vh"
-                                style={{
-                                  width: "100%",
-                                  height: "auto",
-                                }}
-                              ></Image>
-                            </SwiperSlide>
-                            <SwiperSlide>
-                              <Image
-                                alt="report description image 2"
-                                src={"/img/report_2.png"}
-                                width={0}
-                                height={0}
-                                sizes="100vh"
-                                style={{
-                                  width: "100%",
-                                  height: "auto",
-                                }}
-                              ></Image>
-                            </SwiperSlide>
-                            <SwiperSlide>
-                              <Image
-                                alt="report description image 3"
-                                src={"/img/report_3.png"}
-                                width={0}
-                                height={0}
-                                sizes="100vh"
-                                style={{
-                                  width: "100%",
-                                  height: "auto",
-                                }}
-                              ></Image>
-                            </SwiperSlide>
-                          </Swiper>
+                          />
                         </Center>
                       </MediaQuery>
                     </Grid.Col>
@@ -2063,8 +1859,6 @@ export function MoreInfoReport() {
                             style={{ width: "200px" }}
                             onClick={() => {
                               handleReportButtonClick(0);
-                              swiperLarge?.slideTo(0);
-                              swiperSmall?.slideTo(0);
                             }}
                           >
                             <Text
@@ -2087,8 +1881,6 @@ export function MoreInfoReport() {
                             style={{ width: "200px" }}
                             onClick={() => {
                               handleReportButtonClick(1);
-                              swiperLarge?.slideTo(1);
-                              swiperSmall?.slideTo(1);
                             }}
                           >
                             <Text
@@ -2111,8 +1903,6 @@ export function MoreInfoReport() {
                             style={{ width: "200px" }}
                             onClick={() => {
                               handleReportButtonClick(2);
-                              swiperLarge?.slideTo(2);
-                              swiperSmall?.slideTo(2);
                             }}
                           >
                             <Text
@@ -2199,8 +1989,6 @@ export function MoreInfoReport() {
                             compact
                             onClick={() => {
                               handleReportButtonClick(0);
-                              swiperLarge?.slideTo(0);
-                              swiperSmall?.slideTo(0);
                             }}
                             style={{ width: "100px" }}
                           >
@@ -2222,8 +2010,6 @@ export function MoreInfoReport() {
                             compact
                             onClick={() => {
                               handleReportButtonClick(1);
-                              swiperLarge?.slideTo(1);
-                              swiperSmall?.slideTo(1);
                             }}
                             style={{ width: "100px" }}
                           >
@@ -2245,8 +2031,6 @@ export function MoreInfoReport() {
                             compact
                             onClick={() => {
                               handleReportButtonClick(2);
-                              swiperLarge?.slideTo(2);
-                              swiperSmall?.slideTo(2);
                             }}
                             style={{ width: "100px" }}
                           >
@@ -2282,62 +2066,18 @@ export function MoreInfoReport() {
                           }}
                         >
                           <Center>
-                            <Swiper
-                              spaceBetween={50}
-                              slidesPerView={1}
-                              onActiveIndexChange={(swiperCore) => {
-                                setSwiperIndex(swiperCore.activeIndex);
-                                handleReportButtonClick(swiperCore.activeIndex);
+                            <Image
+                              alt="report description image"
+                              src={reportImages[activeReportButton]}
+                              width={0}
+                              height={0}
+                              sizes="100vh"
+                              style={{
+                                width: "100%",
+                                height: "auto",
+                                borderRadius: "15px",
                               }}
-                              onSwiper={(swiper) => {
-                                setSwiperSmall(swiper);
-                              }}
-                              autoplay={{
-                                delay: 4000,
-                                disableOnInteraction: false,
-                              }}
-                              style={{ borderRadius: "15px" }}
-                            >
-                              <SwiperSlide>
-                                <Image
-                                  alt="report description image 1"
-                                  src={"/img/report_1.png"}
-                                  width={0}
-                                  height={0}
-                                  sizes="100vh"
-                                  style={{
-                                    width: "100%",
-                                    height: "auto",
-                                  }}
-                                ></Image>
-                              </SwiperSlide>
-                              <SwiperSlide>
-                                <Image
-                                  alt="report description image 2"
-                                  src={"/img/report_2.png"}
-                                  width={0}
-                                  height={0}
-                                  sizes="100vh"
-                                  style={{
-                                    width: "100%",
-                                    height: "auto",
-                                  }}
-                                ></Image>
-                              </SwiperSlide>
-                              <SwiperSlide>
-                                <Image
-                                  alt="report description image 3"
-                                  src={"/img/report_3.png"}
-                                  width={0}
-                                  height={0}
-                                  sizes="100vh"
-                                  style={{
-                                    width: "100%",
-                                    height: "auto",
-                                  }}
-                                ></Image>
-                              </SwiperSlide>
-                            </Swiper>
+                            />
                           </Center>
                         </MediaQuery>
                       </MediaQuery>
